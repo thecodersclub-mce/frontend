@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Frontend Series</title>
+    <link rel="icon" href="TCC.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional CSS for the form to integrate with your existing styles */
+        .content-container {
+            /* Override previous height/centering to allow form content to flow naturally */
+            height: auto; /* Allow height to adjust based on content */
+            min-height: calc(100vh - 100px); /* Ensure content takes up most of the screen, accounting for header/footer */
+            justify-content: flex-start; /* Align content to the top */
+            padding-bottom: 50px; /* Add padding to prevent content from being hidden by the fixed footer */
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+        }
+
+        .quiz-form-wrapper { /* Renamed to feedback-form-wrapper for clarity, but kept for compatibility */
+            width: 90%; /* Adjust width for better responsiveness */
+            max-width: 700px; /* Limit max-width for larger screens */
+            margin: 20px auto; /* Center the form wrapper */
+            padding: 25px;
+            background-color: #ffffff; /* White background for the form area */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+            box-sizing: border-box;
+        }
+
+        .quiz-form-wrapper h2 {
+            text-align: center;
+            color: #00408f;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left; /* Align labels and inputs to the left */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600; /* Slightly bolder labels */
+            color: #333;
+            font-size: 15px;
+        }
+
+        /* Common styling for all input types (text, email, textarea, select) */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%; /* Take full width of parent */
+            padding: 12px;
+            border: 1px solid #c0c0c0; /* Lighter border */
+            border-radius: 6px;
+            box-sizing: border-box; /* Include padding in width */
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Specific styling for <select> dropdowns to add the custom arrow */
+        .form-group select {
+            -webkit-appearance: none; /* Remove default browser styling for select */
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M192%20256L64%20128v256l128-128z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 12px;
+            padding-right: 30px; /* Make space for the custom arrow */
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #00408f; /* Highlight on focus */
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 64, 143, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column; /* Stack radio/checkbox options vertically */
+            gap: 8px; /* Space between options */
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex; /* Use flex to align input and text */
+            align-items: center; /* Vertically align them */
+            margin-bottom: 0; /* Remove default margin for labels */
+            font-weight: normal; /* Normal weight for option text */
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .radio-group input[type="radio"],
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px; /* Space between radio/checkbox and its label text */
+            width: 18px; /* Standardize size */
+            height: 18px; /* Standardize size */
+            cursor: pointer;
+        }
+
+        /* Styling for form questions paragraph */
+        .form-group p {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #00408f; /* Use your primary blue */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            background-color: #1E88E5; /* Lighter blue on hover */
+        }
+
+        .submit-button:active {
+            transform: scale(0.98);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+            margin: 30px 0;
+        }
+        /* Small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            /* ... other mobile styles ... */
+            .content-access-button {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+            /* REDUCE SIZE OF NAVIGATION BUTTONS FOR MOBILE VIEW */
+            .nav-button {
+                padding: 6px 8px; /* Smaller padding */
+                font-size: 0.75em; /* Smaller font size */
+                margin: 2px; /* Reduce margin between buttons */
+            }
+            .button-container {
+                padding: 10px; /* Adjust padding for the button container */
+                text-align: center; /* Center buttons if they wrap */
+            }
+        }
+        /* Responsive adjustments for form */
+        @media only screen and (max-width: 768px) {
+            .quiz-form-wrapper {
+                width: 95%; /* Make it slightly wider on tablets */
+                padding: 20px;
+            }
+            .quiz-form-wrapper h2 {
+                font-size: 22px;
+            }
+            .form-group label, .form-group input, .form-group textarea, .radio-group label, .checkbox-group label {
+                font-size: 14px;
+            }
+            .submit-button {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .quiz-form-wrapper {
+                padding: 15px;
+            }
+            .quiz-form-wrapper h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .form-group label, .form-group input, .form-group textarea, .radio-group label, .checkbox-group label {
+                font-size: 13px;
+            }
+            .form-group p {
+                font-size: 14px;
+            }
+            .submit-button {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+
+        /* --- CSS for Anti-Copying (kept for consistency) --- */
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .no-select input, .no-select textarea, .no-select select { /* Added select */
+            pointer-events: auto;
+            user-select: auto;
+        }
+
+        /* --- CSS for form section (Blurring & Overlay Container) --- */
+        #feedbackFormSection { /* Renamed ID to be specific to feedback */
+            position: relative;
+        }
+
+        #feedbackFormSection.form-disabled-overlay { /* Renamed class */
+            opacity: 0.5;
+            filter: blur(3px);
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+        }
+        #feedbackFormSection.form-disabled-overlay input,
+        #feedbackFormSection.form-disabled-overlay textarea,
+        #feedbackFormSection.form-disabled-overlay select { /* Added select */
+            pointer-events: auto;
+        }
+
+        /* --- CSS for White Opaque Overlay (if you still need it for disabling) --- */
+        /* If you just want blur/opacity, this overlay might not be strictly necessary */
+        #formOverlay { /* Renamed ID */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        /* --- Submission Success Message (COPIED FROM QUIZ PAGE) --- */
+        #submissionSuccessMessage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #submissionSuccessMessage.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-content {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #submissionSuccessMessage.show .success-content {
+            transform: scale(1);
+        }
+
+        .success-content p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #008000;
+            margin-top: 15px;
+        }
+
+        .success-icon-fa {
+            font-size: 80px;
+            color: #008000;
+            margin-bottom: 10px;
+            animation: fadeInScale 0.6s forwards;
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body onload="setFormStatus()">
+    <div class="blue-container">
+        <div class="left-aligned">
+            <a href="https://mce-madurai.ac.in/" target="_blank">
+                <img src="MCE_tab.png" alt="Logo" class="favicon-logo">
+            </a>
+            <div class="titles">
+                <h1 class="college-name">Mangayarkarasi College of Engineering</h1>
+                <h2 class="site-title">The Coders Club</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="b-nav-button" onclick="window.location.href='index.html';">Home</button>
+        <button class="b-nav-button" onclick="window.location.href='weeklycontent.html';">Weekly Content</button>
+        <button class="b-nav-button" onclick="window.location.href='quiz.html';">Brain Cache</button>
+        <button class="b-nav-button" onclick="window.location.href='finalquiz.html';">Mindmash</button>
+        <button class="b-nav-button" onclick="window.location.href='leaderboard.html';">Leaderboard</button>
+        <button class="b-nav-button active-nav-button" onclick="window.location.href='feedback.html';">Feedback</button>
+    </div>
+
+    <div class="content-container">
+        <center><h4 id="status"></h4></center>
+
+        <div class="quiz-form-wrapper">
+            <h2>Feedback Form</h2>
+            <form id="feedbackForm" method="POST" action="https://script.google.com/macros/s/AKfycbwYjG5TPLqg9X-91Z3g6-FgRLDhJOAG028wiqIO8_-gXcwgS6TM0oZlJWcazUTqQEZD/exec">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="Name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="Email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <select id="department" name="Department" required>
+                        <option value="">Select your Department</option>
+                        <option value="CSE">CSE</option>
+                        <option value="CSE (AI&ML)">CSE (AI&ML)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <select id="year" name="Year" required>
+                        <option value="">Select your Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                    </select>
+                </div>
+
+                <hr>
+
+                <div id="feedbackFormSection">
+                    <h3>Your Feedback</h3>
+
+                    <div class="form-group no-select">
+                        <p><strong>1. How satisfied are you with the recent Coders Club event/quiz?</strong></p>
+                        <div class="radio-group">
+                            <label><input type="radio" id="rating_5" name="SatisfactionRating" value="5 - Very Satisfied" required> 5 - Very Satisfied</label>
+                            <label><input type="radio" id="rating_4" name="SatisfactionRating" value="4 - Satisfied"> 4 - Satisfied</label>
+                            <label><input type="radio" id="rating_3" name="SatisfactionRating" value="3 - Neutral"> 3 - Neutral</label>
+                            <label><input type="radio" id="rating_2" name="SatisfactionRating" value="2 - Dissatisfied"> 2 - Dissatisfied</label>
+                            <label><input type="radio" id="rating_1" name="SatisfactionRating" value="1 - Very Dissatisfied"> 1 - Very Dissatisfied</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="no-select"><strong>2. What did you like most about the event/quiz?</strong></p>
+                        <textarea id="likedMost" name="LikedMost" required placeholder="Tell us what you enjoyed..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="no-select"><strong>3. What suggestions do you have for improving future events/quizzes?</strong></p>
+                        <textarea id="suggestions" name="Suggestions" required placeholder="Suggestions for improvement..."></textarea>
+                    </div>
+
+                    <div class="form-group no-select">
+                        <p><strong>4. Would you recommend Coders Club events/quizzes to your friends?</strong></p>
+                        <div class="radio-group">
+                            <label><input type="radio" id="recommend_yes" name="Recommend" value="Yes" required> Yes</label>
+                            <label><input type="radio" id="recommend_no" name="Recommend" value="No"> No</label>
+                            <label><input type="radio" id="recommend_maybe" name="Recommend" value="Maybe"> Maybe</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="no-select"><strong>5. Any other comments or feedback?</strong></p>
+                        <textarea id="otherComments" name="OtherComments" placeholder="Optional comments..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Feedback</button>
+                </div>
+            </form>
+
+            <div id="submissionSuccessMessage">
+                <div class="success-content">
+                    <i class="fas fa-check-circle success-icon-fa"></i> <p>Feedback Submitted Successfully!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by The Coders Club</p>
+        <a href="https://www.instagram.com/the_mce.coders_club?igsh=Z245eDZmdWhkcmRn" target="_blank">
+            <img src="IG.png" alt="Instagram" class="social-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/thecodersclub-mce/" target="_blank">
+            <img src="LINKEDLN.png" alt="LinkedIn" class="social-logo">
+        </a>
+        <a href="https://www.youtube.com/@TheCodersClub_MCE" target="_blank">
+            <img src="YT.png" alt="YouTube" class="social-logo">
+        </a>
+        <a href="https://whatsapp.com/channel/0029Vb6HMGKKAwEe8OdjAF0X" target="_blank">
+            <img src="WP.svg" alt="WhatsApp" class="social-logo">
+        </a>
+    </footer>
+
+    <script>
+        // --- CONTROL KEYWORD HERE ---
+        // Change this variable to "disable" or "enable"
+        const formControlStatus = "disable"; // Changed variable name to be specific for feedback form
+        // --- END CONTROL KEYWORD ---
+
+        // Object to store original text content for jumbling/unjumbling
+        const originalTextStore = {};
+
+        // Function to shuffle characters in a string
+        function shuffleString(str) {
+            let a = str.split("");
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a.join("");
+        }
+
+        // Function to jumble the text content of an element
+        function jumbleText(element) {
+            // Check if element has any text content to jumble and is not just whitespace
+            if (element && element.textContent && element.textContent.trim().length > 0) {
+                // Use a unique key for storage, preferring element ID or generating one
+                const elementKey = element.id || 'jumble-' + Math.random().toString(36).substring(2, 9);
+                if (!element.id) { // Assign ID if it didn't exist for consistent lookup
+                    element.id = elementKey;
+                }
+
+                // Store original text if not already stored
+                if (!originalTextStore[elementKey]) {
+                    originalTextStore[elementKey] = element.textContent;
+                }
+                element.textContent = shuffleString(element.textContent);
+            }
+        }
+
+        // Function to unjumble the text content of an element
+        function unjumbleText(element) {
+            if (element && element.id && originalTextStore[element.id]) {
+                element.textContent = originalTextStore[element.id];
+                // Optionally delete from store if you don't need it after unjumbling
+                // delete originalTextStore[element.id];
+            }
+        }
+
+        // Function for showing the submission success animation
+        function showSuccessAnimation() {
+            const successMessage = document.getElementById('submissionSuccessMessage');
+            successMessage.classList.add('show'); // Add 'show' class to display the overlay
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show'); // Remove 'show' class to hide the overlay
+            }, 3000); // The animation will be visible for 3 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setFormStatus(); // Call the main function to set the form status based on the keyword
+        });
+
+        function setFormStatus() { // Renamed function for clarity
+            const statusElement = document.getElementById('status');
+            const feedbackFormSection = document.getElementById('feedbackFormSection'); // Changed ID
+            const feedbackForm = document.getElementById('feedbackForm'); // Changed ID
+            const submitButton = feedbackForm.querySelector('.submit-button');
+
+            // Select elements whose text needs to be jumbled (questions and options)
+            const elementsToJumble = feedbackFormSection.querySelectorAll('h3, p, .radio-group label, .checkbox-group label');
+
+            if (formControlStatus === "enable") { // Using new control variable
+                // Form is Enabled
+                // Remove the disabled styling from the form section
+                feedbackFormSection.classList.remove('form-disabled-overlay'); // Changed class
+
+                // Enable relevant form elements inside the form section
+                feedbackFormSection.querySelectorAll('input, textarea, select').forEach(input => { // Added select
+                    input.disabled = false;
+                });
+                submitButton.disabled = false; // Ensure submit button is enabled
+
+                // Unjumble text for questions and options
+                elementsToJumble.forEach(element => {
+                    unjumbleText(element);
+                });
+
+                statusElement.innerHTML = 'Frontend Series - Feedback OPEN<br>Please share your valuable thoughts!';
+                statusElement.style.color = '#008000'; // Green for active
+            } else { // Assumes "disable" or any other value means disabled
+                // Form is Disabled
+                // Add the disabled styling to the form section for blur and opacity
+                feedbackFormSection.classList.add('form-disabled-overlay'); // Changed class
+
+                // Disable relevant form elements inside the form section
+                feedbackFormSection.querySelectorAll('input, textarea, select').forEach(input => { // Added select
+                    input.disabled = true;
+                });
+                submitButton.disabled = true; // Ensure submit button is disabled
+
+                // Jumble text for questions and options
+                elementsToJumble.forEach(element => {
+                    jumbleText(element);
+                });
+
+                statusElement.innerHTML = 'Frontend Series - Feedback<br>Wait for Updates!';
+                statusElement.style.color = '#CC0000'; // Red for closed
+            }
+            // Navigation buttons (Back to Quiz, Leaderboard) are NOT managed by formControlStatus
+            // They remain enabled and visible by default.
+        }
+
+        // Handle form submission to Google Sheet via Google Apps Script
+        const feedbackForm = document.getElementById('feedbackForm'); // Changed variable name
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Check if the form is disabled by the formControlStatus
+            if (this.querySelector('.submit-button').disabled) {
+                alert('The feedback form is currently closed.');
+                return; // Stop submission if disabled
+            }
+
+            const formData = new FormData(feedbackForm); // Changed variable name
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                if (key.endsWith('[]')) { // Handle checkbox arrays
+                    const originalKey = key.slice(0, -2);
+                    if (!data[originalKey]) {
+                        data[originalKey] = [];
+                    }
+                    data[originalKey].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Convert checkbox arrays to comma-separated strings for easier GSheet logging
+            for (const key in data) {
+                if (Array.isArray(data[key])) {
+                    data[key] = data[key].join(', ');
+                }
+            }
+
+            // Replace 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE' with your deployed Apps Script URL for FEEDBACK
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwYjG5TPLqg9X-91Z3g6-FgRLDhJOAG028wiqIO8_-gXcwgS6TM0oZlJWcazUTqQEZD/exec';
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors', // Important for sending data to Apps Script
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(data).toString()
+            })
+            .then(response => {
+                // If the fetch completes (even with no-cors), we assume the data was sent.
+                // Therefore, we can show the success animation.
+                showSuccessAnimation(); // CALL THE NEW ANIMATION FUNCTION HERE
+                feedbackForm.reset(); // Clear the form (changed variable name)
+            })
+            .catch(error => {
+                console.error('Error submitting feedback:', error);
+                alert('There was an error submitting your feedback. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

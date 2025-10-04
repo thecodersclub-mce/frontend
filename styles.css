@@ -1,0 +1,283 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f8f8f8;
+    overflow-x: hidden; /* Prevents horizontal scrollbar for the entire page */
+    overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.blue-container {
+    width: 100%;
+    background-color: #00408f; /* Deep blue header */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.left-aligned {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.favicon-logo {
+    width: 50px;
+    height: auto;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-name {
+    font-size: 16px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.site-title {
+    font-size: 14px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Area - Label & Button Section */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Adjust as needed */
+    width: 100%;
+    text-align: center;
+}
+
+.label-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.label-button-container h3 {
+    background-color: #e3f2fd;
+    color: #00408f;
+    padding: 6px 12px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* General Buttons (for content area, not secondary nav) */
+button {
+    background-color: #00408f;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1E88E5;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* --- Secondary Menu Styles (Default/Laptop View - Now Consistent with Mobile Layout Principles) --- */
+.button-container {
+    /* Lighter blue "Liquid Glass" effect, harmonizing with header */
+    background-image: linear-gradient(135deg, rgba(200, 230, 255, 0.9), rgba(170, 210, 240, 0.8));
+    backdrop-filter: blur(15px) saturate(1.8);
+    -webkit-backdrop-filter: blur(15px) saturate(1.8);
+    border: 1px solid rgba(150, 190, 220, 0.7);
+    
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the group of buttons horizontally on the screen */
+    align-items: stretch; /* CRITICAL for equal height: stretch items to fill container height */
+    padding: 10px 15px; /* Decent padding on sides for the whole container */
+    flex-wrap: nowrap; /* CRITICAL: Force all buttons onto a single line */
+    gap: 10px; /* Decent space BETWEEN buttons */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow-x: hidden; /* Hide horizontal scrollbar always */
+    -webkit-overflow-scrolling: touch;
+}
+
+.b-nav-button {
+    background-color: rgba(12, 129, 224, 0.2); /* Your specified blue hue with transparency */
+    color: #003060; /* Darker, richer blue text for good contrast */
+    border: 1px solid rgba(0, 40, 80, 0.15); /* Subtle blue border */
+    padding: 7px 8px; /* Adjusted padding for a compact look with internal space */
+    font-size: 0.75em; /* Default font size for all screens (will be overridden smaller by media queries) */
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    
+    display: flex; /* Make the button itself a flex container */
+    flex-direction: column; /* Stack wrapped text vertically */
+    align-items: center; /* Center text lines horizontally within the button */
+    justify-content: center; /* Center text vertically within the button */
+
+    white-space: normal; /* Allow text to wrap within the button (for all screens now) */
+    flex-grow: 1; /* Allow buttons to grow to fill space uniformly (within the limited space provided by the gap and padding) */
+    flex-basis: 0; /* Ensures equal width distribution when growing */
+    min-width: 0; /* Ensures buttons can shrink if needed without breaking */
+    text-overflow: clip; /* Ensure no ellipsis, clip if content is too large (shouldn't happen with proper padding/font) */
+    overflow: hidden; /* Hide any content that still overflows within the button */
+    height: auto; /* Allow height to adjust to wrapped content (but main container stretches them to be equal height) */
+    line-height: 1.1; /* Adjust line-height if text seems too crammed vertically */
+}
+
+/* Hover effect for secondary menu buttons */
+.nav-button:hover {
+    background-color: rgb(17, 91, 181); /* A very light tint of the main blue on hover */
+    border-color: rgba(0, 64, 143, 0.3); /* More prominent border on hover */
+    color: #001530; /* Even darker blue on hover */
+}
+.active-nav-button {
+            background-color: #0056b3;
+            color: white;
+            border-bottom: 3px solid #f0f0f0;
+        }
+/* Footer Styles */
+footer {
+    position: fixed;
+    width: 100%;
+    background-color: #00408f;
+    color: white;
+    text-align: center;
+    padding: 3px 0;
+    font-size: 10px;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.social-logo {
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* --- Responsive Styles (Media Queries - UNCHANGED) --- */
+
+/* For screens up to 768px wide (medium tablets, larger phones in landscape) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .favicon-logo {
+        width: 40px;
+    }
+    .college-name {
+        font-size: 16px;
+    }
+    .site-title {
+        font-size: 14px;
+    }
+    .label-button-container h3 {
+        font-size: 16px;
+    }
+    button { /* General buttons on content area */
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .button-row {
+        gap: 15px;
+    }
+
+    /* Secondary menu specific adjustments for tablets/larger phones */
+    .button-container {
+        padding: 10px 10px; /* Adjust container padding slightly */
+        gap: 8px; /* Adjust gap between buttons */
+    }
+
+    .nav-button {
+        padding: 7px 6px; /* Slightly adjust padding for this range */
+        font-size: 0.7em; /* Slightly smaller font for tablets */
+    }
+}
+
+/* For screens up to 600px wide (most phones in landscape, smaller tablets) */
+@media only screen and (max-width: 600px) {
+    .button-container {
+        padding: 8px 2px; /* Reduce container horizontal padding further */
+        gap: 4px; /* Reduce gap between buttons */
+    }
+
+    .nav-button {
+        padding: 7px 5px; /* Adjust padding for phone landscape */
+        font-size: 0.65em; /* Smaller font for phone landscape */
+    }
+}
+
+/* For even smaller screens (typical phone portrait, e.g., iPhone SE, older Androids) */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 13px; /* Overall base font slightly smaller */
+    }
+    .favicon-logo {
+        width: 25px;
+    }
+    .college-name {
+        font-size: 14px;
+    }
+    .site-title {
+        font-size: 12px;
+    }
+    .label-button-container h3 {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    button { /* General buttons on content area */
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+    .button-row {
+        gap: 10px;
+    }
+
+    /* Secondary menu specific overrides for very small screens */
+    .button-container {
+        padding: 5px 1px; /* Very minimal horizontal padding on the container */
+        gap: 2px; /* Minimal gap between buttons for tight fit */
+    }
+    .nav-button {
+        padding: 5px 4px; /* Ensure adequate internal padding even on smallest screens */
+        font-size: 0.6em; /* Smallest font for best fit */
+        border-radius: 3px;
+    }
+}

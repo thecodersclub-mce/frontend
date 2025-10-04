@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Series - The Coders Club</title>
+    <link rel="icon" href="TCC.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Container for all new content */
+        .content-container-wrapper {
+            width: 90%;
+            max-width: 900px; /* Increased max-width for better content display */
+            margin-top: 20px;
+            margin-right: auto;
+            margin-bottom: 70px; /* Space before footer */
+            margin-left: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center; /* Center the overall content within this wrapper */
+        }
+
+        /* Content block for sections like "Weekly Topics" and "Board Members" */
+        .content-block {
+            margin-bottom: 30px; /* More space between content blocks */
+            padding: 10px 0;
+            text-align: left; /* Default text alignment for content blocks */
+        }
+
+        .content-block h3 {
+            color: #1E88E5;
+            margin-bottom: 10px;
+            margin-top: 20px; /* Space above sub-headings */
+            text-align: center; /* Center these specific headings */
+            font-size: 1.8em; /* Larger font size for main content headings */
+        }
+
+        .content-block p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify; /* Justify paragraph text for better readability */
+            padding: 0 15px; /* Add some horizontal padding to paragraphs */
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        /* Table Styling - General */
+        .table-responsive {
+            overflow-x: auto; /* Enables horizontal scrolling for tables on small screens */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            margin-bottom: 20px;
+        }
+
+        .content-block-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for tables */
+            border-radius: 8px; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners apply to content within */
+        }
+
+        .content-block-table th,
+        .content-block-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            word-wrap: break-word; /* Prevents long words from breaking layout */
+        }
+
+        .content-block-table th {
+            background-color: #00408f;
+            color: white;
+            font-weight: bold;
+        }
+
+        .content-block-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .content-block-table tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Default link style within tables */
+        .content-block-table td a {
+            color: #00408f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .content-block-table td a:hover {
+            text-decoration: underline;
+        }
+
+        /* NEW: Specific styles for "Meet Our Board Members" table */
+        .board-members-table th,
+        .board-members-table td {
+            padding: 8px; /* Reduced padding */
+            font-size: 0.85em; /* Smaller font size */
+        }
+
+        /* New CSS for Feedback Section */
+        .feedback-section {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #e3f2fd; /* Light blue background for emphasis */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feedback-section h3 {
+            color: #00408f;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .feedback-display {
+            min-height: 80px; /* Ensure space for feedback */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Hidden by default for fade-in */
+            transition: opacity 1s ease-in-out; /* Smooth transition for fade effect */
+        }
+
+        .feedback-display.show {
+            opacity: 1;
+        }
+
+        .feedback-comment {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feedback-meta {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: bold;
+        }
+
+        /* New button style for "Access Content" */
+        .content-access-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9em;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .content-access-button:hover {
+            background-color: #45a049;
+        }
+
+        /* NEW: Style for the "Currently Open" text itself */
+        .current-status-highlight {
+            color: #fff; /* White text for contrast */
+            background-color: #28a745; /* A clear green background */
+            padding: 3px 8px; /* Some padding around the text */
+            border-radius: 4px; /* Slightly rounded corners */
+            font-weight: bold; /* Make the text bold */
+            text-decoration: none; /* Remove underline by default */
+            display: inline-block; /* Allows padding and background */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .current-status-highlight:hover {
+            background-color: #218838; /* Darker green on hover */
+            text-decoration: none; /* Keep no underline on hover */
+        }
+
+        /* Responsive adjustments for content sections */
+
+        /* Medium devices (tablets, 601px to 900px) */
+        @media only screen and (min-width: 601px) and (max-width: 900px) {
+            .content-container-wrapper {
+                padding: 20px;
+            }
+            .content-block h3, .feedback-section h3 {
+                font-size: 1.6em;
+            }
+            .content-block p {
+                font-size: 1em;
+            }
+            .content-block-table th, .content-block-table td {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+            /* Adjustments for board members table on medium screens */
+            .board-members-table th,
+            .board-members-table td {
+                padding: 7px; /* Further reduced padding */
+                font-size: 0.8em; /* Further smaller font size */
+            }
+            .feedback-comment {
+                font-size: 1em;
+            }
+            .feedback-meta {
+                font-size: 0.85em;
+            }
+            .content-access-button {
+                padding: 7px 12px;
+                font-size: 0.85em;
+            }
+            /* Adjust nav buttons for tablets if needed, though current sizes are probably fine */
+            .nav-button {
+                padding: 8px 12px; /* Slightly smaller padding */
+                font-size: 0.9em; /* Slightly smaller font */
+            }
+        }
+
+        /* Small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .content-container-wrapper {
+                width: 95%; /* Slightly more width on small screens */
+                padding: 10px;
+                margin-top: 15px;
+                margin-bottom: 60px; /* Adjust if footer height changes */
+            }
+            .content-block h3, .feedback-section h3 {
+                font-size: 1.4em;
+            }
+            .content-block p {
+                font-size: 0.9em;
+                padding: 0 10px; /* Adjust padding for smaller screens */
+            }
+            .content-block-table {
+                min-width: 300px; /* Maintain minimum width for scrollable table */
+            }
+            .content-block-table th, .content-block-table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+            /* Adjustments for board members table on small screens */
+            .board-members-table th,
+            .board-members-table td {
+                padding: 5px; /* Significantly reduced padding */
+                font-size: 0.75em; /* Even smaller font size */
+            }
+            .feedback-section {
+                padding: 15px;
+            }
+            .feedback-comment {
+                font-size: 0.9em;
+            }
+            .feedback-meta {
+                font-size: 0.8em;
+            }
+            .content-access-button {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+            /* REDUCE SIZE OF NAVIGATION BUTTONS FOR MOBILE VIEW */
+            .nav-button {
+                padding: 6px 8px; /* Smaller padding */
+                font-size: 0.75em; /* Smaller font size */
+                margin: 2px; /* Reduce margin between buttons */
+            }
+            .button-container {
+                padding: 10px; /* Adjust padding for the button container */
+                text-align: center; /* Center buttons if they wrap */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blue-container">
+        <div class="left-aligned">
+            <a href="https://mce-madurai.ac.in/" target="_blank">
+                <img src="MCE_tab.png" alt="Logo" class="favicon-logo">
+            </a>
+            <div class="titles">
+                <h1 class="college-name">Mangayarkarasi College of Engineering</h1>
+                <h2 class="site-title">The Coders Club</h2>
+            </div>
+        </div>
+    </div>
+
+<div class="button-container">
+        <button class="b-nav-button active-nav-button" onclick="window.location.href='index.html';">Home</button>
+        <button class="b-nav-button" onclick="window.location.href='weeklycontent.html';">Weekly Content</button>
+        <button class="b-nav-button" onclick="window.location.href='quiz.html';">Brain Cache</button>
+        <button class="b-nav-button" onclick="window.location.href='finalquiz.html';">Mindmash</button>
+        <button class="b-nav-button" onclick="window.location.href='leaderboard.html';">Leaderboard</button>
+        <button class="b-nav-button" onclick="window.location.href='feedback.html';">Feedback</button>
+</div>
+
+    <div class="content-container-wrapper">
+        <h2 style="color: #00408f; text-align: center; margin-bottom: 20px; font-size: 2em;">
+            Frontend Series: Your Journey to Coding Mastery!
+        </h2>
+        <p>Welcome to The Coders Club's intensive HTML, CSS, and JavaScript Frontend Series! This program is expertly crafted to elevate your skills from foundational web structure (HTML) and styling (CSS) to complex client-side behavior (JavaScript), ensuring you gain a profound mastery of the web's building blocks.
+
+Every week, we'll immerse ourselves in these key technologies, progressively sharpening your ability to build functional, interactive, and beautifully designed websites from the ground up.</p>
+
+        <div class="content-block">
+            <h3>Weekly Topics Overview:</h3>
+            <div class="table-responsive">
+                <table class="content-block-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Topic</th>
+                            <th>Access Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1</td>
+                            <td>Web & HTML/CSS Foundations</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week1';">Go to Content</button></td>
+                        </tr>
+                        <tr>
+                            <td>Week 2</td>
+                            <td>Advanced Styling & Layouts</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week2';">Go to Content</button></td>
+                        </tr>
+                        <tr>
+                            <td>Week 3</td>
+                            <td>JavaScript Essentials</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week3';">Go to Content</button></td>
+                        </tr>
+                        <tr>
+                            <td>Week 4</td>
+                            <td>Modern JavaScript (ES6+)</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week4';">Go to Content</button></td>
+                        </tr>
+                        <tr>
+                            <td>Week 5</td>
+                            <td>React Basics</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week5';">Go to Content</button></td>
+                        </tr>
+                        <tr>
+                            <td>Week 6</td>
+                            <td>Advanced React & Deployment</td>
+                            <td><button class="content-access-button" onclick="window.location.href='weeklycontent.html#week6';">Go to Content</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Meet Our Board Members:</h3>
+            <p style="text-align: center;">
+                Get to know the dedicated individuals leading The Coders Club and their roles in this series!
+            </p>
+            <div class="table-responsive">
+                <table class="content-block-table **board-members-table**">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Club Role</th>
+                            <th>Dept/Year</th>
+                            <th>Series Role</th>
+                            <th>LinkedIn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yogeshwaran S</td>
+                            <td>President</td>
+                            <td>CSE, 4th</td>
+                            <td>Function Friday</td>
+                            <td><a href="https://www.linkedin.com/in/yogeshwaran-s-7634872a0/" target="_blank">Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>Maha Laksmi T</td>
+                            <td>Vice-President</td>
+                            <td>CSE, 3rd</td>
+                            <td>Monday Maverick</td>
+                            <td><a href="https://www.linkedin.com/in/t-maha-laksmi-167bb2283/" target="_blank">Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>Ananth S</td>
+                            <td>Secretary</td>
+                            <td>CSE, 4th</td>
+                            <td>Quiz Preparation</td>
+                            <td><a href="https://www.linkedin.com/in/ananth-techie/" target="_blank">Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>Balachander M</td>
+                            <td>Treasurer</td>
+                            <td>CSE, 4th</td>
+                            <td>Techie Tuesday</td>
+                            <td><a href="https://www.linkedin.com/in/bala-chander-93b69336b/" target="_blank">Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>Renugadevi K</td>
+                            <td>Event Manager</td>
+                            <td>CSE, 4th</td>
+                            <td>Syntax Snapshots Wednesday</td>
+                            <td><a href="https://www.linkedin.com/in/renugadevi-k-4766b3366/" target="_blank">Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mohammed Arif J</td>
+                            <td>Public Relations Manager</td>
+                            <td>CSE, 3rd</td>
+                            <td>Te Ta Thursday</td>
+                            <td><a href="https://www.linkedin.com/in/mohammedarif-j27/" target="_blank">Profile</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="feedback-section" id="animatedFeedbackSection">
+            <h3>What Our Participants Say:</h3>
+            <div id="feedbackDisplay" class="feedback-display">
+            </div>
+        </div>
+         <div class="content-block">
+            <h3>Other Series:</h3>
+            <div class="table-responsive">
+                <table class="content-block-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Duration</th>
+                            <th>Access Content</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr> <td>C Programming Series</td>
+                            <td>May - July 2025</td>
+                            <td><a href="https://thecodersclub-mce.github.io/c-programming-series" target="_blank">Go to Series</a></td>
+                        <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>DSA Series</td>
+                            <td>July - September 2025</td>
+                            <td><a href="https://thecodersclub-mce.github.io/frontend" target="_blank">Go to Series</a></td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Frontend Series</td>
+                            <td>October - November 2025</td>
+	                <td><a href="https://thecodersclub-mce.github.io/frontend" target="_blank" class="current-status-highlight">Currently Open</a></td>
+                            <td>Ongoing</td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td>November - December 2025</td>
+                            <td><a href="https://thecodersclub-mce.github.io/database" target="_blank">N/A</a></td>
+                            <td>Upcoming</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>Created by The Coders Club</p>
+        <a href="https://www.instagram.com/the_mce.coders_club?igsh=Z245eDZmdWhkcmRn" target="_blank">
+            <img src="IG.png" alt="Instagram" class="social-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/thecodersclub-mce/" target="_blank">
+            <img src="LINKEDLN.png" alt="LinkedIn" class="social-logo">
+        </a>
+        <a href="https://www.youtube.com/@TheCodersClub_MCE" target="_blank">
+            <img src="YT.png" alt="YouTube" class="social-logo">
+        </a>
+        <a href="https://whatsapp.com/channel/0029Vb6HMGKKAwEe8OdjAF0X" target="_blank">
+            <img src="WP.svg" alt="WhatsApp" class="social-logo">
+        </a>
+    </footer>
+
+    <script>
+        // JavaScript for Feedback Animation
+        // --- FEATURE FLAG ---
+        const enableFeedbackAnimation = false; // Set to 'false' to hide the animation, 'true' to show it.
+        // --------------------
+
+        const feedbacks = [
+            { comment: "The C Programming series was incredibly helpful! The concepts were explained clearly.", meta: "3rd Year CSE" },
+            { comment: "I really enjoyed the interactive sessions. Learned a lot about pointers!", meta: "2nd Year CSE (AI&ML)" },
+            { comment: "Great initiative by The Coders Club. Looking forward to more such events.", meta: "2nd Year CSE" },
+            { comment: "The weekly topics are well-structured and easy to follow. Excellent content!", meta: "3rd Year ECE" },
+            { comment: "The instructors made complex topics simple. Highly recommend this series to everyone.", meta: "2nd Year IT" }
+        ];
+
+        let currentFeedbackIndex = 0;
+        const feedbackDisplay = document.getElementById('feedbackDisplay');
+        const animatedFeedbackSection = document.getElementById('animatedFeedbackSection'); // Get the whole section
+
+        function showFeedback() {
+            if (feedbackDisplay.classList.contains('show')) {
+                // If currently visible, fade out first
+                feedbackDisplay.classList.remove('show');
+                setTimeout(() => {
+                    updateFeedbackContent();
+                }, 1000); // Wait for fade-out to complete (1 second)
+            } else {
+                // If not visible (initial load or after first fade-out), just update and fade in
+                updateFeedbackContent();
+            }
+        }
+
+        function updateFeedbackContent() {
+            const feedback = feedbacks[currentFeedbackIndex];
+            feedbackDisplay.innerHTML = `
+                <p class="feedback-comment">"${feedback.comment}"</p>
+                <p class="feedback-meta">- Anonymous (${feedback.meta})</p>
+            `;
+            feedbackDisplay.classList.add('show'); // Fade in
+            currentFeedbackIndex = (currentFeedbackIndex + 1) % feedbacks.length; // Move to next feedback
+        }
+
+        // Start the animation only if the feature flag is enabled
+        document.addEventListener('DOMContentLoaded', () => {
+            if (enableFeedbackAnimation) {
+                animatedFeedbackSection.style.display = 'block'; // Ensure the section is visible if enabled
+                showFeedback(); // Show first feedback immediately
+                setInterval(showFeedback, 5000); // Change feedback every 5 seconds (including fade time)
+            } else {
+                animatedFeedbackSection.style.display = 'none'; // Hide the entire section if not enabled
+            }
+        });
+    </script>
+</body>
+</html>

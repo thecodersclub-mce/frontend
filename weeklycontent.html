@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<!-- <p style="text-align: center; font-style: italic; color: #555;">Content coming soon!</p>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Content C Programming Series - The Coders Club</title>
+    <link rel="icon" href="TCC.png" type="image/png">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+       /* General Container for all content */
+    .content-container-wrapper {
+    width: 90%;
+    max-width: 900px; /* Increased max-width for better content display */
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 70px;
+    margin-left: auto; /* General top/bottom margin */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 70px; /* Space before footer */
+}
+
+/* Main Tab Navigation (Week 1, Week 2, etc.) */
+.main-tab-nav {
+    display: flex;
+    justify-content: center;
+    background: #E0E0E0;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 5px;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    flex-wrap: wrap; /* Added for responsiveness: allows buttons to wrap */
+}
+
+/* Nested Tab Navigation (Monday, Tuesday, etc.) */
+.nested-tab-nav {
+    display: flex;
+    justify-content: center;
+    background: #e3f2fd; /* Lighter blue background for nested tabs */
+    border-radius: 6px;
+    overflow: hidden; /* Ensures content within bounds */
+    padding: 5px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 15px; /* Space above nested tabs */
+    margin-bottom: 15px; /* Space below nested tabs */
+    /* Removed flex-wrap: wrap; to ensure all buttons stay in one row */
+}
+
+/* General Tab Button Styling */
+.tab-button {
+    flex: 1; /* Allows buttons to grow and shrink */
+    min-width: 60px; /* Reduced minimum width to allow more buttons in a row */
+    padding: 5px 8px; /* Reduced padding to make buttons more compact */
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, #F5F5F5, #E0E0E0);
+    color: #333;
+    font-size: 14px;
+    border-radius: 6px; /* Uniform rounded corners */
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 2px; /* Adjusted margin for consistent spacing */
+    /* Removed white-space: nowrap; text-overflow: ellipsis; overflow: hidden; */
+    word-break: break-word; /* Allows long words to break and wrap to the next line */
+}
+.tab-button:hover {
+    background: #1E88E5;
+    color: white;
+}
+
+.tab-button.active {
+    background: #00408f;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for disabled buttons */
+.tab-button.disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.tab-button.disabled:hover {
+    background: #cccccc;
+    color: #666666;
+}
+
+/* Content sections */
+.week-content, .day-content {
+    display: none; /* Hidden by default */
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: left; /* Ensure text alignment is natural */
+}
+
+.active-content {
+    display: block; /* Shown when active */
+}
+
+/* Styling for daily content sections within weeks */
+.day-section {
+    margin-top: 20px; /* Space between the daily tabs and content */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.day-section h2 {
+    color: #00408f;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.content-block {
+    margin-bottom: 20px;
+    /* Ensure no extra padding/margin on the content block itself
+        that might throw off the alignment for its children */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Headings within content block - ensure they have no left margin/padding */
+.content-block h3,
+.content-block h4 {
+    color: #1E88E5;
+    /* Adjust margin-bottom to control space before the list */
+    margin-bottom: 3px; /* Reduced for tighter spacing */
+    margin-left: 0; /* Crucial: Align heading text to the very left of .content-block */
+    padding-left: 0; /* Crucial: Align heading text to the very left of .content-block */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.content-block p {
+    margin-bottom: 10px;
+    line-height: 1.6; /* Improved readability for text */
+}
+
+/* ---------------------------------------------------- */
+/* Unordered Lists (UL) - Circle Bullets */
+/* ---------------------------------------------------- */
+.content-block ul {
+    list-style: none; /* Remove default bullets */
+    margin-left: 0; /* Align the list's left edge with the heading */
+    padding-left: 0; /* Remove browser's default padding */
+    margin-top: 0; /* Pull list closer to the heading */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.content-block ul li {
+    margin-bottom: 5px;
+    position: relative; /* Needed for ::before positioning */
+    line-height: 1.6; /* Ensure consistent line spacing */
+
+    /* Padding to create space for the circle bullet and gap */
+    padding-left: 18px; /* Space for the circle bullet + small gap */
+}
+
+/* Custom Circle Bullet using ::before pseudo-element for UL */
+.content-block ul li::before {
+    content: "•"; /* Unicode character for a solid circle */
+    color: #00408f; /* Matching blue */
+    font-weight: bold; /* Make it more prominent */
+    font-size: 1em; /* Ensure the bullet size matches the text */
+
+    position: absolute; /* Position the bullet absolutely relative to the list item */
+    left: 0; /* Align it to the very left edge of the LI's content area */
+    top: 0; /* Align with the top of the text */
+    margin-right: 8px; /* Space between the bullet and the start of the list item text */
+}
+
+/* ---------------------------------------------------- */
+/* Ordered Lists (OL) - Numbered Bullets */
+/* ---------------------------------------------------- */
+.content-block ol {
+    list-style: none; /* Crucial: Remove default numbers to use custom counters */
+    margin-left: 0; /* Align the list's left edge with the heading */
+    padding-left: 0; /* Remove browser's default padding */
+    margin-top: 0; /* Pull list closer to the heading */
+    margin-bottom: 10px;
+    text-align: left;
+
+    /* Initialize the counter for ordered lists */
+    counter-reset: custom-numbered-list;
+}
+
+.content-block ol li {
+    margin-bottom: 5px;
+    line-height: 1.6; /* Ensure consistent line spacing */
+    position: relative; /* Needed for positioning the ::before pseudo-element */
+
+    /* Padding to create space for the number (e.g., "10.") and gap.
+        Adjust this based on the max number of items you expect (e.g., if you go to 100, you need more space). */
+    padding-left: 30px; /* Space for the number and text content */
+}
+
+/* Custom Numbered Bullet using ::before pseudo-element for OL */
+.content-block ol li::before {
+    /* Increment the counter for each list item */
+    counter-increment: custom-numbered-list;
+    /* Display the counter value followed by a period */
+    content: counter(custom-numbered-list) ".";
+
+    color: #00408f; /* Matching blue */
+    font-weight: bold;
+    font-size: 1em; /* Ensure the number size matches the text */
+
+    position: absolute; /* Position the number absolutely relative to the list item */
+    left: 0; /* Align it to the very left edge of the LI's content area */
+    top: 0; /* Align with the top of the text */
+    text-align: right; /* Right-align the number within its allotted width */
+    width: 25px; /* Fixed width for numbers (e.g., "1." and "10." align right within this width) */
+    margin-right: 5px; /* Space between the number and the start of the list item text */
+}
+
+code {
+    display: block;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.95em;
+    white-space: pre-wrap; /* Ensures line breaks are respected */
+    word-wrap: break-word; /* Breaks long words if necessary */
+}
+
+pre code {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: 1em;
+    white-space: pre;
+}
+
+.example-label {
+    font-weight: bold;
+    color: #00408f;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Add this to your existing CSS file or style block */
+
+.week-content.content-disabled-overlay,
+.day-content.content-disabled-overlay {
+    position: relative;
+    filter: blur(10px); /* Increased blur amount from 5px to 10px */
+    pointer-events: none; /* Disables all mouse events on the blurred content */
+    user-select: none; /* Prevents text selection */
+    opacity: 0.6; /* Optional: Make it slightly faded */
+}
+
+/* Optional: Add an actual overlay on top if you want a more distinct disabled look */
+.week-content.content-disabled-overlay::before,
+.day-content.content-disabled-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white overlay */
+    z-index: 1; /* Make sure it's above the blurred content */
+}
+/* --- Mobile Responsiveness for Content and Buttons --- */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content-container-wrapper {
+        width: 95%; /* Slightly more width on small screens */
+        padding: 10px;
+        margin: 10px auto 70px auto;
+    }
+
+    .main-tab-nav {
+        flex-direction: row; /* Ensure horizontal flow */
+        justify-content: center;
+        flex-wrap: wrap; /* ALLOW WRAPPING for buttons on smaller screens */
+        padding: 5px;
+        /* Removed overflow-x: auto; as wrapping is now allowed */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* --- Specific Adjustments for Week Buttons (assuming these are .tab-button within .main-tab-nav) --- */
+    .main-tab-nav .tab-button { /* Targeting .tab-button specifically within .main-tab-nav */
+        /*
+         * To allow buttons to wrap while still trying to maintain a proportional width,
+         * we use flex-basis. If there are 5 buttons, 18% allows for margins and wrapping.
+         */
+        flex: 1 1 18%; /* Target ~18% width per button, allowing wrapping */
+        min-width: 0; /* Allow them to shrink as much as needed */
+        margin: 2px; /* Small margin for consistent spacing */
+        font-size: 10px; /* Potentially smaller font for weeks to fit */
+        padding: 6px 2px; /* Even tighter padding for weeks */
+
+        /* Ensure text visibility */
+        white-space: normal; /* Allow text to wrap naturally within the button */
+        overflow: visible; /* Ensure all content is visible */
+        text-overflow: clip; /* Prevent ellipsis, show all text */
+        word-break: break-word; /* Allows long words to break and wrap to the next line */
+    }
+
+    .nested-tab-nav {
+        flex-direction: row; /* Ensure horizontal flow */
+        justify-content: center;
+        flex-wrap: wrap; /* ALLOW WRAPPING for buttons on smaller screens */
+        padding: 5px;
+        /* Remove overflow-x: auto; as wrapping is now allowed, horizontal scrolling is less likely needed */
+        /* If buttons still overflow due to min-width, consider adjusting min-width further or ensuring content fits */
+    }
+
+    /* General Tab Button Styling for Mobile */
+    .tab-button {
+        flex: 1 1 auto; /* Allows buttons to grow and shrink */
+        /* Consider a small min-width here, e.g., 30% or 80px, depending on how many buttons per row are desired.
+           Setting it to 0 might make them too small if there are many. Let's keep it at 0 for maximum flexibility. */
+        min-width: 0; /* Allow them to shrink as much as needed */
+        margin: 2px; /* Small margin for consistent spacing */
+        font-size: 11px; /* Base font size for mobile */
+        padding: 6px 4px; /* Reduced horizontal padding to save space */
+        /* Ensure text visibility by using word-break and removing hiding properties */
+        white-space: normal; /* Allow text to wrap naturally within the button */
+        overflow: visible; /* Ensure all content is visible */
+        text-overflow: clip; /* Prevent ellipsis, show all text */
+        word-break: break-word; /* Allows long words to break and wrap to the next line */
+    }
+    /* Content and other elements responsiveness (no change needed here for this specific request) */
+    .day-section {
+        padding: 15px;
+    }
+
+    .day-section h2 {
+        font-size: 1.4em;
+    }
+
+    .content-block h3,
+    .content-block h4 {
+        font-size: 1.1em;
+        margin-bottom: 2px;
+    }
+
+    .content-block p,
+    .content-block ul li,
+    .content-block ol li {
+        font-size: 0.9em;
+    }
+
+    .content-block ul li {
+        padding-left: 15px;
+    }
+    .content-block ul li::before {
+        margin-right: 4px;
+        font-size: 0.9em;
+    }
+
+    .content-block ol li {
+        padding-left: 25px;
+    }
+    .content-block ol li::before {
+        width: 20px;
+        margin-right: 3px;
+        font-size: 0.9em;
+    }
+
+    code {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+    /* ... other mobile styles ... */
+    .content-access-button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+    /* REDUCE SIZE OF NAVIGATION BUTTONS FOR MOBILE VIEW */
+    .nav-button {
+        padding: 6px 8px; /* Smaller padding */
+        font-size: 0.75em; /* Smaller font size */
+        margin: 2px; /* Reduce margin between buttons */
+    }
+    .button-container {
+        padding: 10px; /* Adjust padding for the button container */
+        text-align: center; /* Center buttons if they wrap */
+    }
+
+    /* --- Quiz Specific Mobile Styles --- */
+    .quiz-container {
+        padding: 10px; /* Reduce padding for the entire quiz container */
+        margin-top: 15px; /* Adjust top margin */
+    }
+
+    .quiz-container h3 {
+        font-size: 1.2em; /* Smaller font for quiz title */
+        margin-bottom: 10px;
+    }
+
+    .question-block {
+        margin-bottom: 15px; /* Space between questions */
+    }
+
+    .question-block p {
+        font-size: 1em; /* Adjust question text size */
+        margin-bottom: 8px;
+    }
+
+    .quiz-option {
+        padding: 8px 10px; /* Smaller padding for options */
+        font-size: 0.9em; /* Smaller font size for options */
+        margin-bottom: 6px; /* Space between options */
+        min-height: 35px; /* Ensure a decent tap target size */
+    }
+
+    .quiz-feedback {
+        font-size: 0.9em; /* Smaller font for feedback */
+        padding: 6px 10px; /* Smaller padding for feedback */
+        margin-top: 8px; /* Adjust top margin for feedback */
+    }
+}
+/* Medium devices (tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .content-container-wrapper {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .tab-button {
+        font-size: 13px;
+        padding: 7px 10px;
+        min-width: 90px; /* Slightly larger min-width for tablets */
+    }
+
+    .day-section {
+        padding: 20px;
+    }
+
+    .day-section h2 {
+        font-size: 1.6em;
+    }
+
+    .content-block h3 {
+        font-size: 1.3em;
+    }
+
+    code {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+}
+/* Table Styling - General (applies to all screen sizes unless overridden) */
+.content-block table {
+    width: 100%; /* Default to 100% width */
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    /* Remove table-layout: fixed; here. It can constrain the table too much on small screens.
+        Let the table content dictate its width within the scrollable container. */
+}
+
+.content-block th,
+.content-block td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    word-wrap: break-word; /* Prevents long words from breaking layout */
+}
+
+.content-block th {
+    background-color: #00408f;
+    color: white;
+    font-weight: bold;
+}
+
+.content-block tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.content-block tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Mobile Responsiveness for Content and Buttons --- */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content-container-wrapper {
+        width: 95%; /* Slightly more width on small screens */
+        padding: 10px;
+        margin: 10px auto 70px auto;
+    }
+
+    /* For both main and nested tab navigation */
+    .main-tab-nav,
+    .nested-tab-nav {
+        flex-direction: row; /* Ensure horizontal flow */
+        justify-content: center;
+        flex-wrap: nowrap; /* PREVENT WRAPPING for buttons */
+        padding: 5px;
+        /* Add overflow-x here to enable horizontal scrolling for buttons if they exceed */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* General Tab Button Styling for Mobile */
+    .tab-button {
+        flex: 1 1 auto; /* Allows buttons to grow and shrink */
+        min-width: 0; /* Allow them to shrink as much as needed */
+        margin: 2px; /* Small margin for consistent spacing */
+        font-size: 11px; /* Base font size for mobile */
+        padding: 6px 4px; /* Reduced horizontal padding to save space */
+        white-space: nowrap; /* Prevent text wrapping inside buttons */
+        overflow: hidden; /* Hide overflowing text if it gets too small */
+        text-overflow: ellipsis; /* Add ellipsis for hidden text */
+    }
+
+    /* --- Specific Adjustments for Week Buttons --- */
+    .main-tab-nav .tab-button {
+        flex: 1 1 18%; /* Target ~18% width per button (20% - margins) */
+        font-size: 10px; /* Potentially smaller font for weeks to fit 5 */
+        padding: 6px 2px; /* Even tighter padding for weeks */
+    }
+
+    /* --- Specific Adjustments for Weekday Buttons --- */
+    .nested-tab-nav .tab-button {
+        flex: 1 1 18%; /* Target ~18% width per button (20% - margins) */
+        font-size: 10px; /* Smallest font size for weekdays to fit 5 */
+        padding: 6px 2px; /* Tighter padding for weekdays */
+    }
+
+    /* Content and other elements responsiveness */
+    .day-section {
+        padding: 15px;
+    }
+
+    .day-section h2 {
+        font-size: 1.4em;
+    }
+
+    .content-block h3,
+    .content-block h4 {
+        font-size: 1.1em;
+        margin-bottom: 2px;
+    }
+
+    .content-block p,
+    .content-block ul li,
+    .content-block ol li {
+        font-size: 0.9em;
+    }
+
+    .content-block ul li {
+        padding-left: 15px;
+    }
+    .content-block ul li::before {
+        margin-right: 4px;
+        font-size: 0.9em;
+    }
+
+    .content-block ol li {
+        padding-left: 25px;
+    }
+    .content-block ol li::before {
+        width: 20px;
+        margin-right: 3px;
+        font-size: 0.9em;
+    }
+
+    code {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    /* --- Table Responsiveness for Mobile --- */
+    .table-responsive {
+        overflow-x: auto; /* Enable horizontal scrolling for the table container */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .content-block table {
+        /* On small screens, allow the table to take its natural width,
+            which will then be contained by the .table-responsive wrapper. */
+        width: 100%; /* Start with 100% width */
+        min-width: 400px; /* Set a minimum width for the table itself.
+                            Adjust this based on your table content.
+                            This prevents extreme squishing of columns.*/
+        table-layout: auto; /* Allow column widths to adjust based on content */
+    }
+
+    /* Remove the problematic display changes for table elements on mobile */
+    .content-block table,
+    .content-block thead,
+    .content-block tbody,
+    .content-block th,
+    .content-block td,
+    .content-block tr {
+        display: table-cell; /* Revert to default table display properties, adjusted below */
+    }
+
+    .content-block tr {
+        display: table-row; /* Ensure rows display as table rows */
+    }
+
+    .content-block thead {
+        display: table-header-group; /* Ensure thead displays correctly */
+    }
+
+    .content-block tbody {
+        display: table-row-group; /* Ensure tbody displays correctly */
+    }
+
+    .content-block th,
+    .content-block td {
+        display: table-cell; /* Ensure th and td display as table cells */
+    }
+
+    .content-block thead tr {
+        position: static; /* Revert position */
+        top: auto;
+        left: auto;
+    }
+
+    /* Ensure padding and text alignment are standard for a scrollable table */
+    .content-block td {
+        border: 1px solid #ddd; /* Re-add borders */
+        padding: 8px; /* Slightly reduced padding for mobile table cells */
+        text-align: left; /* Keep text alignment left */
+    }
+
+    .content-block th {
+        padding: 8px; /* Slightly reduced padding for mobile table headers */
+    }
+
+    .content-block td::before {
+        content: none; /* Crucial: Remove the data-label pseudo-element */
+    }
+}
+/* Large devices (desktops, 901px and up - uses existing styles for max-width 900px and up) */
+/* No specific media query needed here as base styles handle larger screens */
+.quiz-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.quiz-container h3 {
+    color: #00408f;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.question-block {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.question-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-block p {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.options label { /* This specific style is no longer strictly needed but keeping for reference if old radio buttons exist */
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+}
+
+/* NEW STYLES FOR TOUCHABLE OPTIONS */
+.quiz-option {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+    color: #333;
+}
+
+.quiz-option:hover {
+    background-color: #eef;
+    border-color: #007BFF;
+    color: #007BFF;
+}
+
+.quiz-option.selected {
+    background-color: #007BFF; /* Blue background for selected */
+    color: white;
+    border-color: #00408f;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.quiz-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+}
+
+.quiz-feedback.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.quiz-feedback.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+    </style>
+</head>
+<body>
+
+    <div class="blue-container">
+        <div class="left-aligned">
+            <a href="index.html">
+                <img src="MCE_tab.png" alt="Logo" class="favicon-logo">
+            </a>
+            <div class="titles">
+                <h1 class="college-name">Mangayarkarasi College of Engineering</h1>
+                <h2 class="site-title">The Coders Club</h2>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="b-nav-button" onclick="window.location.href='index.html';">Home</button>
+        <button class="b-nav-button active-nav-button" onclick="window.location.href='weeklycontent.html';">Weekly Content</button>
+        <button class="b-nav-button" onclick="window.location.href='quiz.html';">Brain Cache</button>
+        <button class="b-nav-button" onclick="window.location.href='finalquiz.html';">Mindmash</button>
+        <button class="b-nav-button" onclick="window.location.href='leaderboard.html';">Leaderboard</button>
+        <button class="b-nav-button" onclick="window.location.href='feedback.html';">Feedback</button>
+    </div>
+
+    <div class="content-container-wrapper">
+        <div class="main-tab-nav">
+            <button class="tab-button" onclick="showWeek('week1', this)">Week 1</button>
+            <button class="tab-button" onclick="showWeek('week2', this)">Week 2</button>
+            <button class="tab-button" onclick="showWeek('week3', this)">Week 3</button>
+            <button class="tab-button" onclick="showWeek('week4', this)">Week 4</button>
+            <button class="tab-button" onclick="showWeek('week5', this)">Week 5</button>
+            <button class="tab-button" onclick="showWeek('week6', this)">Week 6</button>
+            <button class="tab-button" onclick="showWeek('week10', this)">Mindmash</button>
+        </div>
+
+        <div id="week1" class="week-content">
+    <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 1 - Web & HTML/CSS Foundations
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week1', this, 'week1')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week1', this, 'week1')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week1', this, 'week1')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week1', this, 'week1')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week1', this, 'week1')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week1', this, 'week1')">Saturday</button>
+    </div>
+
+    <div id="monday-content-week1" class="day-content day-section">
+<h2>Monday Maverick</h2>
+<div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+</div>
+
+    <div id="tuesday-content-week1" class="day-content day-section">
+        <h2>Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week1" class="day-content day-section">
+        <h2>Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week1" class="day-content day-section">
+        <h2>Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week1" class="day-content day-section">
+        <h2>Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week1" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 1 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>
+
+
+<div id="week2" class="week-content">
+    <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 2 - Advanced Styling & Layouts
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week2', this, 'week2')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week2', this, 'week2')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week2', this, 'week2')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week2', this, 'week2')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week2', this, 'week2')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week2', this, 'week2')">Saturday</button>
+    </div>
+
+    <div id="monday-content-week2" class="day-content day-section">
+        <h2>Monday Maverick</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="tuesday-content-week2" class="day-content day-section">
+        <h2>Techie Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week2" class="day-content day-section">
+        <h2>Syntax Snapshots Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week2" class="day-content day-section">
+        <h2>Te Ta Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week2" class="day-content day-section">
+        <h2>Function Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week2" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 2 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>
+
+        <div id="week3" class="week-content">
+    <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 3 - JavaScript Essentials 
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week3', this, 'week3')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week3', this, 'week3')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week3', this, 'week3')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week3', this, 'week3')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week3', this, 'week3')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week3', this, 'week3')">Saturday</button>
+    </div>
+
+     <div id="monday-content-week3" class="day-content day-section">
+        <h2>Monday Maverick</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="tuesday-content-week3" class="day-content day-section">
+        <h2>Techie Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week2" class="day-content day-section">
+        <h2>Syntax Snapshots Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week3" class="day-content day-section">
+        <h2>Te Ta Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week3" class="day-content day-section">
+        <h2>Function Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week3" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 3 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>
+
+        <div id="week4" class="week-content">
+    <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 4 - Modern JavaScript (ES6+)
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week4', this, 'week4')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week4', this, 'week4')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week4', this, 'week4')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week4', this, 'week4')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week4', this, 'week4')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week4', this, 'week4')">Saturday</button>
+    </div>
+
+    <div id="monday-content-week4" class="day-content day-section">
+        <h2>Monday Maverick</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="tuesday-content-week4" class="day-content day-section">
+        <h2>Techie Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week4" class="day-content day-section">
+        <h2>Syntax Snapshots Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week4" class="day-content day-section">
+        <h2>Te Ta Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week4" class="day-content day-section">
+        <h2>Function Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week4" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 4 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>
+
+        <!--  <p style="text-align: center; font-style: italic; color: #555;">Content coming soon!</p> -->
+
+        <div id="week5" class="week-content">
+            <!-- <p style="text-align: center; font-weight: bold; font-size: 1.5em; color: #00408f; padding: 50px;">
+                Week 5 Content - COMING SOON!
+            </p> -->
+
+<p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 5 - React Basics
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week5', this, 'week5')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week5', this, 'week5')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week5', this, 'week5')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week5', this, 'week5')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week5', this, 'week5')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week5', this, 'week5')">Saturday</button>
+    </div>
+
+     <div id="monday-content-week5" class="day-content day-section">
+        <h2>Monday Maverick</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="tuesday-content-week5" class="day-content day-section">
+        <h2>Techie Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week5" class="day-content day-section">
+        <h2>Syntax Snapshots Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week5" class="day-content day-section">
+        <h2>Te Ta Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week5" class="day-content day-section">
+        <h2>Function Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week5" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 5 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>
+
+<div id="week6" class="week-content">
+    <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
+        Content for Week 6 - Advanced React & Deployment
+    </p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week6', this, 'week6')">Monday</button>
+        <button class="tab-button" onclick="showDay('tuesday-content-week6', this, 'week6')">Tuesday</button>
+        <button class="tab-button" onclick="showDay('wednesday-content-week6', this, 'week6')">Wednesday</button>
+        <button class="tab-button" onclick="showDay('thursday-content-week6', this, 'week6')">Thursday</button>
+        <button class="tab-button" onclick="showDay('friday-content-week6', this, 'week6')">Friday</button>
+        <button class="tab-button" onclick="showDay('saturday-content-week6', this, 'week6')">Saturday</button>
+    </div>
+     <div id="monday-content-week6" class="day-content day-section">
+        <h2>Monday Maverick</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="tuesday-content-week6" class="day-content day-section">
+        <h2>Techie Tuesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="wednesday-content-week6" class="day-content day-section">
+        <h2>Syntax Snapshots Wednesday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="thursday-content-week6" class="day-content day-section">
+        <h2>Te Ta Thursday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+
+    <div id="friday-content-week6" class="day-content day-section">
+        <h2>Function Friday</h2>
+        <div class="content-block">
+            <p>Content coming soon!</p>
+        </div>
+    </div>
+    <div id="saturday-content-week6" class="day-content day-section">
+        <h2>Brain Cache</h2>
+        <div class="content-block">
+            <p>Week 6 Quiz coming soon!</p>
+        </div>
+    </div>
+</div>  <!-- add week6 content before these -->  
+<div id="week10" class="week-content">
+<p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">Mindmash</p>
+    <div class="nested-tab-nav">
+        <button class="tab-button" onclick="showDay('monday-content-week10', this, 'week10')">Quiz 1</button>
+    </div>
+
+    <div id="monday-content-week10" class="day-content day-section">
+        <h2>Mindmash - Quiz 1 Coming Soon!</h2>
+    </div>
+</div><!-- Mindmash content before this-->
+
+</div><!-- content-container-wrapper closing-->
+
+    <footer>
+        <p>Created by The Coders Club</p>
+        <a href="https://www.instagram.com/the_mce.coders_club?igsh=Z245eDZmdWhkcmRn" target="_blank">
+            <img src="IG.png" alt="Instagram" class="social-logo">
+        </a>
+        <a href="https://www.linkedin.com/in/thecodersclub-mce/" target="_blank">
+            <img src="LINKEDLN.png" alt="LinkedIn" class="social-logo">
+        </a>
+        <a href="https://www.youtube.com/@TheCodersClub_MCE" target="_blank">
+            <img src="YT.png" alt="YouTube" class="social-logo">
+        </a>
+        <a href="https://whatsapp.com/channel/0029Vb6HMGKKAwEe8OdjAF0X" target="_blank">
+            <img src="WP.svg" alt="WhatsApp" class="social-logo">
+        </a>
+    </footer>
+
+<script>
+    // --- CONTROL KEYWORD HERE ---
+// Define a variable to store the ID of the disabled week
+// Set this to the week you want to disable (e.g., 'week4', 'week2', or null if no week is disabled)
+let disabledWeekId = null; // Changed from 'null' to null to ensure no week is disabled
+
+// Define an array of disabled days for a given week (e.g., ['tuesday', 'thursday'] for week1)
+const disabledDays = {
+    // Uncomment these lines and specify days if you want to disable specific days within weeks
+    // 'week1': [], // Example: No disabled days for Week 1
+    // 'week2': [],
+    // 'week3': [],
+    // 'week4': [],
+    // 'week5': [],
+    // 'week6': [],
+    // 'week7': [], // Mindmash - no disabled days here for now
+};
+// --- END CONTROL KEYWORD ---
+
+// Object to store original text content for jumbling/unjumbling
+const originalTextStore = {};
+
+// Function to shuffle characters in a string
+function shuffleString(str) {
+    let a = str.split("");
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a.join("");
+}
+
+// Function to jumble the text content of an element
+function jumbleText(element) {
+    // Check if element has any text content to jumble and is not just whitespace
+    if (element && element.textContent && element.textContent.trim().length > 0) {
+        // Use a unique key for storage, preferring element ID or generating one
+        const elementKey = element.id || 'jumble-' + Math.random().toString(36).substring(2, 9);
+        if (!element.id) { // Assign ID if it didn't exist for consistent lookup
+            element.id = elementKey;
+        }
+
+        // Store original text if not already stored
+        if (!originalTextStore[elementKey]) {
+            originalTextStore[elementKey] = element.textContent;
+        }
+        element.textContent = shuffleString(element.textContent);
+    }
+}
+
+// Function to unjumble the text content of an element
+function unjumbleText(element) {
+    if (element && element.id && originalTextStore[element.id]) {
+        element.textContent = originalTextStore[element.id];
+        // Optionally delete from store if you don't need it after unjumbling
+        // delete originalTextStore[element.id];
+    }
+}
+
+// Function to show content for a specific week
+function showWeek(weekId, clickedButton) {
+    // Hide all week content sections
+    const weekContents = document.querySelectorAll('.week-content');
+    weekContents.forEach(content => {
+        content.classList.remove('active-content');
+        content.classList.remove('content-disabled-overlay'); // Ensure this is removed when not disabled
+    });
+
+    // Deactivate all main tab buttons
+    const mainTabButtons = document.querySelectorAll('.main-tab-nav .tab-button');
+    mainTabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Show the selected week's content
+    const selectedWeekContent = document.getElementById(weekId);
+    selectedWeekContent.classList.add('active-content');
+
+    // Activate the clicked week button
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+
+    // Check if the current week is disabled (will always be false with disabledWeekId = null)
+    if (weekId === disabledWeekId) {
+        selectedWeekContent.classList.add('content-disabled-overlay');
+        // Jumble text for questions and options within the entire disabled week
+        selectedWeekContent.querySelectorAll('h3, p, h4, span, .quiz-option, li').forEach(element => {
+            jumbleText(element);
+        });
+
+        // Ensure day buttons for a disabled week do not have 'active' class
+        selectedWeekContent.querySelectorAll('.nested-tab-nav .tab-button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Hide all day content within the disabled week, and also apply blur
+        selectedWeekContent.querySelectorAll('.day-content').forEach(content => {
+            content.classList.remove('active-content'); // Hide any active day content
+            content.classList.add('content-disabled-overlay'); // Apply blur to all day contents
+            content.querySelectorAll('h4, p, span, li, .quiz-option').forEach(element => {
+                jumbleText(element);
+            });
+        });
+
+    } else { // Week is enabled
+        selectedWeekContent.classList.remove('content-disabled-overlay');
+        // Unjumble text for questions and options within the entire enabled week
+        selectedWeekContent.querySelectorAll('h3, p, h4, span, .quiz-option, li').forEach(element => {
+            unjumbleText(element);
+        });
+
+        // Re-add onclick handler for nested day buttons for enabled week
+        selectedWeekContent.querySelectorAll('.nested-tab-nav .tab-button').forEach(button => {
+            // Extract the dayId directly from the button's onclick attribute
+            const onclickAttribute = button.getAttribute('onclick');
+            const dayIdMatch = onclickAttribute.match(/showDay\('([^']+)'/); // Regex to get the first argument of showDay
+            if (dayIdMatch && dayIdMatch[1]) {
+                const originalDayId = dayIdMatch[1];
+                // Set the onclick attribute using the extracted ID, ensuring the weekId is also passed
+                button.setAttribute('onclick', `showDay('${originalDayId}', this, '${weekId}')`);
+            } else {
+                console.warn(`Could not extract dayId from onclick attribute for button:`, button);
+            }
+        });
+
+        // Determine the default day content to show for the *currently active* week
+        // Find the first nested tab button within the selected week and activate its content
+        const firstDayButton = selectedWeekContent.querySelector('.nested-tab-nav .tab-button');
+        if (firstDayButton) {
+            // Extract the dayId from the onclick of the first button
+            const onclickAttribute = firstDayButton.getAttribute('onclick');
+            const dayIdMatch = onclickAttribute.match(/showDay\('([^']+)'/);
+            if (dayIdMatch && dayIdMatch[1]) {
+                const defaultDayId = dayIdMatch[1];
+                showDay(defaultDayId, firstDayButton, weekId);
+            } else {
+                console.warn(`Could not determine default day ID for week ${weekId}.`);
+            }
+        } else {
+            // If there are no day buttons, ensure any currently visible day content is hidden.
+            const dayContents = selectedWeekContent.querySelectorAll('.day-content');
+            dayContents.forEach(content => {
+                content.classList.remove('active-content');
+                content.classList.remove('content-disabled-overlay');
+                content.querySelectorAll('h4, p, span, li, .quiz-option').forEach(element => {
+                    unjumbleText(element);
+                });
+            });
+        }
+    }
+}
+
+// Function to show content for a specific day within a week
+function showDay(dayIdWithWeek, clickedButton, weekId) {
+    const weekContentDiv = document.getElementById(weekId);
+
+    // Hide and un-blur/unjumble all day content sections within the current week first
+    const dayContents = weekContentDiv.querySelectorAll('.day-content');
+    dayContents.forEach(content => {
+        content.classList.remove('active-content');
+        content.classList.remove('content-disabled-overlay'); // Always remove before potentially adding it back
+        content.querySelectorAll('h4, p, span, li, .quiz-option').forEach(element => {
+            unjumbleText(element); // Always unjumble previous content
+        });
+    });
+
+    // Deactivate all nested day tab buttons within the current week
+    const dayTabButtons = weekContentDiv.querySelectorAll('.nested-tab-nav .tab-button');
+    dayTabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Extract just the day name from dayIdWithWeek (e.g., 'monday' from 'monday-content-week1')
+    const dayName = dayIdWithWeek.split('-')[0];
+
+    const targetDayContent = document.getElementById(dayIdWithWeek);
+
+    // Show the selected day's content
+    if (targetDayContent) { // Ensure target content exists before trying to show it
+        targetDayContent.classList.add('active-content');
+    }
+
+    // Activate the clicked day button
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+
+    // Check if the specific day is disabled for this week OR if the entire week is disabled
+    if ((disabledDays[weekId] && disabledDays[weekId].includes(dayName)) || weekId === disabledWeekId) {
+        // Apply blur to the day's content if it's disabled or its parent week is disabled
+        if (targetDayContent) {
+            targetDayContent.classList.add('content-disabled-overlay');
+            // Jumble the text contents within this specific disabled day
+            targetDayContent.querySelectorAll('h4, p, span, li, .quiz-option').forEach(element => {
+                jumbleText(element);
+            });
+        }
+        // Also, ensure the clicked button (if it's a disabled day) becomes disabled style
+        if (clickedButton) {
+            clickedButton.classList.add('disabled');
+            // Temporarily remove its onclick to prevent re-activating jumbled content if clicked again
+            clickedButton.setAttribute('data-original-onclick', clickedButton.getAttribute('onclick'));
+            clickedButton.removeAttribute('onclick');
+        }
+    } else {
+        // Unjumble text if the day is enabled
+        if (targetDayContent) {
+            targetDayContent.querySelectorAll('h4, p, span, li, .quiz-option').forEach(element => {
+                unjumbleText(element);
+            });
+        }
+        // Re-enable the button if it was previously disabled
+        if (clickedButton) {
+            clickedButton.classList.remove('disabled');
+            // Restore original onclick if it was stored
+            if (clickedButton.hasAttribute('data-original-onclick')) {
+                clickedButton.setAttribute('onclick', clickedButton.getAttribute('data-original-onclick'));
+                clickedButton.removeAttribute('data-original-onclick');
+            }
+        }
+    }
+}
+
+// Function to apply initial setup (handles button disabling based on disabledWeeks/Days)
+function applyInitialWeekSetup() {
+    // Disable week buttons if the entire week is marked as disabled
+    document.querySelectorAll('.main-tab-nav .tab-button').forEach(button => {
+        const weekIdMatch = button.getAttribute('onclick').match(/'(week\d+)'/);
+        if (weekIdMatch && weekIdMatch[1] === disabledWeekId) {
+            button.classList.add('disabled');
+            button.setAttribute('data-original-onclick', button.getAttribute('onclick')); // Store original
+            button.removeAttribute('onclick'); // Disable click
+        } else {
+            button.classList.remove('disabled');
+            // Restore onclick if it was previously disabled and now enabled
+            if (button.hasAttribute('data-original-onclick')) {
+                button.setAttribute('onclick', button.getAttribute('data-original-onclick'));
+                button.removeAttribute('data-original-onclick');
+            }
+        }
+    });
+
+    // Disable specific day buttons if they are in the disabledDays list
+    // This needs to be done dynamically when a week is shown, not at initial setup for all
+    // because day buttons only exist within an active week's DOM.
+}
+
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    applyInitialWeekSetup(); // Apply initial setup for week buttons
+
+    const hash = window.location.hash; // Get hash from URL
+    let weekToShow = 'week1'; // Default to Week 1
+
+    if (hash) {
+        const weekIdFromHash = hash.substring(1);
+        const weekButton = document.querySelector(`.main-tab-nav button[onclick*="${weekIdFromHash}"]`);
+
+        if (weekButton && !weekButton.classList.contains('disabled')) {
+            weekToShow = weekIdFromHash; // Use hash if valid and not disabled
+        } else if (weekButton && weekButton.classList.contains('disabled')) {
+            console.warn(`Attempted to link to disabled week: ${weekIdFromHash}. Showing Week 1 instead.`);
+        } else {
+            console.warn(`Invalid or non-existent week ID in hash: ${hash}. Showing Week 1 instead.`);
+        }
+    }
+
+    // Find the button for the determined weekToShow
+    const targetWeekButton = document.querySelector(`.main-tab-nav .tab-button[onclick*="${weekToShow}"]`);
+    if (targetWeekButton) {
+        showWeek(weekToShow, targetWeekButton);
+    } else {
+        // Fallback if somehow the defaultWeekButton is not found
+        console.error("Default week button not found!");
+    }
+
+
+    // --- Quiz Logic - Instant Feedback with Clickable Options ---
+    // Nested structure for answers: answers[weekId][dayName][questionId]
+    const answers = {
+        'week6': {
+            'monday': {
+                'q1': 'c', // Monday Q1: getc() can be a macro, while fgetc() is always a function
+                'q2': 'a'  // Monday Q2: putc() is a macro, while fputc() is a function
+            },
+            'tuesday': {
+                'q1': 'b', // Tuesday Q1: malloc()
+                'q2': 'd'  // Tuesday Q2: It deallocates memory previously allocated...
+            },
+            'wednesday': {
+                'q1': 'd', // Wednesday Q1: struct
+                'q2': 'c'  // Wednesday Q2: Structures store all members in separate memory locations, while unions store all members in the same memory location.
+            },
+            // Add more days here as needed:
+            // 'thursday': {
+            //     'q1': 'your_answer_for_thursday_q1',
+            //     'q2': 'your_answer_for_thursday_q2'
+            // },
+            'friday': { 
+                'q1': 'c', // Tuesday Q1: malloc()
+                'q2': 'b'
+            },
+            // 'saturday': { /* ... */ }
+        },
+        'week7': { // Added answers for Week 7 (Mindmash Quiz 1)
+            'quiz1': { // Changed 'monday' to 'quiz1' for Mindmash as per your button ID
+                'q1': 'b',
+                'q2': 'b',
+                'q3': 'a',
+                'q4': 'c',
+                'q5': 'c'
+            }
+        }
+    };
+
+    // checkAnswer function now takes weekId, dayName, questionName, selectedValue, AND the specific feedbackElement
+    function checkAnswer(weekId, dayName, questionName, selectedValue, feedbackElement) {
+        feedbackElement.style.display = 'block'; // Show feedback area
+
+        // Clear previous feedback classes
+        feedbackElement.classList.remove('correct', 'incorrect');
+
+        const correctAnswer = answers[weekId]?.[dayName]?.[questionName]; // Safely access nested answer
+
+        if (selectedValue === correctAnswer) {
+            feedbackElement.textContent = 'Correct!';
+            feedbackElement.classList.add('correct');
+        } else {
+            let correctDisplay = correctAnswer;
+            // If the answer value is a single letter (a,b,c,d), format it as "option A"
+            if (correctAnswer && ['a', 'b', 'c', 'd'].includes(correctAnswer.toLowerCase())) {
+                correctDisplay = `option ${correctAnswer.toUpperCase()}`;
+            } else if (!correctAnswer) {
+                correctDisplay = " (Answer not found in script, please check)"; // Fallback for missing answers
+            }
+            feedbackElement.textContent = `Incorrect. The correct answer is ${correctDisplay}.`;
+            feedbackElement.classList.add('incorrect');
+        }
+    }
+
+    // Get ALL 'quiz-option' divs on the page, regardless of the day
+    const quizOptions = document.querySelectorAll('.quiz-container .quiz-option');
+
+    quizOptions.forEach(optionDiv => {
+        optionDiv.addEventListener('click', (event) => {
+            const clickedOption = event.target;
+            const questionName = clickedOption.getAttribute('data-question'); // e.g., 'q1'
+            const selectedValue = clickedOption.getAttribute('data-value'); // e.g., 'c'
+
+            // Find the closest parent day-content div to get weekId and dayName
+            const dayContentDiv = clickedOption.closest('.day-content');
+            if (!dayContentDiv) {
+                console.error("Clicked quiz option is not within a .day-content div.");
+                return;
+            }
+            const dayContentId = dayContentDiv.id; // e.g., 'monday-content-week6' or 'quiz1-content-week7'
+            const parts = dayContentId.split('-');
+            // Assuming ID format is 'dayname-content-weekX' or 'quizname-content-weekX'
+            const dayName = parts[0]; // 'monday' or 'quiz1'
+            const weekId = parts[2]; // 'week6' or 'week7'
+
+            // Find the specific quiz-feedback element within the current question-block
+            const feedbackElement = clickedOption.closest('.question-block').querySelector('.quiz-feedback');
+            if (!feedbackElement) {
+                console.error("Quiz feedback element not found within the question block.");
+                return;
+            }
+
+            // Deselect all other options for this specific question (within the same question-block)
+            clickedOption.closest('.options').querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            // Select the clicked option
+            clickedOption.classList.add('selected');
+
+            // Provide feedback using the dynamically found elements and parsed IDs
+            checkAnswer(weekId, dayName, questionName, selectedValue, feedbackElement);
+        });
+    });
+    // --- END Quiz Logic ---
+
+});
+</script>
+</body>
+</html>
