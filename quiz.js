@@ -5,7 +5,7 @@ const timerControlStatus = "enable"; // Set to "enable" to activate time-based c
 // Format: "Month Day, Year HH:MM:SS AM/PM GMT+0530"
 // Use an unambiguous format for Date object parsing.
 // Example for 5th July 2025, 6:00 PM IST
-const quizStartTime = new Date("October 4, 2025 15:00:00 GMT+0530"); // 6:00 PM IST
+const quizStartTime = new Date("October 4, 2025 18:00:00 GMT+0530"); // 6:00 PM IST
 const quizEndTime = new Date("October 5, 2025 18:00:00 GMT+0530");  // 6:00 PM IST
 // --- END TIMER CONTROL KEYWORD ---
 
@@ -205,4 +205,5 @@ quizForm.addEventListener('submit', function(e) {
             // Re-enable the button after the process is complete
             submitButton.disabled = false;
         });
+
 });
