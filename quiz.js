@@ -89,17 +89,17 @@ function setLinkStatus() {
     if (timerControlStatus === "enable") {
         if (currentTime >= quizStartTime && currentTime < quizEndTime) {
             quizShouldBeEnabled = true;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 1 QUIZ<br>Quiz is LIVE! Ends on 05/10/2025 6:00 PM IST!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 1 QUIZ<br>Quiz is LIVE! Ends on 12/10/2025 6:00 PM IST!';
             statusElement.style.color = '#008000'; // Green for active
         } else if (currentTime < quizStartTime) {
             // Quiz not yet started
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 1 QUIZ<br>starts at 6.00 PM on 04/10/2025!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 1 QUIZ<br>starts at 6.00 PM on 12/10/2025!';
             statusElement.style.color = '#FFA500'; // Orange for upcoming
         } else {
             // Quiz ended
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 8 QUIZ<br>starts at 6.00 PM on 04/10/2025!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 1 QUIZ<br>starts at 6.00 PM on 11/10/2025!';
             statusElement.style.color = '#CC0000'; // Red for closed
         }
     }
@@ -206,3 +206,4 @@ quizForm.addEventListener('submit', function(e) {
             submitButton.disabled = false;
         });
 });
+
