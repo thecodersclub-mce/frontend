@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +11,31 @@
     <style>
         .content-container {
             /* Override previous height/centering to allow form content to flow naturally */
-            height: auto; /* Allow height to adjust based on content */
-            min-height: calc(100vh - 100px); /* Ensure content takes up most of the screen, accounting for header/footer */
-            justify-content: flex-start; /* Align content to the top */
-            padding-bottom: 50px; /* Add padding to prevent content from being hidden by the fixed footer */
-            box-sizing: border-box; /* Include padding in the element's total width and height */
+            height: auto;
+            /* Allow height to adjust based on content */
+            min-height: calc(100vh - 100px);
+            /* Ensure content takes up most of the screen, accounting for header/footer */
+            justify-content: flex-start;
+            /* Align content to the top */
+            padding-bottom: 50px;
+            /* Add padding to prevent content from being hidden by the fixed footer */
+            box-sizing: border-box;
+            /* Include padding in the element's total width and height */
         }
 
         .quiz-form-wrapper {
-            width: 90%; /* Adjust width for better responsiveness */
-            max-width: 700px; /* Limit max-width for larger screens */
-            margin: 20px auto; /* Center the form wrapper */
+            width: 90%;
+            /* Adjust width for better responsiveness */
+            max-width: 700px;
+            /* Limit max-width for larger screens */
+            margin: 20px auto;
+            /* Center the form wrapper */
             padding: 25px;
-            background-color: #ffffff; /* White background for the form area */
+            background-color: #ffffff;
+            /* White background for the form area */
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Softer, larger shadow */
             box-sizing: border-box;
         }
 
@@ -38,13 +49,15 @@
 
         .form-group {
             margin-bottom: 20px;
-            text-align: left; /* Align labels and inputs to the left */
+            text-align: left;
+            /* Align labels and inputs to the left */
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600; /* Slightly bolder labels */
+            font-weight: 600;
+            /* Slightly bolder labels */
             color: #333;
             font-size: 15px;
         }
@@ -54,33 +67,41 @@
         .form-group input[type="email"],
         .form-group textarea,
         .form-group select {
-            width: 100%; /* Take full width of parent */
+            width: 100%;
+            /* Take full width of parent */
             padding: 12px;
-            border: 1px solid #c0c0c0; /* Lighter border */
+            border: 1px solid #c0c0c0;
+            /* Lighter border */
             border-radius: 6px;
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
+            /* Include padding in width */
             font-size: 15px;
             transition: border-color 0.3s ease;
         }
 
         /* Specific styling for <select> dropdowns to add the custom arrow */
         .form-group select {
-            -webkit-appearance: none; /* Remove default browser styling for select */
+            -webkit-appearance: none;
+            /* Remove default browser styling for select */
             -moz-appearance: none;
             appearance: none;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M192%20256L64%20128v256l128-128z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M192%20256L64%20128v256l128-128z%22%2F%3E%3C%2Fsvg%3E');
+            /* Custom dropdown arrow */
             background-repeat: no-repeat;
             background-position: right 12px center;
             background-size: 12px;
-            padding-right: 30px; /* Make space for the custom arrow */
+            padding-right: 30px;
+            /* Make space for the custom arrow */
         }
 
         .form-group input[type="text"]:focus,
         .form-group input[type="email"]:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: #00408f; /* Highlight on focus */
-            outline: none; /* Remove default outline */
+            border-color: #00408f;
+            /* Highlight on focus */
+            outline: none;
+            /* Remove default outline */
             box-shadow: 0 0 5px rgba(0, 64, 143, 0.2);
         }
 
@@ -89,26 +110,37 @@
             min-height: 100px;
         }
 
-        .radio-group, .checkbox-group {
+        .radio-group,
+        .checkbox-group {
             display: flex;
-            flex-direction: column; /* Stack radio/checkbox options vertically */
-            gap: 8px; /* Space between options */
+            flex-direction: column;
+            /* Stack radio/checkbox options vertically */
+            gap: 8px;
+            /* Space between options */
         }
 
-        .radio-group label, .checkbox-group label {
-            display: flex; /* Use flex to align input and text */
-            align-items: center; /* Vertically align them */
-            margin-bottom: 0; /* Remove default margin for labels */
-            font-weight: normal; /* Normal weight for option text */
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            /* Use flex to align input and text */
+            align-items: center;
+            /* Vertically align them */
+            margin-bottom: 0;
+            /* Remove default margin for labels */
+            font-weight: normal;
+            /* Normal weight for option text */
             cursor: pointer;
             font-size: 15px;
         }
 
         .radio-group input[type="radio"],
         .checkbox-group input[type="checkbox"] {
-            margin-right: 10px; /* Space between radio/checkbox and its label text */
-            width: 18px; /* Standardize size */
-            height: 18px; /* Standardize size */
+            margin-right: 10px;
+            /* Space between radio/checkbox and its label text */
+            width: 18px;
+            /* Standardize size */
+            height: 18px;
+            /* Standardize size */
             cursor: pointer;
         }
 
@@ -123,7 +155,8 @@
         .submit-button {
             width: 100%;
             padding: 12px 20px;
-            background-color: #00408f; /* Use your primary blue */
+            background-color: #00408f;
+            /* Use your primary blue */
             color: white;
             border: none;
             border-radius: 6px;
@@ -134,7 +167,8 @@
         }
 
         .submit-button:hover {
-            background-color: #1E88E5; /* Lighter blue on hover */
+            background-color: #1E88E5;
+            /* Lighter blue on hover */
         }
 
         .submit-button:active {
@@ -147,41 +181,63 @@
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
             margin: 30px 0;
         }
+
         .active-nav-button {
-            background-color: #0056b3; /* A slightly darker blue to indicate active state */
+            background-color: #0056b3;
+            /* A slightly darker blue to indicate active state */
             color: white;
-         border-bottom: 3px solid #f0f0f0; /* Add a subtle underline */
+            border-bottom: 3px solid #f0f0f0;
+            /* Add a subtle underline */
         }
+
         /* Small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px) {
+
             /* ... other mobile styles ... */
             .content-access-button {
                 padding: 6px 10px;
                 font-size: 0.8em;
             }
+
             /* REDUCE SIZE OF NAVIGATION BUTTONS FOR MOBILE VIEW */
             .nav-button {
-                padding: 6px 8px; /* Smaller padding */
-                font-size: 0.75em; /* Smaller font size */
-                margin: 2px; /* Reduce margin between buttons */
+                padding: 6px 8px;
+                /* Smaller padding */
+                font-size: 0.75em;
+                /* Smaller font size */
+                margin: 2px;
+                /* Reduce margin between buttons */
             }
+
             .button-container {
-                padding: 10px; /* Adjust padding for the button container */
-                text-align: center; /* Center buttons if they wrap */
+                padding: 10px;
+                /* Adjust padding for the button container */
+                text-align: center;
+                /* Center buttons if they wrap */
             }
         }
+
         /* Responsive adjustments for quiz form */
         @media only screen and (max-width: 768px) {
             .quiz-form-wrapper {
-                width: 95%; /* Make it slightly wider on tablets */
+                width: 95%;
+                /* Make it slightly wider on tablets */
                 padding: 20px;
             }
+
             .quiz-form-wrapper h2 {
                 font-size: 22px;
             }
-            .form-group label, .form-group input, .form-group textarea, .radio-group label, .checkbox-group label, .form-group select {
+
+            .form-group label,
+            .form-group input,
+            .form-group textarea,
+            .radio-group label,
+            .checkbox-group label,
+            .form-group select {
                 font-size: 14px;
             }
+
             .submit-button {
                 font-size: 16px;
                 padding: 10px 15px;
@@ -192,16 +248,25 @@
             .quiz-form-wrapper {
                 padding: 15px;
             }
+
             .quiz-form-wrapper h2 {
                 font-size: 20px;
                 margin-bottom: 20px;
             }
-            .form-group label, .form-group input, .form-group textarea, .radio-group label, .checkbox-group label, .form-group select {
+
+            .form-group label,
+            .form-group input,
+            .form-group textarea,
+            .radio-group label,
+            .checkbox-group label,
+            .form-group select {
                 font-size: 13px;
             }
+
             .form-group p {
                 font-size: 14px;
             }
+
             .submit-button {
                 font-size: 15px;
                 padding: 10px;
@@ -210,36 +275,52 @@
 
         /* --- New CSS for Anti-Copying --- */
         .no-select {
-            -webkit-touch-callout: none; /* iOS Safari */
-            -webkit-user-select: none; /* Safari */
-            -khtml-user-select: none; /* Konqueror HTML */
-            -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
         }
+
         /* Allow selection for input fields within no-select, if needed */
-        .no-select input, .no-select textarea, .no-select select {
+        .no-select input,
+        .no-select textarea,
+        .no-select select {
             pointer-events: auto;
             user-select: auto;
         }
 
         /* --- New CSS for the QUIZ QUESTIONS SECTION (Blurring, Jumbling & Overlay Container) --- */
         #quizQuestionsSection {
-            position: relative; /* Essential for positioning the absolute overlay */
+            position: relative;
+            /* Essential for positioning the absolute overlay */
         }
 
         #quizQuestionsSection.quiz-disabled-overlay {
             /* These apply to the content *behind* the overlay */
-            opacity: 0.5; /* Makes the section semi-transparent */
-            filter: blur(3px); /* Applies a blur effect */
-            pointer-events: none; /* Disables all click/hover events on the section content */
-            transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Smooth transition */
+            opacity: 0.5;
+            /* Makes the section semi-transparent */
+            filter: blur(3px);
+            /* Applies a blur effect */
+            pointer-events: none;
+            /* Disables all click/hover events on the section content */
+            transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+            /* Smooth transition */
         }
+
         /* Override pointer-events for input fields within the disabled section to allow JS to disable them */
         #quizQuestionsSection.quiz-disabled-overlay input,
         #quizQuestionsSection.quiz-disabled-overlay textarea,
         #quizQuestionsSection.quiz-disabled-overlay select {
-            pointer-events: auto; /* Allows JS to disable them properly */
+            pointer-events: auto;
+            /* Allows JS to disable them properly */
         }
 
         /* --- New CSS for the White Opaque Overlay --- */
@@ -249,31 +330,45 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
-            z-index: 5; /* Puts it above the blurred content */
-            display: flex; /* Make it a flex container */
-            align-items: center; /* Center content vertically */
-            justify-content: center; /* Center content horizontally */
-            opacity: 0; /* Hidden by default */
-            visibility: hidden; /* Also hidden by default for accessibility/layout */
-            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* White with 80% opacity */
+            z-index: 5;
+            /* Puts it above the blurred content */
+            display: flex;
+            /* Make it a flex container */
+            align-items: center;
+            /* Center content vertically */
+            justify-content: center;
+            /* Center content horizontally */
+            opacity: 0;
+            /* Hidden by default */
+            visibility: hidden;
+            /* Also hidden by default for accessibility/layout */
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            /* Smooth transition */
         }
 
         /* --- New CSS for Submission Success Message --- */
         #submissionSuccessMessage {
-            position: fixed; /* Stays in place relative to the viewport */
+            position: fixed;
+            /* Stays in place relative to the viewport */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent dark background */
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000; /* Ensures it's on top of all other content */
-            opacity: 0; /* Initially hidden */
-            visibility: hidden; /* Also hidden by default for accessibility/layout */
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Smooth fade in/out */
+            z-index: 1000;
+            /* Ensures it's on top of all other content */
+            opacity: 0;
+            /* Initially hidden */
+            visibility: hidden;
+            /* Also hidden by default for accessibility/layout */
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            /* Smooth fade in/out */
         }
 
         /* Class to show the success message */
@@ -288,56 +383,78 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transform: scale(0.9); /* Initial scale for a subtle zoom-in effect */
+            transform: scale(0.9);
+            /* Initial scale for a subtle zoom-in effect */
             transition: transform 0.3s ease-in-out;
         }
 
         /* Animation for the content when shown */
         #submissionSuccessMessage.show .success-content {
-            transform: scale(1); /* Scales up to normal size */
+            transform: scale(1);
+            /* Scales up to normal size */
         }
 
         .success-content p {
             font-size: 20px;
             font-weight: bold;
-            color: #008000; /* Green text for success */
+            color: #008000;
+            /* Green text for success */
             margin-top: 15px;
         }
 
         /* New CSS for the Font Awesome icon */
         .success-icon-fa {
-            font-size: 80px; /* Adjust size as needed */
-            color: #008000; /* Green color for the icon */
-            margin-bottom: 10px; /* Space between icon and text */
-            animation: fadeInScale 0.6s forwards; /* Simple fade-in and scale animation */
+            font-size: 80px;
+            /* Adjust size as needed */
+            color: #008000;
+            /* Green color for the icon */
+            margin-bottom: 10px;
+            /* Space between icon and text */
+            animation: fadeInScale 0.6s forwards;
+            /* Simple fade-in and scale animation */
         }
 
         /* New keyframe for the Font Awesome icon */
         @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.7); }
-            100% { opacity: 1; transform: scale(1); }
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Styling for the new <pre><code> block */
         .code-block {
-            background-color: #f4f4f4; /* Light grey background */
-            border: 1px solid #ddd; /* Light grey border */
+            background-color: #f4f4f4;
+            /* Light grey background */
+            border: 1px solid #ddd;
+            /* Light grey border */
             border-radius: 5px;
             padding: 15px;
             margin: 15px 0;
-            overflow-x: auto; /* Enable horizontal scrolling for long lines */
+            overflow-x: auto;
+            /* Enable horizontal scrolling for long lines */
         }
 
         /* Crucial: Style for <code> inside <pre> */
         .code-block code {
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-            font-size: 0.9em; /* Slightly smaller font size */
-            color: #333; /* Darker text color */
-            display: block; /* Ensures it takes up full width of pre and respects line breaks */
-            white-space: pre-wrap; /* Ensures line breaks in code are respected */
+            font-size: 0.9em;
+            /* Slightly smaller font size */
+            color: #333;
+            /* Darker text color */
+            display: block;
+            /* Ensures it takes up full width of pre and respects line breaks */
+            white-space: pre-wrap;
+            /* Ensures line breaks in code are respected */
         }
     </style>
 </head>
+
 <body>
     <div class="blue-container">
         <div class="left-aligned">
@@ -361,11 +478,14 @@
     </div>
 
     <div class="content-container">
-        <center><h4 id="status"></h4></center>
+        <center>
+            <h4 id="status"></h4>
+        </center>
 
         <div class="quiz-form-wrapper">
             <h2>BRAINCACHE</h2>
-            <form id="quizForm" method="POST" action="https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwLJ58hC9UlwLgJYv8aCJ49vtTcMIP8nw09oep/exec">
+            <form id="quizForm" method="POST"
+                action="https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwLJ58hC9UlwLgJYv8aCJ49vtTcMIP8nw09oep/exec">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="Name" required placeholder="Enter your full name">
@@ -384,10 +504,10 @@
                     <label for="year">Year:</label>
                     <select id="year" name="Year" required>
                         <option value="">Select your Year</option>
-			<option value="1st Year">1st Year</option>
+                        <option value="1st Year">1st Year</option>
                         <option value="2nd Year">2nd Year</option>
                         <option value="3rd Year">3rd Year</option>
-		        <option value="4th Year">4th Year</option>
+                        <option value="4th Year">4th Year</option>
                     </select>
                 </div>
 
@@ -397,63 +517,71 @@
                     <div id="quizOverlay">
                     </div>
                     <h3>Quiz Questions</h3>
-<div class="form-group no-select">
-    <p><strong>1. Which component sends an HTTP request to a server and renders the received content?</strong></p>
-    <div class="radio-group">
-        <label><input type="radio" id="q1_a" name="Question1" value="A" required>A. Web Server</label>
-        <label><input type="radio" id="q1_b" name="Question1" value="B">B. Front-end Development</label>
-        <label><input type="radio" id="q1_c" name="Question1" value="C">C. Web Browser</label>
-        <label><input type="radio" id="q1_d" name="Question1" value="D">D. A website file</label>
-    </div>
-</div>
-<div class="form-group no-select">
-    <p><strong>2. What does the &lt;body&gt; tag contain in an HTML document?</strong></p>
-    <div class="radio-group">
-        <label><input type="radio" id="q2_a" name="Question2" value="A" required>A. Meta information, such as the title</label>
-        <label><input type="radio" id="q2_b" name="Question2" value="B">B. The root element of the webpage</label>
-        <label><input type="radio" id="q2_c" name="Question2" value="C">C. The visible content displayed on the webpage</label>
-        <label><input type="radio" id="q2_d" name="Question2" value="D">D. The document type declaration</label>
-    </div>
-</div>
-<div class="form-group no-select">
-    <p><strong>3. Which of the following is true about CSS?</strong></p>
-    <div class="radio-group">
-        <label><input type="radio" id="q3_a" name="Question3" value="A" required>A. It is used to create the basic skeleton of a webpage.</label>
-        <label><input type="radio" id="q3_b" name="Question3" value="B">B. It is used to apply styles like colors and fonts to a webpage.</label>
-        <label><input type="radio" id="q3_c" name="Question3" value="C">C. It is a programming language used for adding interactive features to a webpage.</label>
-        <label><input type="radio" id="q3_d" name="Question3" value="D">D. Its rules consist of a selector, a declaration block, and a skeleton.</label>
-    </div>
-</div>
-<div class="form-group no-select">
-    <p><strong>4. Which CSS selector is used to select and style a single, unique element?</strong></p>
-    <div class="radio-group">
-        <label><input type="radio" id="q4_a" name="Question4" value="A" required>A. <mark>.</mark> (Class Selector)</label>
-        <label><input type="radio" id="q4_b" name="Question4" value="B">B. <mark>*</mark> (Universal Selector)</label>
-        <label><input type="radio" id="q4_c" name="Question4" value="C">C. <mark>#</mark> (ID Selector)</label>
-        <label><input type="radio" id="q4_d" name="Question4" value="D">D. <mark>></mark> (Child Combinator) </label>
-    </div>
-</div>
-
-<div class="form-group no-select">
-    <p><strong>5. Write the HTML and CSS to create a webpage with a main title and a sentence. The background should be light gray, and the sentence text should be blue. </strong></p>
-    <textarea id="q5_text" name="Question5" rows="6" placeholder="Your answer here..." required></textarea>
-</div>
-</div>
-
-
-		    <!-- ADD QNS BEFORE THIS TAG-->                
-                    <p><strong>After submission wait until you see a tick</strong></p>
-                    <button type="submit" class="submit-button">Submit Quiz</button>
-                </div>
-            </form>
-
-            <div id="submissionSuccessMessage">
-                <div class="success-content">
-                    <i class="fas fa-check-circle success-icon-fa"></i> <p>Quiz Submitted Successfully!</p>
-                </div>
-            </div>
-
+                    <div class="form-group no-select">
+                        <p><strong>1. Which of the following describes the Mobile-First Approach in Responsive Web
+                                Design?</strong></p>
+                        <div class="radio-group"> <label><input type="radio" id="q1_a" name="Question1" value="A"
+                                    required>A. Designing for large desktop screens first, then creating a separate,
+                                stripped-down version for mobile devices.</label> <label><input type="radio" id="q1_b"
+                                    name="Question1" value="B">B. Using only JavaScript to handle layout changes instead
+                                of CSS media queries.</label> <label><input type="radio" id="q1_c" name="Question1"
+                                    value="C">C. Starting the design process with simple, fast-loading layouts for
+                                smaller screens, then scaling up for larger screens.</label> <label><input type="radio"
+                                    id="q1_d" name="Question1" value="D">D. Ensuring all website images are extremely
+                                high resolution, regardless of the user's device.</label> </div>
+                    </div>
+                    <div class="form-group no-select">
+                        <p><strong>2. Which Flexbox property is used to align flex items along the main axis (e.g., to
+                                horizontally center items in a row or vertically center them in a column)?</strong></p>
+                        <div class="radio-group"> <label><input type="radio" id="q2_a" name="Question2" value="A"
+                                    required>A. align-items</label> <label><input type="radio" id="q2_b"
+                                    name="Question2" value="B">B. flex-direction</label> <label><input type="radio"
+                                    id="q2_c" name="Question2" value="C">C. justify-content</label> <label><input
+                                    type="radio" id="q2_d" name="Question2" value="D">D. align-content</label> </div>
+                    </div>
+                    <div class="form-group no-select">
+                        <p><strong>3. What is the difference between a tag and an element?</strong></p>
+                        <div class="radio-group"> <label><input type="radio" id="q3_a" name="Question3" value="A"
+                                    required>A. A tag is a keyword enclosed in angle brackets (&lt;p&gt;), while an
+                                element includes the opening tag, closing tag, and all the content in between
+                                (&lt;p&gt;This is a paragraph.&lt;/p&gt;).</label> <label><input type="radio" id="q3_b"
+                                    name="Question3" value="B">B. A tag defines the content, and an element is used for
+                                styling.</label> <label><input type="radio" id="q3_c" name="Question3" value="C">C. An
+                                element is the building block of HTML, and a tag is used to create attributes.</label>
+                            <label><input type="radio" id="q3_d" name="Question3" value="D">D. There is no difference;
+                                the terms "tag" and "element" can be used interchangeably</label> </div>
+                    </div>
+                    <div class="form-group no-select">
+                        <p><strong>4. Which of the following is the correct syntax for declaring a global CSS Variable
+                                (Custom Property) for a primary color with the value #007bff?</strong></p>
+                        <div class="radio-group"> <label><input type="radio" id="q4_a" name="Question4" value="A"
+                                    required>A. body { primary-color: #007bff; }</label> <label><input type="radio"
+                                    id="q4_b" name="Question4" value="B">B. :root { --primary-color: #007bff; }</label>
+                            <label><input type="radio" id="q4_c" name="Question4" value="C">C. var(--primary-color) =
+                                #007bff;</label> <label><input type="radio" id="q4_d" name="Question4" value="D">D. html
+                                { primary-color: var(#007bff); }</label> </div>
+                    </div>
+                    <div class="form-group no-select">
+                        <p><strong>5. Task: Write the HTML code for a basic landing page that displays the text "Welcome
+                                to our Responsive Landing Page!" as a main heading, and includes the following meta tag
+                                in the &lt;head&gt; section to ensure initial responsiveness across devices:</strong>
+                        </p> <textarea id="q5_text" name="Question5" rows="6" placeholder="Your answer here..."
+                            required></textarea>
+                    </div>
+                </div> <!-- ADD QNS BEFORE THIS TAG-->
+                <p><strong>After submission wait until you see a tick</strong></p>
+                <button type="submit" class="submit-button">Submit Quiz</button>
         </div>
+        </form>
+
+        <div id="submissionSuccessMessage">
+            <div class="success-content">
+                <i class="fas fa-check-circle success-icon-fa"></i>
+                <p>Quiz Submitted Successfully!</p>
+            </div>
+        </div>
+
+    </div>
     </div>
 
     <footer>
@@ -472,5 +600,6 @@
         </a>
     </footer>
     <script src="quiz.js"></script>
-    </body>
+</body>
+
 </html>
