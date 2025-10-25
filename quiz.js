@@ -5,7 +5,7 @@ const timerControlStatus = "enable"; // Set to "enable" to activate time-based c
 // Format: "Month Day, Year HH:MM:SS AM/PM GMT+0530"
 // Use an unambiguous format for Date object parsing.
 // Example for 5th July 2025, 6:00 PM IST
-const quizStartTime = new Date("October 25, 2025 18:00:00 GMT+0530"); // 6:00 PM IST
+const quizStartTime = new Date("October 22, 2025 18:00:00 GMT+0530"); // 6:00 PM IST
 const quizEndTime = new Date("October 26, 2025 18:00:00 GMT+0530");  // 6:00 PM IST
 // --- END TIMER CONTROL KEYWORD ---
 
@@ -50,8 +50,6 @@ function unjumbleText(element) {
     }
 }
 
-// NOTE: The showSuccessAnimation() function was removed as requested.
-
 document.addEventListener('DOMContentLoaded', () => {
     setLinkStatus(); // Call the main function to set the quiz status based on the keyword
 
@@ -85,19 +83,19 @@ function setLinkStatus() {
         } else if (currentTime < quizStartTime) {
             // Quiz not yet started
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>starts at 6.00 PM on 26/10/2025!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>starts at 6.00 PM on 25/10/2025!';
             statusElement.style.color = '#FFA500'; // Orange for upcoming
         } else {
             // Quiz ended
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>starts at 6.00 PM on 26/10/2025!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>Quiz is now CLOSED.'; // Updated text for clarity
             statusElement.style.color = '#CC0000'; // Red for closed
         }
     }
     // Priority 3: Default to disabled if neither manual nor timer is enabling it
     else {
         quizShouldBeEnabled = false;
-        statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>starts at 6.00 PM on 26/10/2025!'; // Indicate manual disable
+        statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>Quiz is currently disabled'; // Indicate manual disable
         statusElement.style.color = '#CC0000'; // Red
     }
 
@@ -141,8 +139,15 @@ const quizForm = document.getElementById('quizForm');
 quizForm.addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default form submission
 
+    // Get button and main status element
+    const submitButton = this.querySelector('.submit-button');
+    const mainStatusElement = document.getElementById('status'); 
+    
+    // Target the specific paragraph below the quiz questions
+    const submissionInfoElement = document.getElementById('submission-info');
+
     // Check if the form is disabled by the linkControlStatus or timer
-    if (this.querySelector('.submit-button').disabled) {
+    if (submitButton.disabled) {
         alert('The quiz is currently closed or not yet open.');
         return; // Stop submission if disabled
     }
@@ -171,18 +176,21 @@ quizForm.addEventListener('submit', function(e) {
     // Replace 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE' with your deployed Apps Script URL
     const scriptUrl = 'https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwLJ58hC9UlwLgJYv8aCJ49vtTcMIP8nw09oep/exec';
 
-    // Get button and status elements
-    const submitButton = this.querySelector('.submit-button');
-    const statusBelowButton = this.querySelector('p strong'); 
     
     // Temporarily disable the submit button and show a loading state
     submitButton.disabled = true;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
     
-    // Status update logic (before fetch to show submission start)
-    if (statusBelowButton) {
-        statusBelowButton.textContent = 'Submission in progress, please wait...';
-        statusBelowButton.style.color = '#FFA500'; // Orange/Yellow for loading
+    // Status update logic (main status at the top)
+    if (mainStatusElement) {
+        mainStatusElement.innerHTML = 'Submission in progress, please wait...';
+        mainStatusElement.style.color = '#FFA500'; // Orange/Yellow for loading
+    }
+    
+    // Status update logic (info below the quiz)
+    if (submissionInfoElement) {
+        submissionInfoElement.textContent = 'Submission in progress, please wait...';
+        submissionInfoElement.style.color = '#FFA500'; 
     }
 
 
@@ -201,13 +209,20 @@ quizForm.addEventListener('submit', function(e) {
             submitButton.classList.add('submitted');
             submitButton.innerHTML = '<i class="fas fa-check"></i> Submitted';
             
-            // 2. Update status message below the button
-            if (statusBelowButton) {
-                statusBelowButton.textContent = 'Quiz successfully submitted!';
-                statusBelowButton.style.color = '#4CAF50'; // Green for success
+            // 2. Update the main status element at the top
+            if (mainStatusElement) {
+                mainStatusElement.innerHTML = 'Quiz successfully submitted! Thank you.';
+                mainStatusElement.style.color = '#4CAF50'; // Green for success
+            }
+            
+            // 3. Update the submission info message below the quiz
+            if (submissionInfoElement) {
+                submissionInfoElement.textContent = 'Quiz successfully submitted!';
+                submissionInfoElement.style.color = '#4CAF50';
             }
 
-            // 3. Clear the form fields
+
+            // 4. Clear the form fields
             quizForm.reset(); 
         })
         .catch(error => {
@@ -219,15 +234,18 @@ quizForm.addEventListener('submit', function(e) {
             submitButton.innerHTML = 'Submit Quiz'; // Reset button text
             submitButton.classList.remove('submitted');
             
-            if (statusBelowButton) {
-                statusBelowButton.textContent = 'Submission failed. Please try again.';
-                statusBelowButton.style.color = '#CC0000'; // Red for failure
+            if (mainStatusElement) {
+                mainStatusElement.innerHTML = 'Submission failed. Please try again.';
+                mainStatusElement.style.color = '#CC0000'; // Red for failure
+            }
+
+            if (submissionInfoElement) {
+                submissionInfoElement.textContent = 'Submission failed. Please try again.';
+                submissionInfoElement.style.color = '#CC0000';
             }
 
         })
         .finally(() => {
-            // If the submission was successful, the button remains disabled (via the .submitted class CSS)
-            // and its innerHTML is already updated. No action needed here.
+            // The button stays disabled and green on success.
         });
 });
-
