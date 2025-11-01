@@ -5,8 +5,8 @@ const timerControlStatus = "enable"; // Set to "enable" to activate time-based c
 // Format: "Month Day, Year HH:MM:SS AM/PM GMT+0530"
 // Use an unambiguous format for Date object parsing.
 // Example for 5th July 2025, 6:00 PM IST
-const quizStartTime = new Date("October 25, 2025 18:00:00 GMT+0530"); // 6:00 PM IST
-const quizEndTime = new Date("October 26, 2025 18:00:00 GMT+0530");  // 6:00 PM IST
+const quizStartTime = new Date("November 1, 2025 18:00:00 GMT+0530"); // 6:00 PM IST
+const quizEndTime = new Date("November 2, 2025 18:00:00 GMT+0530");  // 6:00 PM IST
 // --- END TIMER CONTROL KEYWORD ---
 
 
@@ -78,24 +78,24 @@ function setLinkStatus() {
     if (timerControlStatus === "enable") {
         if (currentTime >= quizStartTime && currentTime < quizEndTime) {
             quizShouldBeEnabled = true;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>Quiz is LIVE! Ends on 26/10/2025 6:00 PM IST!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 4 QUIZ<br>Quiz is LIVE! Ends on 02/11/2025 6:00 PM IST!';
             statusElement.style.color = '#008000'; // Green for active
         } else if (currentTime < quizStartTime) {
             // Quiz not yet started
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>starts at 6.00 PM on 25/10/2025!';
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 4 QUIZ<br>starts at 6.00 PM on 01/11/2025!';
             statusElement.style.color = '#FFA500'; // Orange for upcoming
         } else {
             // Quiz ended
             quizShouldBeEnabled = false;
-            statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>Quiz is now CLOSED.'; // Updated text for clarity
+            statusElement.innerHTML = 'BRAIN CACHE - WEEK 4 QUIZ<br>Quiz is now CLOSED.'; // Updated text for clarity
             statusElement.style.color = '#CC0000'; // Red for closed
         }
     }
     // Priority 3: Default to disabled if neither manual nor timer is enabling it
     else {
         quizShouldBeEnabled = false;
-        statusElement.innerHTML = 'BRAIN CACHE - WEEK 3 QUIZ<br>Quiz is currently disabled'; // Indicate manual disable
+        statusElement.innerHTML = 'BRAIN CACHE - WEEK 4 QUIZ<br>Quiz is currently disabled'; // Indicate manual disable
         statusElement.style.color = '#CC0000'; // Red
     }
 
@@ -249,4 +249,3 @@ quizForm.addEventListener('submit', function(e) {
             // The button stays disabled and green on success.
         });
 });
-
