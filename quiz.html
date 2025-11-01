@@ -531,71 +531,57 @@ action="https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwL
 </div>
 <h3>Quiz Questions</h3>
 <div class="form-group no-select">
-<p><strong>1. Which of the following JavaScript variable declarations is block-scoped and can be reassigned a new
-value later in the code?</strong></p>
+<p><strong>1. Which of the following statements about let, const, and Arrow Functions in modern JavaScript (ES6) is TRUE?</strong></p>
 <div class="radio-group">
-<label><input type="radio" id="q1_a" name="Question1" value="A" required>A. const count = 10;</label>
-<label><input type="radio" id="q1_b" name="Question1" value="B">B. var total = 50;</label>
-<label><input type="radio" id="q1_c" name="Question1" value="C">C. let index = 0;</label>
-<label><input type="radio" id="q1_d" name="Question1" value="D">D. let PI = 3.14;</label>
+<label><input type="radio" id="q1_a" name="Question1" value="A" required>A. A variable declared with const can be reassigned within the same block scope.</label>
+<label><input type="radio" id="q1_b" name="Question1" value="B">B. Variables declared with let are globally scoped, similar to var.</label>
+<label><input type="radio" id="q1_c" name="Question1" value="C">C. Arrow Functions (using the => syntax) do not bind their own this value.</label>
+<label><input type="radio" id="q1_d" name="Question1" value="D">D. Variables declared with let can be redeclared multiple times in the same scope.</label>
 </div>
 </div>
 <div class="form-group no-select">
-<p><strong>2. Which of the following code snippets correctly demonstrates a JavaScript Function Expression?</strong>
+<p><strong>2. Which of the following is the primary use case of the Spread Operator in JavaScript?</strong>
 </p>
 <div class="radio-group">
-<label><input type="radio" id="q2_a" name="Question2" value="A" required>A.&nbsp;
-<pre><code>function calculate(a, b) {
-return a + b;
-}</code></pre></label>
-<label><input type="radio" id="q2_b" name="Question2" value="B">B.&nbsp;
-<pre><code>const multiply = (a, b) => a * b;</code></pre></label>
-<label><input type="radio" id="q2_c" name="Question2" value="C">C.&nbsp;
-<pre><code>const subtract = function(a, b) {
-return a - b;
-};</code></pre></label>
-<label><input type="radio" id="q2_d" name="Question2" value="D">D.&nbsp;
-<pre><code>if (value &gt; 10) {
-// code block
-}</code></pre></label>
+<label><input type="radio" id="q2_a" name="Question2" value="A" required>A. To embed expressions and variables directly within a string.</label>
+<label><input type="radio" id="q2_b" name="Question2" value="B">B. To extract values from an array or properties from an object into separate variables.</label>
+<label><input type="radio" id="q2_c" name="Question2" value="C">C. To define a variable that cannot be reassigned (a constant).</label>
+<label><input type="radio" id="q2_d" name="Question2" value="D">D. To expand an iterable into its individual elements for tasks like copying or merging data.</label>
 </div>
 </div>
 <div class="form-group no-select">
-<p><strong>3. Which of the following data structures in JavaScript is primarily used to store ordered collections of
-items, such as a list of names or scores?</strong></p>
+<p><strong>3. Consider the following JavaScript code using const:</strong></p>
+<pre><code>const user = { name: "Bob", age: 21 };
+user.age = 22;</code></pre>
+<p><strong>What is the result of the second line of code?</strong></p>
 <div class="radio-group">
-<label><input type="radio" id="q3_a" name="Question3" value="A" required>A. Function</label>
-<label><input type="radio" id="q3_b" name="Question3" value="B">B. Array</label>
-<label><input type="radio" id="q3_c" name="Question3" value="C">C. Boolean</label>
-<label><input type="radio" id="q3_d" name="Question3" value="D">D. Object</label>
+<label><input type="radio" id="q3_a" name="Question3" value="A" required>A. It causes a TypeError because you are trying to reassign a const variable.</label>
+<label><input type="radio" id="q3_b" name="Question3" value="B">B. It silently fails and the age remains 21.</label>
+<label><input type="radio" id="q3_c" name="Question3" value="C">C. It successfully changes the age property of the object to 22.</label>
+<label><input type="radio" id="q3_d" name="Question3" value="D">D. It converts user from an object to a primitive type.</label>
 </div>
 </div>
 <div class="form-group no-select">
-<p><strong>4. What is the primary method used in JavaScript to attach a function that will execute when a specific event, like a button click, occurs on an HTML element?</strong></p>
+<p><strong>4. What is the main role of a web browser in displaying a website?</strong></p>
 <div class="radio-group">
-<label><input type="radio" id="q4_a" name="Question4" value="A" required>A.&nbsp;
-<code>element.querySelector("click", myFunction)</code></label>
-<label><input type="radio" id="q4_b" name="Question4" value="B">B.&nbsp;
-<code>document.getElementById("btn").onclick = myFunction</code></label>
-<label><input type="radio" id="q4_c" name="Question4" value="C">C.&nbsp;
-<code>element.addEventListener("click", myFunction)</code></label>
-<label><input type="radio" id="q4_d" name="Question4" value="D">D.&nbsp;
-<code>element.textContent("click", myFunction)</code></label>
+<label><input type="radio" id="q4_a" name="Question4" value="A" required>A. To create the initial HTML and CSS files.</label>
+<label><input type="radio" id="q4_b" name="Question4" value="B">B. To host and store the website's data.</label>
+<label><input type="radio" id="q4_c" name="Question4" value="C">C. To execute server-side code like Python or Node.js.</label>
+<label><input type="radio" id="q4_d" name="Question4" value="D">D. To interpret HTML, CSS, and JavaScript to render the content visually.</label>
 </div>
 </div>
 <div class="form-group no-select">
-<p><strong>5. Write the complete HTML, CSS, and JavaScript code for a basic To-Do List application.</strong></p>
-<p>Your solution must allow users to:
+<p><strong>5. Task: Write the HTML code for a basic Weather App UI structure.</strong></p>
+<p>Your solution should include the following elements, clearly labeled with comments or placeholder content:</p>
 <ol>
-<li>Add new tasks.</li>
-<li>Toggle a task as complete (e.g., using a strikethrough).</li>
-<li>Delete a task.</li>
+<li>An **Input field** for the user to type a city name.</li>
+<li>A **Button** to trigger the API data fetch.</li>
+<li>A container (e.g., a `div`) to display the **Weather Data** (Temperature, Description).</li>
+<li>A container (e.g., another `div`) for displaying **Error Messages** or a **Loading State**.</li>
 </ol>
-</p>
-<textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your HTML, CSS, and JavaScript code here..."
+<textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your HTML code here..."
 required></textarea>
-</div>
-</div> <!-- ADD QNS BEFORE THIS TAG-->
+</div></div> <!-- ADD QNS BEFORE THIS TAG-->
 <p><strong>After submission wait until submit button turns green</strong></p>
 <button type="submit" class="submit-button">Submit Quiz</button>
 </div>
@@ -603,6 +589,7 @@ required></textarea>
 
 </div>
 </div>
+
 <footer>
 <p>Created by The Coders Club</p>
 <a href="https://www.instagram.com/the_mce.coders_club?igsh=Z245eDZmdWhkcmRn" target="_blank">
@@ -620,4 +607,5 @@ required></textarea>
 </footer>
 <script src="quiz.js"></script>
 </body>
+
 </html>
