@@ -496,96 +496,117 @@ pre code {
 </center>
 
 <div class="quiz-form-wrapper">
-<h2>BRAINCACHE</h2>
-<form id="quizForm" method="POST"
-action="https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwLJ58hC9UlwLgJYv8aCJ49vtTcMIP8nw09oep/exec">
-<div class="form-group">
-<label for="name">Name:</label>
-<input type="text" id="name" name="Name" required placeholder="Enter your full name">
-</div>
+    <h2>BRAIN CACHE</h2>
+    <form id="quizForm" method="POST"
+        action="https://script.google.com/macros/s/AKfycby8HRkL4c6fP71MuaPu7MBhJDF93lDwLJ58hC9UlwLgJY8aCJ49vtTcMIP8nw09oep/exec">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" required placeholder="Enter your full name">
+        </div>
 
-<div class="form-group">
-<label for="department">Department:</label>
-<select id="department" name="Department" required>
-<option value="">Select your Department</option>
-<option value="CSE">CSE</option>
-<option value="CSE (AI&ML)">CSE (AI&ML)</option>
-</select>
-</div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department" name="Department" required>
+                <option value="">Select your Department</option>
+                <option value="CSE">CSE</option>
+                <option value="CSE (AI&ML)">CSE (AI&ML)</option>
+            </select>
+        </div>
 
-<div class="form-group">
-<label for="year">Year:</label>
-<select id="year" name="Year" required>
-<option value="">Select your Year</option>
-<option value="1st Year">1st Year</option>
-<option value="2nd Year">2nd Year</option>
-<option value="3rd Year">3rd Year</option>
-<option value="4th Year">4th Year</option>
-</select>
-</div>
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <select id="year" name="Year" required>
+                <option value="">Select your Year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select>
+        </div>
 
-<hr>
+        <hr>
 
-<div id="quizQuestionsSection">
-<div id="quizOverlay">
+        <div id="quizQuestionsSection">
+            <div id="quizOverlay">
+            </div>
+            <h3>Quiz Questions</h3>
+            <div class="form-group no-select">
+                <p><strong>1. Which of the following is the key feature that the text explicitly mentions React uses to
+                        improve application performance?</strong></p>
+                <div class="radio-group">
+                    <label><input type="radio" id="q1_a" name="Question1" value="A" required>A. Component-based
+                        architecture</label>
+                    <label><input type="radio" id="q1_b" name="Question1" value="B">B. Virtual DOM</label>
+                    <label><input type="radio" id="q1_c" name="Question1" value="C">C. JSX (JavaScript + HTML
+                        syntax)</label>
+                    <label><input type="radio" id="q1_d" name="Question1" value="D">D. Unidirectional data flow</label>
+                </div>
+            </div>
+            <div class="form-group no-select">
+                <p><strong>2. According to the section on 'State Management,' what is its primary function in a
+                        JavaScript application?</strong>
+                </p>
+                <div class="radio-group">
+                    <label><input type="radio" id="q2_a" name="Question2" value="A" required>A. To allow teams to work
+                        on different parts of the application independently, leading to Faster Development.</label>
+                    <label><input type="radio" id="q2_b" name="Question2" value="B">B. To improve code reusability by
+                        writing logic once and using it anywhere.</label>
+                    <label><input type="radio" id="q2_c" name="Question2" value="C">C. To manage how data flows between
+                        components and ensure the UI updates automatically when data changes.</label>
+                    <label><input type="radio" id="q2_d" name="Question2" value="D">D. To fix or update a part of the
+                        application without breaking others.</label>
+                </div>
+            </div>
+            <div class="form-group no-select">
+                <p><strong>3. What is the primary reason the 'Key Rule' emphasizes including a unique key prop when
+                        rendering a list of elements using the map() method in React?</strong></p>
+                <div class="radio-group">
+                    <label><input type="radio" id="q3_a" name="Question3" value="A" required>A. To allow the JavaScript
+                        map() method to compile correctly.</label>
+                    <label><input type="radio" id="q3_b" name="Question3" value="B">B. To help React efficiently
+                        identify each element and prevent bugs when the list changes.</label>
+                    <label><input type="radio" id="q3_c" name="Question3" value="C">C. To make sure the function passed
+                        to the event handler is not a string.</label>
+                    <label><input type="radio" id="q3_d" name="Question3" value="D">D. To ensure that event handlers
+                        like onClick are written in camelCase.</label>
+                </div>
+            </div>
+            <div class="form-group no-select">
+                <p><strong>4. The text states that the useEffect hook is impressive because it replaces what three
+                        specific class-based lifecycle methods, offering a declarative and tidy approach to side
+                        effects?</strong></p>
+                <div class="radio-group">
+                    <label><input type="radio" id="q4_a" name="Question4" value="A" required>A. constructor,
+                        shouldComponentUpdate, and render</label>
+                    <label><input type="radio" id="q4_b" name="Question4" value="B">B. componentDidMount,
+                        componentDidUpdate, and componentWillUnmount</label>
+                    <label><input type="radio" id="q4_c" name="Question4" value="C">C. componentWillMount,
+                        componentWillReceiveProps, and componentWillUpdate</label>
+                    <label><input type="radio" id="q4_d" name="Question4" value="D">D. useState, useCallback, and
+                        useContext</label>
+                </div>
+            </div>
+            <div class="form-group no-select">
+                <p><strong>5. Task: Write the specific JavaScript code that needs to be added to script.js to enable the
+                        'Enter' key functionality.</strong></p>
+                <p>This code should:</p>
+                <ol>
+                    <li>Listen for the keydown event on the input element (`movieInput`).</li>
+                    <li>Check if the key pressed is the Enter key (`key === 'Enter'`).</li>
+                    <li>If it is, prevent the default action and then call the search function using the current input
+                        value.</li>
+                </ol>
+                <p>Write only the event listener code block.</p>
+                <textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your JavaScript code here..."
+                    required></textarea>
+            </div>
+        </div>
+
+        <p><strong>After submission wait until submit button turns green</strong></p>
+
+        <button type="submit" class="submit-button">Submit Quiz</button>
+    </form>
 </div>
-<h3>Quiz Questions</h3>
-<div class="form-group no-select">
-<p><strong>1. Which of the following statements about let, const, and Arrow Functions in modern JavaScript (ES6) is TRUE?</strong></p>
-<div class="radio-group">
-<label><input type="radio" id="q1_a" name="Question1" value="A" required>A. A variable declared with const can be reassigned within the same block scope.</label>
-<label><input type="radio" id="q1_b" name="Question1" value="B">B. Variables declared with let are globally scoped, similar to var.</label>
-<label><input type="radio" id="q1_c" name="Question1" value="C">C. Arrow Functions (using the => syntax) do not bind their own this value.</label>
-<label><input type="radio" id="q1_d" name="Question1" value="D">D. Variables declared with let can be redeclared multiple times in the same scope.</label>
-</div>
-</div>
-<div class="form-group no-select">
-<p><strong>2. Which of the following is the primary use case of the Spread Operator in JavaScript?</strong>
-</p>
-<div class="radio-group">
-<label><input type="radio" id="q2_a" name="Question2" value="A" required>A. To embed expressions and variables directly within a string.</label>
-<label><input type="radio" id="q2_b" name="Question2" value="B">B. To extract values from an array or properties from an object into separate variables.</label>
-<label><input type="radio" id="q2_c" name="Question2" value="C">C. To define a variable that cannot be reassigned (a constant).</label>
-<label><input type="radio" id="q2_d" name="Question2" value="D">D. To expand an iterable into its individual elements for tasks like copying or merging data.</label>
-</div>
-</div>
-<div class="form-group no-select">
-<p><strong>3. Consider the following JavaScript code using const:</strong></p>
-<pre><code>const user = { name: "Bob", age: 21 };
-user.age = 22;</code></pre>
-<p><strong>What is the result of the second line of code?</strong></p>
-<div class="radio-group">
-<label><input type="radio" id="q3_a" name="Question3" value="A" required>A. It causes a TypeError because you are trying to reassign a const variable.</label>
-<label><input type="radio" id="q3_b" name="Question3" value="B">B. It silently fails and the age remains 21.</label>
-<label><input type="radio" id="q3_c" name="Question3" value="C">C. It successfully changes the age property of the object to 22.</label>
-<label><input type="radio" id="q3_d" name="Question3" value="D">D. It converts user from an object to a primitive type.</label>
-</div>
-</div>
-<div class="form-group no-select">
-<p><strong>4. What is the main role of a web browser in displaying a website?</strong></p>
-<div class="radio-group">
-<label><input type="radio" id="q4_a" name="Question4" value="A" required>A. To create the initial HTML and CSS files.</label>
-<label><input type="radio" id="q4_b" name="Question4" value="B">B. To host and store the website's data.</label>
-<label><input type="radio" id="q4_c" name="Question4" value="C">C. To execute server-side code like Python or Node.js.</label>
-<label><input type="radio" id="q4_d" name="Question4" value="D">D. To interpret HTML, CSS, and JavaScript to render the content visually.</label>
-</div>
-</div>
-<div class="form-group no-select">
-<p><strong>5. Task: Write the HTML code for a basic Weather App UI structure.</strong></p>
-<p>Your solution should include the following elements, clearly labeled with comments or placeholder content:</p>
-<ol>
-<li>An Input field for the user to type a city name.</li>
-<li>A Button to trigger the API data fetch.</li>
-<li>A container (e.g., a div) to display the Weather Data (Temperature, Description).</li>
-<li>A container (e.g., another div) for displaying Error Messages or a Loading State.</li>
-</ol>
-<textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your HTML code here..."
-required></textarea>
-</div></div> <!-- ADD QNS BEFORE THIS TAG-->
-<p><strong>After submission wait until submit button turns green</strong></p>
-<button type="submit" class="submit-button">Submit Quiz</button>
-</div>
-</form>
 
 </div>
 </div>
