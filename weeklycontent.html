@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!-- <p style="text-align: center; font-style: italic; color: #555;">Content coming soon!</p>-->
 <html lang="en">
 <head>
@@ -792,42 +792,439 @@ pre code {
     <div id="monday-content-week1" class="day-content day-section">
 <h2>Monday Maverick</h2>
 <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+    <h3>Front-end Development - How the Web Works</h3>
+    <p>This section outlines the foundational client-server interaction that allows websites to be accessed and
+        displayed.</p>
+
+   <h4>1. Web Browser</h4>
+    <p>A software application (like Chrome, Firefox, or Safari) used by the client to access and display websites.</p>
+    <ul>
+        <li>It sends requests to servers.</li>
+        <li>It renders the received content (HTML, CSS, JavaScript) into a visual web page.</li>
+    </ul>
+
+    <h4>2. Web Server</h4>
+    <p>A computer system that stores and serves website files (HTML documents, images, videos, etc.).</p>
+    <ul>
+        <li>It stores the website's resources.</li>
+        <li>It responds to browser requests by sending back the required resources.</li>
+    </ul>
+
+    <h4>3. Request & Response Cycle</h4>
+    <p>This is the communication protocol between the browser (client) and the server.</p>
+    <ol>
+        <li>Request: The browser sends an HTTP request to a server (e.g., a GET request to load a page or a POST
+            request to submit data).</li>
+        <li>Processing: The server processes the request, locates the necessary files or data.</li>
+        <li>Response: The server sends an HTTP response back to the browser, containing the requested resource
+            (e.g., an HTML file) and a status code.</li>
+        <li>Rendering: The browser reads the HTML and associated files and displays the web page to the user.</li>
+    </ol>
+
+   <p>The entire process ensures that users can interact with resources stored remotely on servers.</p>
+</div>
 </div>
 
     <div id="tuesday-content-week1" class="day-content day-section">
-        <h2>Tuesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+        <h2>Techie Tuesday</h2>
+<div class="content-block">
+    <h3>Front-end Development - Basic HTML Structure</h3>
+    <h4>1. What is HTML?</h4>
+    <p>HTML stands for HyperText Markup Language. It's the standard language used to create webpages.</p>
+    <p>Every webpage has a basic skeleton, made of HTML tags that tell the browser how to display content.</p>
+
+    <h4>2. Basic HTML Skeleton</h4>
+    <p>Here is the simplest complete structure of an HTML document:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My Website!&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>3. Explanation of Each Part</h4>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Part</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                <td>Tells the browser that this is an HTML5 document.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;html&gt;</code></td>
+                <td>The root element of the webpage. All other content and tags are placed inside this tag.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;head&gt;</code></td>
+                <td>Contains meta information (not visible on the page), like the title, character set, and links to
+                    styles or scripts.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;title&gt;</code></td>
+                <td>The text that appears on the browser tab.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;body&gt;</code></td>
+                <td>Contains everything you see on the webpage—text, images, links, buttons, etc.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;h1&gt;</code></td>
+                <td>A heading tag. Headings range from <strong>&lt;h1&gt;</strong> (largest) to <strong>&lt;h6&gt;</strong>
+                    (smallest).</td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>A paragraph tag for standard blocks of text.</td>
+            </tr>
+        </tbody>
+    </table>
+
+   <h4>4. Create and View Your Page</h4>
+    <ol>
+        <li>Open a text editor (like Notepad, VS Code, or Sublime Text).</li>
+        <li>Copy and paste the Basic HTML Skeleton code.</li>
+        <li>Save the file with the extension <strong>.html</strong> (e.g., <strong>index.html</strong>).</li>
+        <li>Double-click the saved file to open it in your default web browser.</li>
+    </ol>
+</div>
     </div>
 
     <div id="wednesday-content-week1" class="day-content day-section">
         <h2>Wednesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Front-end Development - Introduction to CSS</h3>
+    <h4>1. What is CSS?</h4>
+    <p>CSS stands for Cascading Style Sheets. It is used to style and layout web pages. Its primary purpose is to
+        help developers separate content (HTML) from design (CSS), making code cleaner and easier to maintain.</p>
+
+    <h5>What You Can Do with CSS:</h5>
+    <ul>
+        <li>Change colors, fonts, and spacing.</li>
+        <li>Add visual effects like borders, shadows, and transitions.</li>
+        <li>Control complex page layout using modern tools like Flexbox and Grid.</li>
+        <li>Make websites responsive so they look good across different devices.</li>
+    </ul>
+
+   <h4>2. CSS Syntax</h4>
+    <p>Every CSS rule consists of a selector and a declaration block</p>
+    <pre><code>selector {
+  property: value;
+}</code></pre>
+
+    <h5>Example:</h5>
+    <pre><code>h1 {
+  color: darkblue;
+  font-size: 32px;
+}</code></pre>
+
+    <h5>Explanation of Parts:</h5>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Part</th>
+                <th>Role</th>
+                <th>Example in Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Selector</td>
+                <td>Targets the HTML element(s) you want to style.</td>
+                <td>h1</td>
+            </tr>
+            <tr>
+                <td>Property</td>
+                <td>The specific characteristic you want to change.</td>
+                <td>color, font-size</td>
+            </tr>
+            <tr>
+                <td>Value</td>
+                <td>The setting or definition for that property.</td>
+                <td>darkblue, 32px</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
     </div>
 
     <div id="thursday-content-week1" class="day-content day-section">
         <h2>Thursday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Front-end Development - CSS Selectors Overview</h3>
+
+    <p>CSS selectors are patterns used to target specific HTML elements to apply styles to them. They determine
+        which elements a CSS rule will affect.</p>
+
+   <h4>Common Selector Types</h4>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Selector Type</th>
+                <th>Pattern</th>
+                <th>Purpose & Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Universal</td>
+                <td><code>*</code></td>
+                <td>Selects all elements on the page. <br>Example: <code>* { margin: 0; }</code></td>
+            </tr>
+            <tr>
+                <td>Type (Element)</td>
+                <td><code>p, h1, div</code></td>
+                <td>Selects all elements of a **specific HTML tag**. <br>Example: <code>p { color: blue; }</code></td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td><code>.classname</code></td>
+                <td>Selects all elements with a specific <strong>class</strong> attribute value. (Reusable) <br>Example:
+                    <code>.highlight { background-color: yellow; }</code></td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td><code>#idname</code></td>
+                <td>Selects a single, unique element with a specific <strong>id</strong> attribute value. <br>Example:
+                    <code>#header { font-size: 24px; }</code></td>
+            </tr>
+            <tr>
+                <td>Attribute</td>
+                <td><code>[attribute]</code></td>
+                <td>Selects elements based on the presence of an attribute or its exact value. <br>Example:
+                    <code>input[type="submit"] { background-color: green; }</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Combinators (Combining Selectors)</h4>
+    <p>Combinators are used to link multiple simple selectors to create more specific targeting rules:</p>
+    <ul>
+        <li>Descendant Combinator (Space): <strong>div p</strong>
+            <ul>
+                <li>Selects all <strong>&lt;p&gt;</strong> elements that are anywhere inside a <strong>&lt;div&gt;</strong>
+                    element.</li>
+            </ul>
+        </li>
+        <li>Child Combinator (>): <strong>ul > li</strong>
+            <ul>
+                <li>Selects all <strong>&lt;li&gt;</strong> elements that are a direct child of a
+                    <strong>&lt;ul&gt;</strong> element.</li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
     </div>
 
     <div id="friday-content-week1" class="day-content day-section">
         <h2>Friday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Week 1: Mini Project - Personal Portfolio Page</h3>
+
+    <p><strong>Description:</strong> A personal portfolio page is a website that showcases an individual's skills,
+        experience, and projects. It's a fundamental way to demonstrate your expertise and accomplishments to
+        potential employers, clients, or collaborators.</p>
+
+    <p>This project uses only HTML and basic CSS to build a structured, multi-section page, applying the tags and
+        selectors learned this week.</p>
+
+    <h4>A Typical Personal Portfolio Page Includes:</h4>
+
+    <dl>
+        <dt><strong>1. Home / Introduction</strong></dt>
+        <dd>A brief introduction to who you are and what you do, serving as the main landing section.</dd>
+
+        <dt><strong>2. About Me</strong></dt>
+        <dd>A more detailed section covering your background, core technical skills (using lists), and professional
+            experience.</dd>
+
+        <dt><strong>3. Projects / Showcase</strong></dt>
+        <dd>A section to showcase your work, including descriptive text, images, and links to live demos or GitHub
+            repositories (using anchor tags <strong>&lt;a&gt;</strong>).</dd>
+
+        <dt><strong>4. Contact</strong></dt>
+        <dd>A way for visitors to get in touch with you, including contact details (email, phone number) and social
+            media links.</dd>
+    </dl>
+    <h4>Goals for this Mini Project:</h4>
+    <ul>
+        <li>Practice using semantic HTML structure (e.g., <strong>&lt;header&gt;</strong>, <strong>&lt;section&gt;</strong>,
+            <strong>&lt;footer&gt;</strong>).</li>
+        <li>Implement different CSS selectors (Type, Class, ID) to style various sections.</li>
+        <li>Ensure all text content is clean, well-formatted, and visually separated using headings
+            (<strong>&lt;h1&gt;</strong> - <strong>&lt;h6&gt;</strong>) and paragraphs (<strong>&lt;p&gt;</strong>).</li>
+    </ul>
+
+   <h3>Task Answer: Implementation Example (HTML & CSS)</h3>
+
+    <p>This example provides the foundational structure using HTML and a small block of CSS to demonstrate Type, Class,
+        and ID selectors.</p>
+
+    <h4>1. <strong>index.html</strong> (Structure)</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Developer Portfolio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;!-- Option 2: Inline CSS for demo --&gt;
+    &lt;style&gt;
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff; /* Type Selector */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container { /* Class Selector */
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #contact { /* ID Selector */
+            background-color: #e9ecef;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Jane Doe - Front-end Developer&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;div class="container"&gt;
+        &lt;section id="home"&gt;
+            &lt;h2&gt;Hello!&lt;/h2&gt;
+            &lt;p&gt;I'm a passionate junior developer specializing in clean, semantic web design using HTML and CSS.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id="about"&gt;
+            &lt;h2&gt;About Me&lt;/h2&gt;
+            &lt;p&gt;I have a background in graphic design and recently transitioned into web development. My goal is to build accessible and user-friendly interfaces.&lt;/p&gt;
+            &lt;h3&gt;Skills&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;HTML5&lt;/li&gt;
+                &lt;li&gt;CSS3&lt;/li&gt;
+                &lt;li&gt;Version Control (Git)&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;section id="projects"&gt;
+            &lt;h2&gt;Projects&lt;/h2&gt;
+            &lt;div class="project-card"&gt;
+                &lt;h3&gt;Project Alpha&lt;/h3&gt;
+                &lt;p&gt;A simple, static landing page demonstrating Flexbox layout.&lt;/p&gt;
+                &lt;a href="#"&gt;View on GitHub&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="contact"&gt;
+            &lt;h2&gt;Get In Touch&lt;/h2&gt;
+            &lt;p&gt;Email: jane.doe@example.com&lt;/p&gt;
+            &lt;p&gt;Phone: (555) 123-4567&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 Jane Doe&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+</div>
     </div>
     <div id="saturday-content-week1" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 1 Quiz coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>1. Which component sends an HTTP request to a server and renders the received content?</h3>
+    <ol>
+        <li>Web Server</li>
+        <li>Front-end Development</li>
+        <li><strong>Web Browser</strong></li>
+        <li>A website file</li>
+    </ol>
+    <h3>2. What does the &lt;body&gt; tag contain in an HTML document?</h3>
+    <ol>
+        <li>Meta information, such as the title</li>
+        <li>The root element of the webpage</li>
+        <li><strong>The visible content displayed on the webpage</strong></li>
+        <li>The document type declaration</li>
+    </ol>
+    <h3>3. Which of the following is true about CSS?</h3>
+    <ol>
+        <li>It is used to create the basic skeleton of a webpage.</li>
+        <li><strong>It is used to apply styles like colors and fonts to a webpage.</strong></li>
+        <li>It is a programming language used for adding interactive features to a webpage.</li>
+        <li>Its rules consist of a selector, a declaration block, and a skeleton.</li>
+    </ol>
+    <h3>4. Which CSS selector is used to select and style a single, unique element?</h3>
+    <ol>
+        <li>. (Class Selector)</li>
+        <li>* (Universal Selector)</li>
+        <li><strong># (ID Selector)</strong></li>
+        <li>> (Child Combinator)</li>
+    </ol>
+    <h3>5. Write the HTML and CSS to create a webpage with a main title and a sentence. The background should be light
+        gray, and the sentence text should be blue.</h3>
+        <h4>Expected Answer:</h4>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Basic Webpage&lt;/title&gt;
+&lt;style&gt;
+body {
+background-color: lightgray;
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+.blue-text {
+color: blue;
+font-size: 1.2em;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Main Title of the Webpage&lt;/h1&gt;
+&lt;p class="blue-text"&gt;This is the important sentence with blue text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
     </div>
 </div>
 
@@ -848,42 +1245,338 @@ pre code {
     <div id="monday-content-week2" class="day-content day-section">
         <h2>Monday Maverick</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
+            <h3>Responsive Web Design – Mobile-First Approach:</h3>
+
+            <p><strong>Responsive Web Design (RWD)</strong> ensures a website looks and works perfectly on all devices —
+                mobiles, tablets, and desktops.</p>
+        
+            <p>The Mobile-First Approach is a key strategy in RWD, meaning you design and code for smaller screens first, then gradually enhance the layout and features for larger devices.</p>
+        
+            <h4>Key Points:</h4>
+            <ul>
+                <li>✓ Start with simple, fast-loading mobile layouts, focusing on core content and essential functionality.</li>
+                <li>✓ Use fluid grids (like Flexbox or Grid), flexible images (using <strong>max-width: 100%;</strong>), and CSS media queries for breakpoints.</li>
+                <li>✓ Prioritize content and usability specifically for mobile users, where screen space is limited.</li>
+                <li>✓ Scale up for bigger screens using progressive enhancement, adding complexity and extra elements only as screen space allows.</li>
+            </ul>
+            <p>Goal: Deliver a seamless user experience across all screen sizes, ensuring your site is accessible and functional everywhere.</p>
         </div>
     </div>
 
     <div id="tuesday-content-week2" class="day-content day-section">
         <h2>Techie Tuesday</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
-    </div>
+            <h3>Topic: Mastering Flexbox Layout</h3>
+            <p>Hey Coders! Today’s puzzle is all about one of the most powerful CSS tools — **Flexbox**! It’s designed to
+                provide an efficient way to lay out, align, and distribute space among items in a container, even when their
+                size is unknown or dynamic.</p>
+            <p>Can you piece together how these properties fit to create perfect layouts?</p>
+            <h4>The Flexbox Puzzle Pieces (Container Properties):</h4>
+            <p>These properties are applied to the parent container (the element with <strong>display: flex;</strong>) and
+                control the overall layout and alignment of its children (flex items):</p>
+        
+            <ul>
+                <li><strong>display: flex;</strong> → The starting point — turns your container into a Flexbox world!</li>
+                <li><strong>flex-direction</strong> → Decides the flow of items along the Main Axis: <strong>row</strong>
+                    (default), <strong>column</strong>, <strong>row-reverse</strong>, or <strong>column-reverse</strong>.</li>
+                <li><strong>justify-content</strong> → Aligns your items along the Main Axis (e.g., <strong>flex-start</strong>,
+                    <strong>center</strong>, <strong>space-between</strong>, <strong>space-around</strong>).</li>
+                <li><strong>align-items</strong> → Aligns items along the Cross Axis (perpendicular to the main axis, e.g.,
+                    <strong>flex-start</strong>, <strong>center</strong>, <strong>stretch</strong>).</li>
+                <li><strong>flex-wrap</strong> → Tells items whether to stay in one line (<strong>nowrap</strong>) or **wrap** to
+                    the next line (<strong>wrap</strong>) if they exceed the container width.</li>
+                <li><strong>align-content</strong> → Controls the space between rows (or columns) when wrapping happens
+                    (i.e., when <strong>flex-wrap</strong> is active).</li>
+                <li><strong>gap</strong> (or <strong>row-gap</strong>/<strong>column-gap</strong>) → Adds perfect spacing between items
+                    — a modern replacement for using external margins!</li>
+            </ul>
+            <div class="quiz-container">
+                <h3>Question:</h3>
+                <div class="question-block">
+                    <p>1. If your boxes are evenly spaced in a row and centered on the screen, which two Flexbox properties are doing the magic?</p>
+                    <div class="options">
+                        <div class="quiz-option" data-question="q4" data-value="a">A. Align-Items and Flex-wrap</div>
+                        <div class="quiz-option" data-question="q4" data-value="b">B. Justify-content and align-items</div>
+                        <div class="quiz-option" data-question="q4" data-value="c">C. Flex-direction and gap</div>
+                        <div class="quiz-option" data-question="q4" data-value="d">D. Justify-content and flex-direction</div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </div>
+    </div></div>
 
     <div id="wednesday-content-week2" class="day-content day-section">
         <h2>Syntax Snapshots Wednesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>CSS Grid: The Modern Layout Superpower!</h3>
+    <p>Design clean, flexible, and fully responsive layouts with just a few lines of CSS. No more messy floats or
+        confusing complex Flexbox setups — CSS Grid gives you total control over two-dimensional layouts!</p>
+
+   <h4>With CSS Grid, you can:</h4>
+    <ul>
+        <li>Create complex layouts easily (rows and columns simultaneously).</li>
+        <li>Align and space elements perfectly within a grid structure.</li>
+        <li>Make your site look great on any device (inherently responsive).</li>
+        <li>Mix with Flexbox for even more power (Grid handles the macro-layout, Flexbox handles the micro-alignment within cells).</li>
+    </ul>
+    <h4>Perfect for:</h4>
+    <ul>
+        <li>Responsive websites</li>
+        <li>Dashboards</li>
+        <li>Portfolios</li>
+        <li>Modern web apps</li>
+    </ul>
+
+    <p><strong>Example Concept:</strong></p>
+    <pre><code>.container {
+    display: grid;
+    /* Defines 3 columns: two flexible, one fixed */
+    grid-template-columns: 1fr 1fr 200px; 
+    /* Defines two rows with flexible heights */
+    grid-template-rows: auto 1fr; 
+    gap: 10px;
+}</code></pre>
+
+   <blockquote>
+        Tip: If you’re building your portfolio, try designing it using CSS Grid — you’ll be amazed at how
+        clean and professional it looks!
+    </blockquote>
+</div>
     </div>
 
     <div id="thursday-content-week2" class="day-content day-section">
         <h2>Te Ta Thursday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+
+    <p>CSS Variables, officially known as <strong></strong>Custom Properties</strong>, allow you to store specific values to be reused
+        throughout your stylesheet. Think of them as variables in a programming language—you define a value once and use
+        it everywhere.</p>
+    <h4>Why use them?</h4>
+    <ul>
+        <li>Maintainability: Need to change your site's primary color? Just update one variable instead of hunting for every instance of that color code across hundreds of lines.</li>
+        <li>Readability: Code like <strong>color: var(--primary-color);</strong> is much clearer than <strong>color: #4A90E2;</strong>.</li>
+        <li>Theming: They are the cornerstone of dynamic features like <strong>dark/light mode</strong> switches or switching between color palettes.</li>
+    </ul>
+    <h4>Syntax</h4>
+    <p>You declare a variable using a double-hyphen prefix (<strong>--</strong>) and access it using the <strong>var()</strong> function. It's best practice to declare global variables in the <strong>:root</strong> pseudo-class.</p>
+    <pre><code>/* Declaration (Global Scope) */
+:root {
+  --primary-color: #007bff;
+  --spacing-unit: 1rem;
+}
+
+/* Usage */
+.header {
+  background-color: var(--primary-color);
+  padding: var(--spacing-unit);
+}</code></pre>
+    <h4>Example: A Simple Themed Button</h4>
+    <p>Here, we define a primary color and use it for a button. Changing the <strong>--primary-color</strong> value in <strong>:root</strong> will update the button instantly.</p>
+    <pre><code>/* CSS */
+:root {
+  --primary-color: #4A90E2; /* Blue */
+  --text-color: white;
+}
+
+.themed-button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* You can easily create a 'success' theme that overrides the color locally: */
+.themed-button.success {
+  --primary-color: #5cb85c; /* Green, overrides local scope */
+}</code></pre>
+</div>
     </div>
 
     <div id="friday-content-week2" class="day-content day-section">
         <h2>Function Friday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Mini Project - Responsive Landing Page:</h3>
+    <p><strong>What is a Responsive Landing Page?</strong><br>
+        A responsive landing page is like a chameleon - it changes its appearance to fit different devices and screen
+        sizes! This means that whether you're visiting a website on your phone, tablet, or computer, you'll get an
+        optimal user experience.</p>
+    <h4>Key Characteristics:</h4>
+    <ul>
+        <li><strong>Flexible Grid System:</strong> Adapts layout components (like columns) to different screen sizes and devices, often using CSS Flexbox or Grid.</li>
+        <li><strong>Dynamic Content:</strong> Adjusts layout, font sizes (using relative units like <strong>rem</strong> or <strong>vw</strong>), and images based on screen size and device.</li>
+        <li><strong>Cross-Browser Compatibility:</strong> Works seamlessly on various web browsers (Chrome, Firefox, Safari, Edge).</li>
+        <li><strong>Mobile-Friendliness:</strong> Provides an optimal experience on smartphones and tablets, often utilizing the "mobile-first" approach.</li>
+        <li><strong>Fast Loading Speed:</strong> Ensures quick page loading, regardless of device or connection speed, often achieved by optimizing images and code.</li>
+    </ul>
+
+    <h4>Benefits:</h4>
+    <ul>
+        <li><strong>Improved User Experience:</strong> Easy navigation and readability on any device.</li>
+        <li><strong>Increased Conversions:</strong> Optimized layout and content drive engagement and conversions.
+        </li>
+        <li><strong>Enhanced SEO:</strong> Responsive design is favored by search engines like Google (using a single URL is better than multiple device-specific URLs).</li>
+        <li><strong>Broader Reach:</strong> Caters to diverse audiences, including the majority who browse on mobile devices.</li>
+    </ul>
+
+    <h4>Code Examples and Templates:</h4>
+    <ul>
+        <li><strong>W3Schools</strong>: <a href="http://www.w3schools.com/">HTML, CSS, JavaScript examples</a></li>
+        <li><strong>CodePen</strong>: <a href="http://codepen.io/">Front-end development community with many landing
+                page examples</a></li>
+        <li><strong>Bootstrap</strong>: <a href="http://getbootstrap.com/">Responsive landing page templates and
+                examples (using its utility classes and grid)</a></li>
+        <li><strong>Tailwind CSS</strong>: <a href="http://tailwindcss.com/">Utility-first CSS framework with landing
+                page examples</a></li>
+    </ul>
+
+    <h4>Inspiration and Design Ideas:</h4>
+    <ul>
+        <li><strong>Landing Page</strong>: <a href="http://landingpage.io/">Landing page inspiration and
+                templates</a></li>
+        <li><strong>Site Inspire</strong>: <a href="http://www.siteinspire.com/">Web design inspiration, including
+                landing pages</a></li>
+        <li><strong>Awwwards</strong>: <a href="http://www.awwwards.com/">Web design awards and inspiration</a></li>
+    </ul>
+
+    <h4>Tutorials and Guides:</h4>
+    <ul>
+        <li><strong>GeeksforGeeks</strong>: <a href="http://www.geeksforgeeks.org/">Coding tutorials, including web development and landing page design</a></li>
+        <li><strong>FreeCodeCamp</strong>: <a href="http://www.freecodecamp.org/">Interactive coding tutorials, including web development</a></li>
+        <li><strong>Smashing Magazine</strong>: <a href="http://www.smashingmagazine.com/">Web design and development tutorials, including landing page design</a></li>
+    </ul>
+    <h3>Task Answer: Responsive Landing Page Template:</h3>
+
+    <p>This is a minimal example demonstrating the three pillars of responsive design: Viewport Meta Tag, Fluid Layout (Flexbox), and Media Queries.</p>
+
+    <h4>1. <strong>index.html</strong> (Structure & Meta Tag)</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Demo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Responsive Landing Page&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;div class="content-wrapper"&gt;
+        &lt;div class="column"&gt;
+            &lt;h2&gt;Feature One&lt;/h2&gt;
+            &lt;p&gt;This content stays readable on any screen size.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="column"&gt;
+            &lt;h2&gt;Feature Two&lt;/h2&gt;
+            &lt;p&gt;The columns stack vertically on small screens.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="column"&gt;
+            &lt;h2&gt;Feature Three&lt;/h2&gt;
+            &lt;p&gt;They display side-by-side on larger screens.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>2. <strong>style.css</strong> (Flexbox & Media Queries)</h4>
+    <pre><code>body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Default Mobile-First Layout (Vertical Stack) */
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks columns by default */
+    gap: 20px;
+    padding: 20px;
+}
+
+.column {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query: Changes layout for screens wider than 768px (Tablets/Desktops) */
+@media (min-width: 768px) {
+    .content-wrapper {
+        flex-direction: row; /* Arranges columns horizontally */
+    }
+
+    .column {
+        flex: 1; /* Makes columns take up equal width */
+    }
+}</code></pre>
+
+</div>
     </div>
     <div id="saturday-content-week2" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 2 Quiz coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>1. Which of the following describes the Mobile-First Approach in Responsive Web Design?</h3>
+    <ol>
+        <li>Designing for large desktop screens first, then creating a separate, stripped-down version for mobile
+            devices.</li>
+        <li>Using only JavaScript to handle layout changes instead of CSS media queries.</li>
+        <li><strong>Starting the design process with simple, fast-loading layouts for smaller screens, then scaling up
+                for larger screens.</strong></li>
+        <li>Ensuring all website images are extremely high resolution, regardless of the user's device.</li>
+    </ol>
+    <h3>2. Which Flexbox property is used to align flex items along the main axis (e.g., to horizontally center items in
+        a row or vertically center them in a column)?</h3>
+    <ol>
+        <li>align-items</li>
+        <li>flex-direction</li>
+        <li><strong>justify-content</strong></li>
+        <li>align-content</li>
+    </ol>
+    <h3>3. What is the difference between a tag and an element?</h3>
+    <ol>
+        <li><strong>A tag is a keyword enclosed in angle brackets (&lt;p&gt;), while an element includes the opening
+                tag, closing tag, and all the content in between (&lt;p&gt;This is a paragraph.&lt;/p&gt;).</strong>
+        </li>
+        <li>A tag defines the content, and an element is used for styling.</li>
+        <li>An element is the building block of HTML, and a tag is used to create attributes.</li>
+        <li>There is no difference; the terms "tag" and "element" can be used interchangeably</li>
+    </ol>
+    <h3>4. Which of the following is the correct syntax for declaring a global CSS Variable (Custom Property) for a
+        primary color with the value #007bff?</h3>
+    <ol>
+        <li>body { primary-color: #007bff; }</li>
+        <li><strong>:root { --primary-color: #007bff; }</strong></li>
+        <li>var(--primary-color) = #007bff;</li>
+        <li>html { primary-color: var(#007bff); }</li>
+    </ol>
+    <h3>5. Task: Write the HTML code for a basic landing page that displays the text "Welcome to our Responsive Landing
+        Page!" as a main heading, and includes the following meta tag in the &lt;head&gt; section to ensure initial
+        responsiveness across devices:</h3>
+    <h4>Expected Answer:</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Responsive Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to our Responsive Landing Page!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+</div>
+
     </div>
 </div>
 
@@ -902,43 +1595,610 @@ pre code {
 
      <div id="monday-content-week3" class="day-content day-section">
         <h2>Monday Maverick</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>JS Basics: Variables, Data Types, and Operators</h3>
+    <h4>Variables:</h4>
+    <p>Variables are used to store data values. The choice of keyword affects the scope and mutability of the variable:
+    </p>
+    <pre><code>var name = "John"; // old way, function-scoped
+let age = 25; // modern way, block-scoped, can be reassigned
+const PI = 3.14; // constant, block-scoped, cannot be reassigned</code></pre>
+    <h4>Data Types:</h4>
+    <p>Data types classify the kind of data a variable holds.</p>
+
+    <h5>Primitive Types (Single, immutable values):</h5>
+    <ol>
+        <li>String – text data (e.g., <strong>"Hello"</strong>)</li>
+        <li>Number – integers and floating-point numbers (e.g., <strong>10</strong>, <strong>3.14</strong>)</li>
+        <li>Boolean – logical values (e.g., <strong>true</strong>, <strong>false</strong>)</li>
+        <li>Undefined – variable declared but not yet assigned a value</li>
+        <li>Null – intentional absence of any object value</li>
+        <li>Symbol – unique identifier (introduced in ES6)</li>
+        <li>BigInt – used for integers larger than $2^{53}-1$</li>
+    </ol>
+
+    <h5>Non-Primitive Types (Collection of values/more complex):</h5>
+    <ol>
+        <li>Object (includes arrays, functions, and standard objects)</li>
+    </ol>
+
+    <pre><code>let person = {name: "Alice", age: 22}; // Object
+let fruits = ["apple", "mango"]; // Array (a type of Object)</code></pre>
+    <h4>Operators:</h4>
+    <p>Operators perform operations on variables and values.</p>
+
+    <ol>
+        <li>Arithmetic: <strong>+</strong>, <strong>-</strong>, <strong>*</strong>, <strong>/</strong>, <strong>%</strong> (modulo),
+            <strong>**</strong> (exponentiation)</li>
+        <li>Assignment: <strong>=</strong>, <strong>+=</strong>, <strong>-=</strong>, <strong>*=</strong>, etc.</li>
+        <li>Comparison: <strong>==</strong>, <strong>===</strong> (strict equality), <strong>!=</strong>, <strong>></strong>,
+            <strong><</strong>, <strong>>=</strong>, <strong><=</strong></li>
+        <li>Logical: <strong>&&</strong> (AND), <strong>||</strong> (OR), <strong>!</strong> (NOT)</li>
+        <li>String: <strong>+</strong> (concatenation)</li>
+        <li>Ternary: <strong>condition ? value1 : value2</strong> (Shorthand for if/else)</li>
+    </ol>
+
+    <h5>Example:</h5>
+    <pre><code>let x = 10, y = 5;
+let sum = x + y;            // 15 (Arithmetic)
+let isEqual = x === y;      // false (Comparison)
+let message = (x > y) ? "Yes" : "No"; // "Yes" (Ternary)</code></pre>
+</div>
     </div>
 
     <div id="tuesday-content-week3" class="day-content day-section">
         <h2>Techie Tuesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Control & Functions in Action — The Heartbeat of JavaScript!</h3>
+    <p>JavaScript isn’t just about writing lines of code — it’s about controlling how your program behaves and organizing it smartly using functions! Let’s break it down.</p>
+    <h4>Control Statements — The Decision Makers</h4>
+    <p>Control statements decide what happens next in your code, giving it intelligence and flow.</p>
+
+    <h5>Types of Control Flow:</h5>
+    <h6>If / Else (Conditional Decisions):</h6>
+    <pre><code>if (score > 50) {
+  console.log("You passed!");
+} else {
+  console.log("Try again!");
+}</code></pre>
+
+    <h6>Switch (Multiple Choices)</h6>
+    <pre><code>switch (day) {
+  case "Monday": console.log("Start strong!"); break;
+  case "Friday": console.log("Weekend mood!"); break;
+  default: console.log("Keep going!");
+}</code></pre>
+
+    <h6>Loops (Efficient Repetition):</h6>
+    <ul>
+        <li><strong>for</strong> → Repeat a fixed number of times.</li>
+        <li><strong>while</strong> → Repeat while a condition remains true.</li>
+        <li><strong>forEach()</strong> → Loop through arrays with modern style!</li>
+    </ul>
+    <h4>Functions — The Power Units of JavaScript:</h4>
+    <p>Functions are **reusable blocks of code** that perform a specific task when called, promoting organization.</p>
+
+    <h5>Types of Functions:</h5>
+    <h6>Function Declaration (Traditional)</h6>
+    <pre><code>function greet() {
+  console.log("Hello, Coders Club!");
+}
+greet();</code></pre>
+
+    <h6>Function Expression (Assigned to a variable)</h6>
+    <pre><code>const greet = function() {
+  console.log("Hi there!");
+};</code></pre>
+
+    <h6>Arrow Function (Modern, concise syntax)</h6>
+    <pre><code>const greet = () => console.log("Welcome!");</code></pre>
+    <h4>Why They Matter:</h4>
+    <ul>
+        <li>Make code reusable and organized (Functions).</li>
+        <li>Improve readability and modularity.</li>
+        <li>Control how and when actions happen (Control Statements).</li>
+    </ul>
+    <blockquote>
+        In Short:<br>
+        Control statements decide the flow, Functions define the action!
+    </blockquote>
+    <p>Together, they make JavaScript smart, dynamic, and alive</p>
+    <h3>Control Statements – The Decision Makers:</h3>
+    <p>Control statements determine the execution path of your code based on conditions, deciding what happens next.</p>
+    
+    <h4>Types of Control Flow:</h4>
+    <h4>If/Else (Conditional Logic):</h4>
+    <pre><code>// Decide between two paths
+    if (score > 50) {
+        console.log("You passed!");
+    } else {
+        console.log("Try again!");
+    }</code></pre>
+    
+    <h4>Switch (Handling Multiple Cases):</h4>
+    <pre><code>// Choose one path from many based on a value
+    switch (day) {
+        case "Monday": 
+            console.log("Start strong!"); 
+            break; // break is crucial to prevent fall-through
+        case "Friday": 
+            console.log("Weekend mood!"); 
+            break;
+        default: 
+            console.log("Keep going!");
+    }</code></pre>
+    
+    <h4>Loops (Repetition):</h4>
+    <ul>
+        <li>for: Repeat a fixed number of times.</li>
+        <li>while: Repeat while a specific condition is true.</li>
+        <li>forEach(): Loops through arrays with a concise, modern style.</li>
+    </ul>
+    <h3>2️Functions – The Power Units of JavaScript:</h3>
+    <p>Functions are reusable blocks of code that perform a specific task when they are 'called' or invoked, making code modular.</p>
+    
+    <h4>Function Declaration (Traditional):</h4>
+    <pre><code>function greet() {
+        console.log("Hello, Coders Club!");
+    }
+    greet(); // Invoke the function</code></pre>
+    
+    <h4>Function Expression (Assigned to a Variable)</h4>
+    <pre><code>const greet = function() {
+        console.log("Hi there!");
+    };</code></pre>
+    
+    <h4>Arrow Function (Modern & Concise):</h4>
+    <pre><code>const greet = () => console.log("Welcome!"); 
+    // Single expression body doesn't need return or curly braces
+    </code></pre>
+    <h3>Why They Matter:</h3>
+    <ul>
+        <li>Make code reusable and organized (Functions).</li>
+        <li>Improve readability and modularity.</li>
+        <li>Control how and when actions happen (Control Statements).</li>
+    </ul>
+</div>
     </div>
 
-    <div id="wednesday-content-week2" class="day-content day-section">
+    <div id="wednesday-content-week3" class="day-content day-section">
         <h2>Syntax Snapshots Wednesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Arrays & Objects: Organizing Data in JavaScript!</h3>
+
+    <p>In JavaScript, arrays and objects are the backbone of data handling. They help you store, organize, and access information easily — from simple lists to complex data structures.</p>
+    <h4>Arrays:</h4>
+    <ul>
+        <li>Definition: Store ordered collections of values.</li>
+        <li>Access: Accessed using a numeric index (starting from 0).</li>
+        <li>Analogy: Like a list of students in a class.</li>
+    </ul>
+    <pre><code>const students = ["Alice", "Bob", "Charlie"];
+console.log(students[0]); // "Alice"</code></pre>
+    <h4>Objects:</h4>
+    <ul>
+        <li>Definition: Store data as key–value pairs.</li>
+        <li>Access: Accessed using the key (a string) via dot or bracket notation.</li>
+        <li>Analogy: Like a student’s details (name, age, marks).</li>
+    </ul>
+
+    <pre><code>const studentDetails = {
+    name: "Alice",
+    age: 21,
+    marks: 95
+};
+console.log(studentDetails.name); // "Alice"</code></pre>
+    <h4>With Arrays and Objects, you can:</h4>
+    <ul>
+        <li>Manage large sets of data effectively.</li>
+        <li>Build dynamic and complex web applications.</li>
+        <li>Work with APIs and databases efficiently (data is often returned as JSON, which is based on these structures).</li>
+    </ul>
+
+    <blockquote>
+Tip: Mastering arrays and objects makes you a stronger JavaScript developer — try using them in your next mini project or portfolio site!
+    </blockquote>
+</div>
     </div>
 
     <div id="thursday-content-week3" class="day-content day-section">
         <h2>Te Ta Thursday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>DOM in JavaScript — Simple Blog:</h3>
+    <h3>What is DOM?</h3>
+    <p><strong>DOM (Document Object Model)</strong> is a tree-like structure created by the browser for every webpage. It represents all the HTML elements as objects, allowing JavaScript to access, change, or delete them.</p>
+    <h3>Why it’s Important</h3>
+    <ul>
+        <li>Makes web pages dynamic and interactive.</li>
+        <li>Allows content updates without reloading the page.</li>
+        <li>Enables event handling (like responding to button clicks or form submissions).</li>
+    </ul>
+    <h3>Common DOM Methods</h3>
+    <h4>// Select Elements</h4>
+    <pre><code>document.getElementById("demo");
+document.querySelector(".box");
+document.querySelectorAll("p");</code></pre>
+
+    <h4>// Change Content & Style</h4>
+    <pre><code>element.textContent = "Hello World"; // Change text content
+element.innerHTML = "&lt;b&gt;New HTML&lt;/b&gt;"; // Change content including HTML tags
+element.style.color = "blue"; // Change CSS style</code></pre>
+
+    <h4>// Create and Add New Element</h4>
+    <pre><code>const p = document.createElement("p"); // Create a new element node
+p.textContent = "New Paragraph";
+document.body.appendChild(p); // Add the new element to the body of the document</code></pre>
+    <h3>Event Example:</h3>
+    <pre><code>document.getElementById("btn").addEventListener("click", () => {
+    alert("Button Clicked!");
+});</code></pre>
+    <h3>Summary</h3>
+    <p>The DOM connects HTML and JavaScript, turning static pages into interactive web apps. Learning DOM helps you control content, style, and behavior dynamically. Master the DOM, master the web!</p>
+</div>
     </div>
 
     <div id="friday-content-week3" class="day-content day-section">
         <h2>Function Friday</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
+            <h3>Mini Project - To Do List using JavaScript:</h3>
+            <p><strong>What is a To Do List App?</strong><br>
+                A To Do List app is a simple yet powerful tool that helps users manage their tasks and stay organized. With
+                JavaScript, you can create a dynamic and interactive app that allows users to add, remove, and edit tasks.</p>
+            <h4>Key Characteristics:</h4>
+            <ul>
+                <li>Task Management: Allows users to add, remove, and edit tasks.</li>
+                <li>Dynamic UI: Updates the task list in real-time as users interact with the app (e.g., adding an item
+                    instantly appears).</li>
+                <li>Data Storage: Stores tasks locally (using Local Storage) so they persist even when the browser is
+                    closed.</li>
+                <li>Filtering and Sorting: Allows users to filter and sort tasks based on different criteria (e.g.,
+                    completed vs. pending).</li>
+            </ul>
+            <h4>Benefits:</h4>
+            <ul>
+                <li>Task Management: Helps users stay organized and focused on their tasks.</li>
+                <li>Time-Saving: Allows users to quickly add and manage tasks.</li>
+                <li>Productivity: Boosts productivity by providing a clear overview of tasks and deadlines.</li>
+            </ul>
+            <h4>Code Examples and Templates:</h4>
+            <ul>
+                <li>CodePen 💻: <a href="https://codepen.io/">https://codepen.io/</a> (Front-end development community with
+                    many To Do List examples)</li>
+                <li>W3Schools: <a href="https://www.w3schools.com/">https://www.w3schools.com/</a> (HTML, CSS, JavaScript examples for To Do List app)</li>
+                <li>JavaScript Tutorial: <a
+                        href="https://www.javascripttutorial.net/">https://www.javascripttutorial.net/</a> (JavaScript tutorials and examples for To Do List app)</li>
+            </ul>
+        
+            <h4>Inspiration and Design Ideas:</h4>
+            <ul>
+                <li>Todoist: <a href="https://todoist.com/">https://todoist.com/</a> (Popular To Do List app with a clean
+                    and intuitive design)</li>
+                <li>Trello: <a href="https://trello.com/">https://trello.com/</a> (Project management tool with a Kanban
+                    board layout)</li>
+                <li>Dribbble: <a href="https://dribbble.com/">https://dribbble.com/</a> (Design inspiration for To Do
+                    List apps)</li>
+            </ul>
+        
+            <h4>Tutorials and Guides:</h4>
+            <ul>
+                <li>FreeCodeCamp: <a href="https://www.freecodecamp.org/">https://www.freecodecamp.org/</a> (Interactive
+                    coding tutorials, including JavaScript and To Do List app development)</li>
+                <li>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a> (Coding
+                    tutorials, including JavaScript and To Do List app development)</li>
+                <li>MDN Web Docs: <a href="https://developer.mozilla.org/en-US/">https://developer.mozilla.org/en-US/</a>
+                    (Comprehensive documentation on JavaScript and web development)</li>
+            </ul>
+        
+            <p>Get started with your To Do List app project and have fun building!</p>
+            <h3>Task Answer: To Do List Implementation Example</h3>
+            
+            <p>This example provides the basic HTML structure, minimal CSS, and the core JavaScript logic for adding tasks and saving/loading data using Local Storage.</p>
+            
+            <h4>1. <strong>index.html</strong> (UI Structure)</h4>
+            <pre><code>&lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;JS To Do List&lt;/title&gt;
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="container"&gt;
+                    &lt;h1&gt;My To Do List&lt;/h1&gt;
+                    &lt;div class="input-group"&gt;
+                        &lt;input type="text" id="task-input" placeholder="Add a new task..."&gt;
+                        &lt;button id="add-button"&gt;Add&lt;/button&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;ul id="task-list"&gt;
+                        &lt;!-- Tasks will be listed here --&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                
+                &lt;script src="script.js"&gt;&lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</code></pre>
+            
+            <h4>2. <strong>style.css</strong> (Minimal Styling)</h4>
+            <pre><code>body {
+                font-family: sans-serif;
+                background-color: #f0f0f5;
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+            }
+            .container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                max-width: 450px;
+                width: 100%;
+            }
+            .input-group {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            #task-input {
+                flex-grow: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            #add-button {
+                padding: 10px 15px;
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            #task-list {
+                list-style: none;
+                padding: 0;
+            }
+            #task-list li {
+                background: #f9f9f9;
+                padding: 10px;
+                border-radius: 4px;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-left: 5px solid #5cb85c;
+            }</code></pre>
+            
+            <h4>3. <strong>script.js</strong> (Core Logic)</h4>
+            <pre><code>const taskInput = document.getElementById('task-input');
+            const addButton = document.getElementById('add-button');
+            const taskList = document.getElementById('task-list');
+            const STORAGE_KEY = 'todoListTasks';
+            
+            // Load tasks from local storage on page load
+            document.addEventListener('DOMContentLoaded', loadTasks);
+            
+            // Event listener for adding a task
+            addButton.addEventListener('click', addTask);
+            taskInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+            
+            function addTask() {
+                const taskText = taskInput.value.trim();
+            
+                if (taskText === "") {
+                    alert("Task cannot be empty!");
+                    return;
+                }
+            
+                createTaskElement(taskText);
+                saveTasks();
+                taskInput.value = ''; // Clear input
+            }
+            
+            function createTaskElement(text) {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    &lt;span&gt;${text}&lt;/span&gt;
+                    &lt;button onclick="removeTask(this)"&gt;Remove&lt;/button&gt;
+                `;
+                taskList.appendChild(li);
+            }
+            
+            function removeTask(buttonElement) {
+                const li = buttonElement.parentNode;
+                taskList.removeChild(li);
+                saveTasks();
+            }
+            
+            // Save tasks to Local Storage
+            function saveTasks() {
+                const tasks = [];
+                taskList.querySelectorAll('li span').forEach(span => {
+                    tasks.push(span.textContent);
+                });
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+            }
+            
+            // Load tasks from Local Storage
+            function loadTasks() {
+                const storedTasks = localStorage.getItem(STORAGE_KEY);
+                if (storedTasks) {
+                    const tasks = JSON.parse(storedTasks);
+                    tasks.forEach(text => {
+                        createTaskElement(text);
+                    });
+                }
+            }</code></pre>
         </div>
     </div>
     <div id="saturday-content-week3" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 3 Quiz coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>1. Which of the following JavaScript variable declarations is block-scoped and can be reassigned a new value
+        later in the code?</h3>
+    <ol>
+        <li>const count = 10;</li>
+        <li>var total = 50;</li>
+        <li><strong>let index = 0;</strong></li>
+        <li>let PI = 3.14;</li>
+    </ol>
+    <h3>2. Which of the following code snippets correctly demonstrates a JavaScript Function Expression?</h3>
+    <ol>
+        <li>
+            <pre><code>function calculate(a, b) {
+return a + b;
+}</code></pre>
+        </li>
+        <li>
+            <pre><code>const multiply = (a, b) => a * b;</code></pre>
+        </li>
+        <li>
+            <strong>
+                <pre><code>const subtract = function(a, b) {
+return a - b;
+};</code></pre>
+            </strong>
+        </li>
+        <li>
+            <pre><code>if (value > 10) {
+// code block
+}</code></pre>
+        </li>
+    </ol>
+    <h3>3. Which of the following data structures in JavaScript is primarily used to store ordered collections of items,
+        such as a list of names or scores?</h3>
+    <ol>
+        <li>Function</li>
+        <li><strong>Array</strong></li>
+        <li>Boolean</li>
+        <li>Object</li>
+    </ol>
+    <h3>4. What is the primary method used in JavaScript to attach a function that will execute when a specific event,
+        like a button click, occurs on an HTML element?</h3>
+    <ol>
+        <li>element.querySelector("click", myFunction)</li>
+        <li>document.getElementById("btn").onclick = myFunction</li>
+        <li><strong>element.addEventListener("click", myFunction)</strong></li>
+        <li>element.textContent("click", myFunction)</li>
+    </ol>
+    <h3>5. Write the complete HTML, CSS, and JavaScript code for a basic To-Do List application.</h3>
+    <strong>Your solution must allow users to:</strong>
+    <ol>
+        <li>Add new tasks.</li>
+        <li>Toggle a task as complete (e.g., using a strikethrough).</li>
+        <li>Delete a task.</li>
+    </ol>
+    <h4>Expected Answer: </h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;To-Do List App&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-100 min-h-screen flex items-start justify-center p-4"&gt;
+
+    &lt;div id="todo-app" class="bg-white p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-md mt-10"&gt;
+        &lt;h1 class="text-3xl font-extrabold mb-6 text-gray-800 text-center"&gt;My To-Do List&lt;/h1&gt;
+
+        &lt;!-- Input Area --&gt;
+        &lt;div class="flex space-x-3 mb-6"&gt;
+            &lt;input type="text" id="task-input" placeholder="Add a new task..." 
+                   class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 shadow-inner"&gt;
+            &lt;button onclick="addTask()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-md transition duration-200"&gt;
+                Add
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Task List --&gt;
+        &lt;ul id="task-list" class="space-y-3"&gt;
+            &lt;!-- Tasks will be added here --&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        document.addEventListener('DOMContentLoaded', () => {
+            const taskInput = document.getElementById('task-input');
+            const taskList = document.getElementById('task-list');
+
+            // Allow adding tasks with the Enter key
+            taskInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+
+            // Handle task interaction (toggle and delete) using event delegation
+            taskList.addEventListener('click', (e) => {
+                const target = e.target;
+                const listItem = target.closest('li');
+
+                if (!listItem) return; // Clicked outside a list item
+
+                // 1. Delete Task
+                if (target.classList.contains('delete-btn')) {
+                    listItem.remove();
+                } 
+                // 2. Toggle Completion (click on the text/main area of the task)
+                else if (target.classList.contains('task-text')) {
+                    listItem.classList.toggle('completed');
+                }
+            });
+        });
+
+        function addTask() {
+            const taskInput = document.getElementById('task-input');
+            const taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                // Using a custom message box instead of alert()
+                console.log("Task cannot be empty.");
+                return;
+            }
+
+            const taskList = document.getElementById('task-list');
+
+            // Create new list item
+            const listItem = document.createElement('li');
+            listItem.className = 'flex items-center justify-between bg-white p-4 border border-gray-200 rounded-lg shadow-sm transition duration-150 ease-in-out';
+
+            // Task text element (clickable for toggling)
+            const taskSpan = document.createElement('span');
+            taskSpan.textContent = taskText;
+            taskSpan.className = 'task-text flex-grow cursor-pointer text-gray-700';
+
+            // Delete button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '✕';
+            deleteButton.className = 'delete-btn ml-4 text-red-500 hover:text-red-700 font-bold transition duration-150';
+
+            // Assemble the list item
+            listItem.appendChild(taskSpan);
+            listItem.appendChild(deleteButton);
+            taskList.appendChild(listItem);
+
+            // Clear the input field
+            taskInput.value = '';
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+</div>
+
     </div>
 </div>
 
@@ -957,43 +2217,617 @@ pre code {
 
     <div id="monday-content-week4" class="day-content day-section">
         <h2>Monday Maverick</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Modern Javascript (ES6): Let, Const, and Arrow Functions:</h3>
+    <h4>1. <strong>let</strong></h4>
+    <ul>
+        <li>Used to declare block-scoped variables (only accessible within `{ }`).</li>
+        <li>Can be reassigned, but **not redeclared** in the same scope.</li>
+    </ul>
+
+    <h5>Example:</h5>
+    <pre><code>let count = 10;
+count = 20; // allowed
+// let count = 30; // NOT allowed (redeclaration)</code></pre>
+    <h4>2. <strong>const</strong></h4>
+    <ul>
+        <li>Declares constant variables (the identifier cannot be reassigned).</li>
+        <li>Also block-scoped.</li>
+        <li>Note: For objects and arrays, the content can still be modified, but the variable itself cannot be pointed to a new object/array.</li>
+    </ul>
+
+    <h5>Example:</h5>
+    <pre><code>const PI = 3.14;
+// PI = 3.1415; // NOT allowed (reassignment)
+
+const settings = { theme: 'dark' };
+settings.theme = 'light'; // Allowed (modifying content)</code></pre>
+    <h4>3. Arrow Functions (<strong>=></strong>)</h4>
+    <ul>
+        <li>Provides a shorter, cleaner syntax for writing functions.</li>
+        <li>Crucially, they do not bind their own <strong>this</strong> value, inheriting it from the surrounding code (lexical <strong>this</strong>).</li>
+    </ul>
+
+    <h5>Example:</h5>
+    <pre><code>// Concise function for addition
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
+
+// Function with single parameter (parentheses optional)
+const double = num => num * 2;</code></pre>
+    <h4>In short:</h4>
+    <ul>
+        <li><strong>let</strong> → flexible, block-scoped, reassignable.</li>
+        <li><strong>const</strong> → fixed, block-scoped, immutable identifier.</li>
+        <li><strong>=></strong> → concise, modern way to write functions with lexical <strong>this</strong>.</li>
+    </ul>
+</div>
     </div>
 
     <div id="tuesday-content-week4" class="day-content day-section">
         <h2>Techie Tuesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
+<div class="content-block">
+    <h3>Destructuring, Spread, and Template Literals in JavaScript:</h3>
+    <h4>1. Destructuring</h4>
+    <p>Destructuring allows you to unpack values from arrays or properties from objects into separate, readable
+        variables.</p>
+    <ul>
+        <li><strong>Use Case:</strong> Simplifies variable assignment and improves code readability.</li>
+    </ul>
+    <h5>Example:</h5>
+    <pre><code>// Array Destructuring
+const numbers = [10, 20, 30];
+const [a, b, c] = numbers;
+console.log(a); // 10
+
+// Object Destructuring
+const user = { name: "Bala", age: 21 };
+const { name, age } = user;
+console.log(name); // Bala</code></pre>
+    <h4>2. Spread Operator (...)</h4>
+    <p>The Spread Operator allows an iterable (like an array or object) to be expanded into its individual elements or key-value pairs.</p>
+    <ul>
+        <li><strong>Use Case:</strong> Useful for copying, merging, and passing data dynamically (e.g., merging two arrays or adding properties to an object).</li>
+    </ul>
+    <h5>Example:</h5>
+    <pre><code>// Array Spread (Merging)
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // [1, 2, 3, 4, 5]
+
+// Object Spread (Copying and Extending)
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };
+console.log(obj2); // { a: 1, b: 2, c: 3 }</code></pre>
+    <h4>3. Template Literals</h4>
+    <p>Template literals allow embedding variables and expressions inside strings using backticks (`` ` ``) and <strong>${}</strong> placeholders.</p>
+    <ul>
+        <li><strong>Use Case:</strong> Makes string concatenation cleaner, more readable, and flexible, especially for
+            multi-line strings.</li>
+    </ul>
+    <h5>Example:</h5>
+    <pre><code>const name = "Bala";
+const age = 21;
+console.log(`My name is ${name} and I am ${age} years old.`);
+// Output: My name is Bala and I am 21 years old.</code></pre>
+    <h4>Summary:</h4>
+    <ul>
+        <li>Destructuring→ Extract values easily.</li>
+        <li>Spread→ Expand and merge data efficiently.</li>
+        <li>Template Literals→ Create dynamic and readable strings.</li>
+    </ul>
+    <p><strong>Video Reference:</strong> <a href="https://youtu.be/9BaqW4mlCXk?si=MJcxf5mb67bc9wx5">Modern JavaScript Features (Destructuring, Spread, Template Literals)</a></p>
+</div>
+<div class="quiz-container">
+    <h3>Question:</h3>
+    <div class="question-block">
+        <p>1. Which JavaScript feature helps you write cleaner and more dynamic strings?</p>
+        <div class="options">
+            <div class="quiz-option" data-question="q3" data-value="a">A. Destructuring</div>
+            <div class="quiz-option" data-question="q3" data-value="b">B. Spread Operator</div>
+            <div class="quiz-option" data-question="q3" data-value="c">C. Template Literals</div>
+            <div class="quiz-option" data-question="q3" data-value="d">D. None Of the above</div>
         </div>
+        <div class="quiz-feedback"></div>
+    </div>
+</div>
     </div>
 
     <div id="wednesday-content-week4" class="day-content day-section">
         <h2>Syntax Snapshots Wednesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
+<div class="content-block">
+    <h3>Async JavaScript: Promises & Async/Await:</h3>
+    <p>In JavaScript, not everything happens instantly — some tasks (like fetching data or loading APIs) take time. That's where asynchronous programming comes in!</p>
+
+    <h4>Promises:</h4>
+    <ul>
+        <li>Purpose: Handle tasks that take time and let you run code only after they are successfully completed or have failed.</li>
+        <li>States: A Promise can be Pending (waiting), Fulfilled (successful), or Rejected (failed).
+        </li>
+        <li>Example: Fetching data from a server using <strong>.then()</strong> and <strong>.catch()</strong> to handle success and failure.</li>
+    </ul>
+    <h4>Async/Await:</h4>
+    <ul>
+        <li>Purpose: A cleaner, modern way to write Promise-based asynchronous code.</li>
+        <li>Benefit: It allows you to write asynchronous code that *looks* synchronous, making it easier to read and
+            debug, while still running efficiently in the background.</li>
+    </ul>
+
+    <p><strong>Syntax Example:</strong></p>
+    <pre><code>async function getData() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch failed:', error);
+  }
+}</code></pre>
+    <h4>Why Use Async JS?</h4>
+    <ul>
+        <li>Load data smoothly without freezing the user interface (non-blocking).</li>
+        <li>Handle multiple tasks at once efficiently.</li>
+        <li>Make your apps faster and user-friendly.</li>
+    </ul>
+
+    <blockquote>
+        Tip: Try using <strong>async</strong> and <strong>await</strong> when fetching APIs in your next project — it'll make your code look neat and professional!
+    </blockquote>
+</div>
+<div class="quiz-container">
+    <h3>Question:</h3>
+    <div class="question-block">
+        <p>1. What is the main purpose of asynchronous JavaScript?</p>
+        <div class="options">
+            <div class="quiz-option" data-question="q2" data-value="a">A. To run code line by line without delay</div>
+            <div class="quiz-option" data-question="q2" data-value="b">B. To handle tasks that take time without blocking the main thread</div>
+            <div class="quiz-option" data-question="q2" data-value="c">C. To make JavaScript faster in all cases</div>
+            <div class="quiz-option" data-question="q2" data-value="d">D. To replace loops in JavaScript</div>
         </div>
+        <div class="quiz-feedback"></div>
+    </div>
+</div>
     </div>
 
     <div id="thursday-content-week4" class="day-content day-section">
         <h2>Te Ta Thursday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Modules & Imports/Exports in JavaScript:</h3>
+    <p><strong>What are Modules? </strong>: Modules are like separate files that contain related code. They help keep
+        your project organized and make it easier to reuse code.</p>
+    <h4>Exports & Imports:</h4>
+    <ul>
+        <li><strong>Exports:</strong> When you want to share something from one module with another, you use exports. Think of it like sharing a toy with a friend.</li>
+        <li><strong>Imports:</strong> When you want to use something from another module, you import it. It's like
+            borrowing a toy from a friend.</li>
+    </ul>
+
+    <h4>Why Use Modules?</h4>
+    <ul>
+        <li>Keeps your code tidy and easy to understand.</li>
+        <li>Makes it easy to reuse code.</li>
+        <li>Helps teams work together more smoothly.</li>
+    </ul>
+    <h4>Types of Exports:</h4>
+    <ul>
+        <li><strong>Named Exports:</strong> Share specific things like functions or variables.</li>
+        <li><strong>Default Exports:</strong> Share one main thing (often a class or function) from the file.</li>
+    </ul>
+
+    <h4>Example:</h4>
+    <h5>Named Export/Import:</h5>
+    <pre><code>// math.js (Export)
+export function add(x, y) { return x + y; }
+
+// app.js (Import)
+import { add } from './math.js';</code></pre>
+
+    <h5>Default Export/Import:</h5>
+    <pre><code>// Calculator.js (Export)
+export default class Calculator { 
+    // ... class methods 
+} 
+// app.js (Import)
+import Calculator from './Calculator.js';</code></pre>
+
+    <p>Modules make coding easier and more fun!</p>
+</div>
     </div>
 
     <div id="friday-content-week4" class="day-content day-section">
         <h2>Function Friday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Mini Project - Weather App with API</h3>
+    <p><strong>What is a Weather App?</strong>: A weather app is a software application that provides current and
+        forecasted weather conditions for a specific location. It uses data from weather APIs to display information
+        like temperature, humidity, wind speed, and more.</p>
+
+    <p><strong>How Does it Work?</strong>: A weather app sends a request to a weather API, which returns data in JSON
+        format. The app then parses this data and displays it to the user in a user-friendly format.</p>
+
+    <p><strong>Project Goal:</strong> Create a simple weather app that shows the current weather and forecast for a city.</p>
+    <h4>What You'll Learn:</h4>
+    <ul>
+        <li>How to fetch data from an API</li>
+        <li>How to display data on your app</li>
+        <li>How to handle errors and make your app more robust</li>
+    </ul>
+
+    <h4>Task List:</h4>
+    <ol>
+        <li>Choose a weather API and sign up for an API key</li>
+        <li>Create a basic UI with HTML and CSS</li>
+        <li>Write JavaScript code to fetch data from the API</li>
+        <li>Parse JSON data and display it on the UI</li>
+        <li>Add error handling and make your app more user-friendly</li>
+        <li>Deploy your app and share it with friends!</li>
+    </ol>
+    <h4>Resources to Refer:</h4>
+    <ul>
+        <li>OpenWeatherMap API</li>
+        <li>WeatherAPI</li>
+        <li>JavaScript Fetch API Tutorial</li>
+        <li>HTML/CSS Tutorial</li>
+        <li>Async/Await Tutorial</li>
+    </ul>
+
+    <h4>Tips and Tricks:</h4>
+    <ul>
+        <li>Use <strong>async/await</strong> to handle API calls smoothly</li>
+        <li>Use <strong>try-catch</strong> blocks to handle errors</li>
+        <li>Make your app responsive and user-friendly</li>
+    </ul>
+    <p>Get started and build a cool weather app!</p><br>
+
+    <h3>Task Answer: Implementation Example (Steps 1-4)</h3>
+    <p>This is a foundational example covering the basic HTML, CSS, and JavaScript required to fetch and display weather data using a placeholder for the OpenWeatherMap API.</p>
+    <h4>1. <strong>index.html</strong> (UI Structure)</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Basic Weather App&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Current Weather &lt;/h1&gt;
+        &lt;div class="search-section"&gt;
+            &lt;input type="text" id="city-input" placeholder="Enter city (e.g., London)"&gt;
+            &lt;button id="search-button"&gt;Get Weather&lt;/button&gt;
+        &lt;/div&gt;
+        
+        &lt;div id="weather-details" class="details-section"&gt;
+            &lt;!-- Weather data will be displayed here --&gt;
+            &lt;p&gt;Enter a city and click 'Get Weather' to see results.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>2. <strong>style.css</strong> (Basic Styling)</h4>
+    <pre><code>body {
+    font-family: sans-serif;
+    background-color: #e6f7ff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#city-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+}
+#search-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.details-section {
+    padding: 15px;
+    border: 1px solid #b3e0ff;
+    border-radius: 6px;
+    min-height: 100px;
+    text-align: center;
+}
+.error {
+    color: red;
+}</code></pre>
+
+    <h4>3. <strong>script.js</strong> (Fetch and Display Logic)</h4>
+    <pre><code>// IMPORTANT: Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+const API_KEY = 'YOUR_API_KEY'; 
+const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+const searchButton = document.getElementById('search-button');
+const cityInput = document.getElementById('city-input');
+const weatherDetailsDiv = document.getElementById('weather-details');
+
+async function fetchWeatherData(city) {
+    const url = `${BASE_URL}?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`;
+    
+    // 3. Write JavaScript code to fetch data from the API 📡
+    // 5. Use try-catch blocks for error handling
+    try {
+        weatherDetailsDiv.innerHTML = '&lt;p&gt;Fetching weather data...&lt;/p&gt;'; // Loading state
+
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            // Check for city not found or other API errors
+            const errorData = await response.json();
+            throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json(); // 4. Parse JSON data 
+
+        displayWeather(data); // Display data
+
+    } catch (error) {
+        console.error("Fetch error:", error);
+        weatherDetailsDiv.innerHTML = `&lt;p class="error"&gt;Error: Could not retrieve weather for "${city}". Please check the city name and your API key. (${error.message})&lt;/p&gt;`;
+    }
+}
+
+// Helper function to display the weather details
+function displayWeather(data) {
+    const tempC = Math.round(data.main.temp);
+    const description = data.weather[0].description;
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+    weatherDetailsDiv.innerHTML = `
+        &lt;h2&gt;${data.name}, ${data.sys.country}&lt;/h2&gt;
+        &lt;img src="${iconUrl}" alt="${description}"&gt;
+        &lt;h1&gt;${tempC}°C&lt;/h1&gt;
+        &lt;p&gt;${description.charAt(0).toUpperCase() + description.slice(1)}&lt;/p&gt;
+        &lt;p&gt;Humidity: ${data.main.humidity}% | Wind: ${data.wind.speed} m/s&lt;/p&gt;
+    `;
+}
+
+// Event listener for the search button
+searchButton.addEventListener('click', () => {
+    const city = cityInput.value.trim();
+    if (city) {
+        fetchWeatherData(city);
+    } else {
+        weatherDetailsDiv.innerHTML = '&lt;p class="error"&gt;Please enter a city name!&lt;/p&gt;';
+    }
+});
+
+// Load a default city on page load
+document.addEventListener('DOMContentLoaded', () => {
+    fetchWeatherData('Tokyo'); 
+});</code></pre>
+
+</div>
     </div>
     <div id="saturday-content-week4" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 4 Quiz coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>1. Which of the following statements about let, const, and Arrow Functions in modern JavaScript (ES6) is TRUE?</h3>
+    <ol>
+        <li>A variable declared with const can be reassigned within the same block scope.</li>
+        <li>Variables declared with let are globally scoped, similar to var.</li>
+        <li><strong>Arrow Functions (using the =&gt; syntax) do not bind their own this value.</strong></li>
+        <li>Variables declared with let can be redeclared multiple times in the same scope.
+        </li>
+    </ol>
+    <h3>2. Which of the following is the primary use case of the Spread Operator (...) in
+        JavaScript?</h3>
+    <ol>
+        <li>To embed expressions and variables directly within a string.</li>
+        <li>To extract values from an array or properties from an object into separate variables.</li>
+        <li>To define a variable that cannot be reassigned (a constant).</li>
+        <li><strong>To expand an iterable into its individual elements for tasks like copying or merging data.</strong>
+        </li>
+    </ol>
+    <h3>3. Consider the following JavaScript code using const:
+        <pre><code>const user = { name: "Bob", age: 21 };
+user.age = 22;</code></pre> What is the result of the second line of code?
+    </h3>
+    <ol>
+        <li>It causes a TypeError because you are trying to reassign a const variable.</li>
+        <li>It silently fails and the age remains 21.</li>
+        <li><strong>It successfully changes the age property of the object to 22.</strong></li>
+        <li>It converts user from an object to a primitive type.</li>
+    </ol>
+    <h3>4. What is the main role of a web browser in displaying a website?</h3>
+    <ol>
+        <li>To create the initial HTML and CSS files.</li>
+        <li>To host and store the website's data.</li>
+        <li>To execute server-side code like Python or Node.js.</li>
+        <li><strong>To interpret HTML, CSS, and JavaScript to render the content visually.</strong></li>
+    </ol>
+    <h3>5. Task: Write the HTML code for,</h3>
+    <ol>
+        <li> Choose a weather API and sign up for an API key.</li>
+        <li> Create a basic UI with HTML and CSS.</li>
+        <li> Write JavaScript code to fetch data from the API.</li>
+        <li> Parse JSON data and display it on the UI.</li>
+        <li> Add error handling and make your app more user-friendly.</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Basic Weather App&lt;/title&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        /* Custom styles for aesthetic appeal */
+        .weather-card {
+            background: linear-gradient(135deg, #4c51bf, #7f9cf5);
+            color: white;
+        }
+        .loading-ring {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-100 min-h-screen flex items-center justify-center p-4"&gt;
+
+    &lt;div id="app" class="w-full max-w-md"&gt;
+        &lt;div class="bg-white p-6 rounded-xl shadow-2xl"&gt;
+            &lt;h1 class="text-3xl font-extrabold mb-6 text-gray-800 text-center"&gt;Simple Weather Viewer&lt;/h1&gt;
+
+            &lt;!-- Search Input --&gt;
+            &lt;div class="flex space-x-3 mb-6"&gt;
+                &lt;input type="text" id="city-input" placeholder="Enter city name..." value="London"
+                       class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 shadow-inner"&gt;
+                &lt;button onclick="getWeather()" id="fetch-button"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-md transition duration-200 flex items-center justify-center"&gt;
+                    &lt;span id="button-text"&gt;Get Weather&lt;/span&gt;
+                    &lt;div id="loading-spinner" class="loading-ring hidden"&gt;&lt;/div&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Weather Display Card --&gt;
+            &lt;div id="weather-display" class="weather-card p-6 rounded-xl shadow-lg text-center"&gt;
+                &lt;p class="text-lg font-medium" id="city-name"&gt;Enter a city to see the weather&lt;/p&gt;
+                &lt;h2 class="text-6xl font-bold my-4" id="temperature"&gt;--°C&lt;/h2&gt;
+                &lt;p class="text-xl font-semibold mb-2" id="description"&gt;&lt;/p&gt;
+                &lt;p id="humidity"&gt;Humidity: --%&lt;/p&gt;
+                &lt;p id="wind-speed"&gt;Wind: -- m/s&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Error Message Box --&gt;
+            &lt;div id="error-message" class="hidden mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // NOTE: Replace this with your actual OpenWeatherMap API key.
+        const API_KEY = 'YOUR_MOCK_API_KEY'; // MUST replace with a valid key for actual use.
+        const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+        const cityInput = document.getElementById('city-input');
+        const weatherDisplay = document.getElementById('weather-display');
+        const errorDiv = document.getElementById('error-message');
+        const buttonText = document.getElementById('button-text');
+        const loadingSpinner = document.getElementById('loading-spinner');
+
+        // Utility function for setting loading state
+        function setLoading(isLoading) {
+            document.getElementById('fetch-button').disabled = isLoading;
+            if (isLoading) {
+                buttonText.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+            } else {
+                buttonText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+
+        // Utility function for showing errors
+        function showError(message) {
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            // Reset weather display on error
+            document.getElementById('city-name').textContent = 'Error fetching weather';
+            document.getElementById('temperature').textContent = '--°C';
+            document.getElementById('description').textContent = '';
+            document.getElementById('humidity').textContent = 'Humidity: --%';
+            document.getElementById('wind-speed').textContent = 'Wind: -- m/s';
+        }
+
+        function clearError() {
+            errorDiv.classList.add('hidden');
+            errorDiv.textContent = '';
+        }
+
+        async function getWeather() {
+            clearError();
+            const city = cityInput.value.trim();
+
+            if (!city) {
+                showError("Please enter a city name.");
+                return;
+            }
+
+            setLoading(true);
+
+            // Construct the full API URL
+            const url = `${BASE_URL}?q=${city}&units=metric&appid=${API_KEY}`;
+            
+            try {
+                // Fetch data from the API
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (response.status !== 200) {
+                    showError(data.message || 'City not found or API error.');
+                    return;
+                }
+
+                // Parse and Display Data (Task 4)
+                const temperature = Math.round(data.main.temp);
+                const description = data.weather[0].description.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                const humidity = data.main.humidity;
+                const windSpeed = data.wind.speed;
+
+                document.getElementById('city-name').textContent = `${data.name}, ${data.sys.country}`;
+                document.getElementById('temperature').textContent = `${temperature}°C`;
+                document.getElementById('description').textContent = description;
+                document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+                document.getElementById('wind-speed').textContent = `Wind: ${windSpeed} m/s`;
+
+            } catch (error) {
+                // Add error handling (Task 5)
+                showError("Could not connect to the weather service. Check your connection.");
+                console.error('Fetch error:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        // Initialize with default city on load
+        document.addEventListener('DOMContentLoaded', () => {
+             // Add event listener for 'Enter' key press on input
+             cityInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    getWeather();
+                }
+            });
+            getWeather();
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+</div>
+
     </div>
 </div>
 
@@ -1018,43 +2852,383 @@ pre code {
 
      <div id="monday-content-week5" class="day-content day-section">
         <h2>Monday Maverick</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h4>Introduction to React:</h4>
+    <p>React is a JavaScript library developed by Facebook for building user interfaces, especially Single-Page Applications (SPAs). It allows developers to create reusable UI components that efficiently update and render when data changes. React uses a Virtual DOM to improve performance and provides a declarative way to design interactive UIs.</p>
+    <h4>Key Features:</h4>
+    <ul>
+        <li>Component-based architecture</li>
+        <li>Virtual DOM for fast rendering</li>
+        <li>Unidirectional data flow</li>
+        <li>JSX (JavaScript + HTML syntax)</li>
+        <li>Reusable and maintainable code</li>
+    </ul>
+    <h4>SPA (Single Page Application) Concept:</h4>
+    <p>A Single Page Application loads a single HTML page and dynamically updates content as the user interacts with the app—without reloading the entire page.</p>
+    <p>React makes SPAs efficient by handling routing, rendering, and state changes on the client side.</p>
+    <h4>Benefits of SPAs:</h4>
+    <ul>
+        <li>Faster user experience</li>
+        <li>Reduced server load</li>
+        <li>Seamless navigation</li>
+        <li>Easy to maintain and scale</li>
+    </ul>
+    <h4>In a Nutshell:</h4>
+    <p>React simplifies building dynamic web apps using components, and SPA ensures smooth, app-like user interactions on the web.</p>
+</div>
     </div>
 
     <div id="tuesday-content-week5" class="day-content day-section">
         <h2>Techie Tuesday</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
+            <h3>Topic: Components, Pros & State Management</h3> 
+            <h4>Components:</h4>
+            <ul>
+                <li>Reusable building blocks of web apps.</li>
+                <li>Each component handles its own logic, design, and data.</li>
+                <li>Helps break complex UIs into smaller, easy-to-manage parts.</li>
+            </ul>
+            <h4>Pros of Using Components:</h4>
+            <ul>
+                <li><span style="color: #28a745;">Reusability</span>– Write once, use anywhere.</li>
+                <li><span style="color: #28a745;">Better Readability</span>– Cleaner and modular code.</li>
+                <li><span style="color: #28a745;">Easy Maintenance</span>– Fix or update a part without breaking others.
+                </li>
+                <li><span style="color: #28a745;">Separation of Concerns</span>– Logic and UI are organized.</li>
+                <li><span style="color: #28a745;">Faster Development</span>– Teams can work on parts independently.</li>
+            </ul>
+            <h4>State Management</h4>
+            <ul>
+                <li>State: Data that changes in your app (like user input, API data, etc.).</li>
+                <li>Manages how data flows between components.</li>
+                <li>Ensures UI updates automatically when data changes.</li>
+                <li>Helps avoid confusion in large apps with many components.</li>
+                <li>Common tools: Redux (React), Vuex (Vue), NgRx (Angular).</li>
+            </ul>
         </div>
     </div>
 
     <div id="wednesday-content-week5" class="day-content day-section">
         <h2>Syntax Snapshots Wednesday</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+        <h3>Handling Events & Rendering Lists in React:</h3>
+        <p>React makes it simple to create interactive UIs — and two key parts of that are event handling and list rendering!</p>
+       <h4>Event Handling:</h4>
+        <p>React handles events similar to JavaScript, but with a few twists:</p>
+        <ul>
+            <li>Events are written in camelCase (e.g., <strong>onClick</strong>, <strong>onChange</strong>).</li>
+            <li>You pass a function, not a string, to the handler.</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre><code>&lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;</code></pre>
+        <blockquote>
+        Functions can update state and re-render the UI instantly!
+        </blockquote>
+        <h4>Rendering Lists</h4>
+        <p>When you need to show multiple items (like users, products, or posts), React uses the JavaScript <strong>map()</strong> method:</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>{items.map((item) => (
+  &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+))}</code></pre>
+        <p>Key Rule: Always include a unique <strong>key</strong> prop (like <strong>key={item.id}</strong>) to help React identify each element efficiently and prevent bugs when lists change.</p>        
+        <h4>Tip for Dynamic Apps:</h4>
+        <p>Combine event handling and list rendering — like adding a delete or edit button for each item in a list — to make your app dynamic and user-friendly!</p>
+    </div>
     </div>
 
     <div id="thursday-content-week5" class="day-content day-section">
         <h2>Te Ta Thursday</h2>
         <div class="content-block">
-            <p>Content coming soon!</p>
+            <p>React Hooks revolutionized functional components by adding superpowers like state and side effects—without
+                classes. We'll zoom in on the two MVPs: <strong>useState</strong> for dynamic data and
+                <strong>useEffect</strong> for real-world interactions. Clean, reusable, and game-changing. Let's code!</p>
+            <h3>1. <strong>useState</strong>: Your Component's Memory Bank</h3>
+            <ul>
+                <li><strong>What it does:</strong> Tracks and updates local state, triggering smart re-renders.</li>
+                <li><strong>Why impressive?</strong> Effortless state magic—no "<strong>this</strong>" drama.</li>
+            </ul>
+        
+            <h4>Simple Example: A Live Counter</h4>
+            <pre><code>import React, { useState } from 'react';
+        
+        function Counter() {
+          const [count, setCount] = useState(0); // [current, updater]
+        
+          return (
+            &lt;div&gt;
+              &lt;h2&gt;Count: {count}&lt;/h2&gt;
+              &lt;button onClick={() => setCount(count + 1)}&gt;Up!&lt;/button&gt;
+              &lt;button onClick={() => setCount(0)}&gt;Reset&lt;/button&gt;
+            &lt;/div&gt;
+          );
+        }</code></pre>
+            <p><strong>Tip:</strong> For complex updates, use <strong>setCount(prev => prev + 1)</strong> to ensure you're using the
+                freshest state value.</p>        
+            <h3>2. <strong>useEffect</strong>: The Action Hero</h3>
+            <ul>
+                <li><strong>What it does:</strong> Manages side effects (e.g., data fetches, timers, manual DOM updates) across
+                    component lifecycles (mounting, updating, unmounting).</li>
+                <li><strong>Why impressive?</strong> One hook replaces three class methods (<strong>componentDidMount</strong>,
+                    <strong>componentDidUpdate</strong>, <strong>componentWillUnmount</strong>)—declarative and tidy.</li>
+            </ul>
+        
+            <h4>Simple Example: Auto-Fetch User Data</h4>
+            <pre><code>import React, { useState, useEffect } from 'react';
+        
+        function UserFetcher({ id }) {
+          const [user, setUser] = useState(null);
+        
+          useEffect(() => {
+            // 1. Side Effect (Data Fetch)
+            fetch(&#96;/api/user/${id}&#96;)
+              .then(res => res.json())
+              .then(setUser);
+        
+            // 2. Cleanup Function (Runs before re-run and on unmount)
+            return () => console.log('Cleanup time!'); 
+          }, [id]); // Dependency Array: Re-run only if 'id' changes
+        
+          return user ? &lt;h2&gt;Hi, {user.name}!&lt;/h2&gt; : &lt;p&gt;Loading...&lt;/p&gt;;
+        }</code></pre>
+        
         </div>
     </div>
 
-    <div id="friday-content-week5" class="day-content day-section">
-        <h2>Function Friday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+   <div id="friday-content-week5" class="day-content day-section">
+    <h2>Function Friday</h2>
+    <div class="content-block">
+        <h3>Mini Project - Movie Search App</h3>
+        <p><strong>What is a Movie Search App? <br></strong>: A movie search app is a software application that allows users to search for movies and get information about them, such as the plot, cast, ratings, and more.</p>
+        <p><strong>How Does it Work?</strong>: The app sends a request to a movie API, which returns data about the movie, and the app displays it to the user.</p>
+        <p><strong>Project Goal:</strong> Create a simple movie search app that shows information about a movie.</p>
+        <h4>What You'll Learn:</h4>
+        <ul>
+            <li>How to fetch data from an API</li>
+            <li>How to display data on your app</li>
+            <li>How to handle errors and make your app more robust</li>
+        </ul>
+        <h4>Task List:</h4>
+        <ol>
+            <li>Choose a movie API and sign up for an API key</li>
+            <li>Create a basic UI with HTML and CSS</li>
+            <li>Write JavaScript code to fetch data from the API</li>
+            <li>Parse JSON data and display it on the UI</li>
+            <li>Add error handling and make your app more user-friendly</li>
+            <li>Deploy your app and share it with friends!</li>
+        </ol>
+        <h4>Resources to Refer:</h4>
+        <ul>
+            <li>OMDB API</li>
+            <li>The Movie DB API</li>
+            <li>JavaScript Fetch API Tutorial</li>
+            <li>HTML/CSS Tutorial</li>
+            <li>Async/Await Tutorial</li>
+        </ul>
+        <h4>Tips and Tricks:</h4>
+        <ul>
+            <li>Use async/await to handle API calls smoothly</li>
+            <li>Use try-catch blocks to handle errors</li>
+            <li>Make your app responsive and user-friendly</li>
+        </ul>
+        <p>Get started and build a cool movie search app!</p>
+        <h3>Task Answer: Implementation Example (Steps 1-4)</h3>
+        
+        <p>This is a foundational example covering the basic HTML, CSS, and JavaScript required to fetch data using a mock API
+            key, demonstrating the first four steps of the task list.</p>
+
+        <h4>1. <strong>index.html</strong> (UI Structure)</h4>
+        <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;Movie Search App&lt;/title&gt;
+            &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;Movie Search Demo 🎬&lt;/h1&gt;
+                &lt;div class="search-section"&gt;
+                    &lt;input type="text" id="movie-title-input" placeholder="Enter a movie title (e.g., Inception)"&gt;
+                    &lt;button id="search-button"&gt;Search&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="movie-details" class="details-section"&gt;
+                    &lt;!-- Results will appear here --&gt;
+                    &lt;p&gt;Enter a movie title and click search to see results!&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;script src="script.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+        
+        <h4>2. <strong>style.css</strong> (Basic Styling)</h4>
+        <pre><code>body {
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .search-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #movie-title-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        #search-button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .movie-poster {
+            max-width: 150px;
+            float: right;
+            margin-left: 15px;
+        }
+        .error {
+            color: red;
+        }</code></pre>
+        
+        <h4>3. <strong>script.js</strong> (Fetch and Display Logic)</h4>
+        <pre><code>// IMPORTANT: Replace 'YOUR_API_KEY' with your actual OMDB API key
+        const API_KEY = 'YOUR_API_KEY'; 
+        const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&t=`;
+        
+        const searchButton = document.getElementById('search-button');
+        const movieInput = document.getElementById('movie-title-input');
+        const movieDetailsDiv = document.getElementById('movie-details');
+        
+        async function fetchMovieData(title) {
+            try {
+                movieDetailsDiv.innerHTML = '&lt;p&gt;Loading movie data...&lt;/p&gt;'; // Loading state
+                
+                // Fetch data
+                const response = await fetch(API_URL + encodeURIComponent(title));
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json(); // Parse JSON
+                
+                if (data.Response === "True") {
+                    displayMovieDetails(data); // Display data
+                } else {
+                    // Error handling for "Movie not found"
+                    movieDetailsDiv.innerHTML = `&lt;p class="error"&gt;Error: ${data.Error || 'Movie not found.'}&lt;/p&gt;`;
+                }
+        
+            } catch (error) {
+                // General error handling
+                console.error("Fetch error:", error);
+                movieDetailsDiv.innerHTML = '&lt;p class="error"&gt;Oops! Something went wrong. Check your API key or network.&lt;/p&gt;';
+            }
+        }
+        
+        function displayMovieDetails(movie) {
+            movieDetailsDiv.innerHTML = `
+                &lt;img class="movie-poster" src="${movie.Poster !== 'N/A' ? movie.Poster : ''}" alt="${movie.Title} Poster"&gt;
+                &lt;h2&gt;${movie.Title} (${movie.Year})&lt;/h2&gt;
+                &lt;p&gt;&lt;strong&gt;Genre:&lt;/strong&gt; ${movie.Genre}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Director:&lt;/strong&gt; ${movie.Director}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;IMDb Rating:&lt;/strong&gt; ${movie.imdbRating}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Plot:&lt;/strong&gt; ${movie.Plot}&lt;/p&gt;
+            `;
+        }
+        
+        searchButton.addEventListener('click', () => {
+            const title = movieInput.value.trim();
+            if (title) {
+                fetchMovieData(title);
+            } else {
+                movieDetailsDiv.innerHTML = '&lt;p class="error"&gt;Please enter a movie title!&lt;/p&gt;';
+            }
+        });
+        
+        // Load a default movie on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMovieData('The Matrix'); 
+        });</code></pre>
     </div>
+</div>
+
     <div id="saturday-content-week5" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 5 Quiz coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>1. Which of the following is the key feature that the text explicitly mentions React uses to improve application
+        performance?</h3>
+    <ol>
+        <li>Component-based architecture</li>
+        <li><strong>Virtual DOM</strong></li>
+        <li>JSX (JavaScript + HTML syntax)</li>
+        <li>Unidirectional data flow</li>
+    </ol>
+    <h3>2. According to the section on 'State Management,' what is its primary function in a JavaScript application?
+    </h3>
+    <ol>
+        <li>To allow teams to work on different parts of the application independently, leading to Faster Development.
+        </li>
+        <li>To improve code reusability by writing logic once and using it anywhere.</li>
+        <li><strong>To manage how data flows between components and ensure the UI updates automatically when data
+                changes.</strong></li>
+        <li>To fix or update a part of the application without breaking others.</li>
+    </ol>
+    <h3>3. What is the primary reason the 'Key Rule' emphasizes including a unique key prop
+        when rendering a list of elements using the map() method in React?</h3>
+    <ol>
+        <li>To allow the JavaScript map() method to compile correctly.</li>
+        <li><strong>To help React efficiently identify each element and prevent bugs when the list changes.</strong>
+        </li>
+        <li>To make sure the function passed to the event handler is not a string.</li>
+        <li>To ensure that event handlers like onClick are written in camelCase.</li>
+    </ol>
+    <h3>4. Which three class-based lifecycle methods useEffect replaces?
+</h3>
+    <ol>
+        <li>constructor, shouldComponentUpdate, and render</li>
+        <li><strong>componentDidMount, componentDidUpdate, and componentWillUnmount</strong></li>
+        <li>componentWillMount, componentWillReceiveProps, and componentWillUpdate</li>
+        <li>useState, useCallback, and useContext</li>
+    </ol>
+    <h3>5. Task: Write the specific JavaScript code that needs to be added to script.js to enable the 'Enter' key
+        functionality. This code should:</h3>
+    <ol>
+        <li>Listen for the keydown event on the input element (movieInput).</li>
+        <li>Check if the key pressed is the Enter key (key === 'Enter').</li>
+        <li>If it is, prevent the default action (which can sometimes be form submission/page reload) and then call the
+            search function using the current input value.</li>
+        <li>Write only the event listener code block.</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+        <pre><code>movieInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        search(movieInput.value);
+    }
+});</code></pre>
+        </strong>
+        </li>
+        </ol>
+</div>
+
     </div>
 </div>
 
@@ -1072,37 +3246,548 @@ pre code {
     </div>
      <div id="monday-content-week6" class="day-content day-section">
         <h2>Monday Maverick</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Advanced React Concepts and Deployment</h3>
+    <p>Advanced React focuses on building larger, more efficient applications using tools and patterns beyond basic components.</p>  
+    <h4>Key Advanced Concepts:</h4>
+    <ul>
+        <li>Hooks (useState, useEffect, useMemo, useCallback) for managing logic in functional components.</li>
+        <li>Custom Hooks to reuse logic across components.</li>
+        <li>Routing using React Router for Single Page Application (SPA) navigation.</li>
+        <li>Performance optimization (memoization, code splitting, lazy loading).</li>
+        <li>Error Boundaries for gracefully handling UI errors.</li>
+        <li>Higher-Order Components (HOCs) and Render Props patterns.</li>
+    </ul>
+
+   <h4>State Management with Context API</h4>
+    <p>React’s Context API is used to share data across multiple components without "prop drilling" (passing props down through many layers).</p>
+    
+    <ul>
+        <li>Use Cases: Theme settings, user authentication, app-wide language settings.</li>
+        <li>How it works: Create a Context → Wrap your app with a Provider → Consume values using <strong>useContext</strong>.</li>
+        <li>Good for small to medium apps where global state is simple.</li>
+    </ul>
+
+   <h4>Redux Introduction:</h4>
+    <p>Redux is a state management library for handling complex, large-scale application state.</p>
+    
+    <h5>Core Principles:</h5>
+    <ul>
+        <li>Single Store: One global state object.</li>
+        <li>Actions: Describe what happened.</li>
+        <li>Reducers: Pure functions that update state based on actions.</li>
+        <li>Dispatch: Sends an action to the reducers.</li>
+    </ul>
+    
+    <ul>
+        <li>When to use Redux: Large apps with deep component trees, complex data flow, or when needing advanced debugging (Redux DevTools).</li>
+        <li>Redux offers predictability and centralized state but adds extra setup.</li>
+    </ul>
+
+   <h4>React Deployment:</h4>
+    <p>Deployment optimizes your JavaScript/CSS and makes the app fast and production-ready.</p>
+    
+    <h5>Steps:</h5>
+    <ol>
+        <li>Run the build command: <strong>npm run build</strong> (or <strong>yarn build</strong>)</li>
+        <li>Upload the generated <strong>build</strong> folder to a hosting service.</li>
+    </ol>
+    
+    <h5>Common Hosting Services:</h5>
+    <ul>
+        <li>Vercel</li>
+        <li>Netlify</li>
+        <li>GitHub Pages</li>
+        <li>Firebase Hosting</li>
+        <li>AWS Amplify</li>
+    </ul>
+
+</div>
     </div>
 
     <div id="tuesday-content-week6" class="day-content day-section">
         <h2>Techie Tuesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Routing in React with React Router</h3>
+
+    <p>Let’s explore one of the core concepts in React — Routing using React Router.</p>
+
+   <h4>What is Routing?</h4>
+    <p>Routing helps us navigate between different pages or components in a React application — just like moving between
+        pages in a website, but without reloading the page! This is the foundation of a Single Page Application
+        (SPA).</p>
+
+    <h4>What is React Router?</h4>
+    <p>React Router is a powerful library that makes navigation simple and dynamic in React apps. It helps manage URLs,
+        define routes, and display components based on the current path.</p>
+
+    <h5>Key Features:</h5>
+    <ul>
+        <li>Single Page Application (SPA) navigation.</li>
+        <li>Dynamic route matching.</li>
+        <li>Nested routes for structured layouts.</li>
+        <li>URL parameters for passing data.</li>
+        <li>Easy navigation with <strong>&lt;Link&gt;</strong> and <strong>useNavigate()</strong> hooks.</li>
+    </ul>
+   <h4>Basic Example:</h4>
+    <p>This example demonstrates setting up a basic navigation structure and defining two routes (Home and About).</p>
+    <pre><code>import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    &lt;Router&gt;
+      &lt;nav&gt;
+        &lt;Link to="/"&gt;Home&lt;/Link&gt; | &lt;Link to="/about"&gt;About&lt;/Link&gt;
+      &lt;/nav&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/Router&gt;
+  );
+}</code></pre>
+    <h4>Why It’s Important:</h4>
+    <p>React Router enhances the **user experience** by creating smooth transitions and efficient navigation without the
+        performance cost of reloading entire pages.</p>
+
+    <h4>Tip:</h4>
+    <blockquote style="border-left: 5px solid #007bff; padding-left: 10px; margin: 15px 0;">
+        <p>Always wrap your entire application's routing structure inside <strong>&lt;BrowserRouter&gt;</strong> to make
+            navigation functional.</p>
+    </blockquote>
+
+</div>
     </div>
 
     <div id="wednesday-content-week6" class="day-content day-section">
         <h2>Syntax Snapshots Wednesday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Styling React Components (CSS Modules & Styled-Components)</h3>
+    <p>In React, styling is about keeping your UI clean, modular, and reusable.</p>
+
+    <h4>1. CSS Modules</h4>
+    <p>CSS Modules allow you to write regular <strong>.css</strong> files but with scoped styles—meaning styles apply
+        only to that component.</p>
+
+    <ul>
+        <li>Prevents name conflicts.</li>
+        <li>Keeps code organized.</li>
+    </ul>
+
+    <h5>Example:</h5>
+    <pre><code>import styles from './Button.module.css';
+
+&lt;button className={styles.primary}&gt;Click Me&lt;/button&gt;</code></pre>
+
+    <h4>2. Styled-Components</h4>
+    <p>A modern way to style using CSS-in-JS—you write actual CSS inside your JavaScript!</p>
+
+    <ul>
+        <li>Enables dynamic styling with props.</li>
+        <li>Promotes a cleaner component-based approach.</li>
+    </ul>
+
+    <h5>Example:</h5>
+    <pre><code>import styled from 'styled-components';
+
+const Button = styled.button`
+  background: #ffb347;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+`;</code></pre>
+
+    <h4>Tip:</h4>
+    <blockquote style="border-left: 5px solid #007bff; padding-left: 10px; margin: 15px 0;">
+        <p>Use CSS Modules for structure and simplicity, and Styled-Components for dynamic, theme-based styling.
+            Combine both for a modern, scalable React project!</p>
+    </blockquote>
+
+</div>
     </div>
 
     <div id="thursday-content-week6" class="day-content day-section">
         <h2>Te Ta Thursday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Git, GitHub, and Performance Optimization Basics</h3>
+    
+    <p>This block covers essential knowledge for modern development: Git for version control, GitHub for collaboration, and basic performance optimization techniques.</p>
+
+    <h4>Git Basics: Distributed Version Control System</h4>
+    <p>Git tracks changes in your code, enabling seamless collaboration. It's free, open-source, and offline-friendly!</p>
+    
+    <h5>Key Concepts:</h5>
+    <ul>
+        <li><strong>Repository (Repo):</strong> Project folder + history. Local or remote (e.g., GitHub).</li>
+        <li><strong>Commit:</strong> Snapshot of changes with a descriptive message—like a "save point".</li>
+        <li><strong>Branch:</strong> Parallel version for safe experiments (e.g., main for production).</li>
+        <li><strong>Merge:</strong> Blend branches together.</li>
+        <li><strong>Pull/Push:</strong> Sync local ↔ remote changes.</li>
+    </ul>
+
+    <h5>Basic Workflow:</h5>
+    <ol>
+        <li>Initialize: <strong>git init</strong> in your project folder.</li>
+        <li>Add Files: <strong>git add .</strong> (for all).</li>
+        <li>Commit: <strong>git commit -m "Add login feature"</strong>.</li>
+        <li>Branch & Switch: <strong>git branch feature-login</strong> then <strong>git switch feature-login</strong>.</li>
+        <li>Merge: Switch to main → <strong>git merge feature-login</strong>.</li>
+    </ol>
+    
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>git clone &lt;url&gt;</code></td>
+                <td>Download repo</td>
+                <td><code>git clone https://github.com/user/repo.git</code></td>
+            </tr>
+            <tr>
+                <td><code>git pull</code></td>
+                <td>Fetch remote updates</td>
+                <td><code>git pull origin main</code></td>
+            </tr>
+            <tr>
+                <td><code>git push</code></td>
+                <td>Upload changes</td>
+                <td><code>git push origin main</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>GitHub Basics: Collaboration Superpowers</h4>
+    <p>GitHub hosts Git repos with collab superpowers like Pull Requests (PRs) and Issues. Perfect for open-source!</p>
+    
+    <h5>Key Features:</h5>
+    <ul>
+        <li><strong>Pull Requests (PRs):</strong> Propose/review changes before merging.</li>
+        <li><strong>Issues:</strong> Track bugs/tasks like a project board.</li>
+        <li><strong>Actions:</strong> Automate CI/CD (e.g., test on push).</li>
+        <li><strong>Forks:</strong> Copy repos to contribute safely.</li>
+    </ul>
+    
+    <h5>Getting Started:</h5>
+    <ol>
+        <li>Sign Up: github.com.</li>
+        <li>New Repo: "New" → Name → Add README → Create.</li>
+        <li>Link Local: <strong>git remote add origin &lt;url&gt;</strong> → <strong>git push -u origin main</strong>.</li>
+        <li>Collaborate: Fork → Clone → Edit → Push → PR from fork.</li>
+    </ol>
+
+    <h4>Performance Optimization Basics (Software Dev)</h4>
+    <p>Boost speed & efficiency—80% gains from 20% code! (Pareto principle) Focus on bottlenecks first.</p>
+
+    <h5>Steps & Techniques:</h5>
+    <ul>
+        <li><strong>Profile First (Measure!):</strong> Use tools like Python's cProfile to spot slow functions.</li>
+        <li><strong>Algo Upgrades:</strong> Improve time complexity (e.g., $O(n^2)$ to $O(n \log n)$).</li>
+        <li><strong>Caching:</strong> Memoize results (e.g., <strong>@lru_cache</strong> in Python).</li>
+        <li><strong>Lazy Loading:</strong> Load on-demand data (e.g., scroll images).</li>
+        <li><strong>I/O Tweaks:</strong> Batch DB queries, add indexes.</li>
+        <li><strong>Parallelism:</strong> Use Threads for CPU tasks.</li>
+    </ul>
+    
+    <p><strong>Python Example:</strong> Vectorize with NumPy over loops for speed:</p>
+    <pre><code># Slow loop
+result = [x**2 for x in large_list]
+
+# Fast NumPy
+import numpy as np
+result = np.square(np.array(large_list))  # Often 10x faster!</code></pre>
+    
+    <p><strong>Practice:</strong> Cycle: Profile → Optimize → Re-test.</p>
+
+</div>
     </div>
 
     <div id="friday-content-week6" class="day-content day-section">
         <h2>Function Friday</h2>
-        <div class="content-block">
-            <p>Content coming soon!</p>
-        </div>
+<div class="content-block">
+    <h3>Mini Project - Interactive To-Do List with Local Storage (React Focus):</h3>
+
+    <p><strong>What is an Interactive To-Do List?</strong>: It's an application where users can add, view, complete
+        (toggle), and delete tasks. The key feature is Local Storage which saves the list in the browser for future
+        sessions.</p>
+    <p><strong>Why This Project?</strong>: It's excellent practice for combining React's core Hooks with client-side
+        data persistence.</p>
+    <p><strong>Project Goal:</strong> Create a responsive React application that performs CRUD operations on tasks and
+        ensures the list persists after the browser is closed.</p>
+
+    <h4>What You'll Learn:</h4>
+    <ul>
+        <li>Mastering the <strong>useState</strong> Hook for managing the main list array and input.</li>
+        <li>Implementing the <strong>useEffect</strong> Hook to manage side effects (loading and saving to Local
+            Storage).</li>
+        <li>Handling basic CRUD (Create, Read, Update, Delete) operations on an array state.</li>
+        <li>Using browser Local Storage for data persistence.</li>
+    </ul>
+
+    <h4>Task List:</h4>
+    <ol>
+        <li>Set up a basic React project.</li>
+        <li>Use <strong>useState</strong> to initialize the tasks array.</li>
+        <li>Implement Local Storage Load Logic: Use <strong>useEffect</strong> (runs once) to load saved tasks using
+            <strong>JSON.parse()</strong>.</li>
+        <li>Implement Local Storage Save Logic: Use another <strong>useEffect</strong> (runs on <strong>[tasks]</strong>
+            change) to save tasks using <strong>JSON.stringify()</strong>.</li>
+        <li>Create a function to Add a new task object to the list.</li>
+        <li>Create a function to Delete a task by filtering the array by ID.</li>
+        <li>Create a function to Toggle Complete status by mapping over the array.</li>
+        <li>Build the UI components (Input Form, List Item).</li>
+    </ol>
+
+    <h4>Resources to Refer:</h4>
+    <ul>
+        <li>React Hooks Documentation (<strong>useState</strong>, <strong>useEffect</strong>)</li>
+        <li>MDN Web Docs: Using the Storage API (Local Storage)</li>
+        <li>JavaScript Array Methods (<strong>map</strong>, <strong>filter</strong>, <strong>findIndex</strong>)</li>
+        <li>React Forms and Event Handling</li>
+    </ul>
+
+    <h3>Implementation Focus: State Persistence with Hooks</h3>
+
+    <h4><strong>index.html</strong> (Self-Contained Implementation):</h4>
+    
+    <pre><code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;React To-Do List with Local Storage&lt;/title&gt;
+        
+        &lt;!-- Import React and ReactDOM libraries --&gt;
+        &lt;script src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+        &lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+        
+        &lt;!-- Import Babel for in-browser JSX compilation --&gt;
+        &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+        
+        &lt;!-- In-page CSS Styling --&gt;
+        &lt;style&gt;
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+    
+            .todo-container {
+                background-color: #ffffff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 500px;
+            }
+    
+            .todo-form {
+                display: flex;
+                margin-bottom: 20px;
+            }
+    
+            .todo-form input {
+                flex-grow: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px 0 0 5px;
+                font-size: 16px;
+            }
+    
+            .todo-form button {
+                padding: 10px 15px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+                font-size: 16px;
+            }
+    
+            .todo-list {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .todo-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                background-color: #fafafa;
+                margin-bottom: 8px;
+                border-radius: 5px;
+            }
+    
+            .todo-text {
+                flex-grow: 1;
+                margin-right: 15px;
+                word-break: break-word;
+            }
+    
+            .completed .todo-text {
+                text-decoration: line-through;
+                color: #999;
+            }
+    
+            .todo-item button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-left: 10px;
+                font-size: 18px;
+                padding: 5px;
+                transition: color 0.2s;
+            }
+    
+            .delete-btn {
+                color: #ff4d4d;
+            }
+    
+            .delete-btn:hover {
+                color: #cc0000;
+            }
+    
+            .toggle-btn {
+                color: #28a745;
+            }
+    
+            .toggle-btn:hover {
+                color: #1e7e34;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+        &lt;div id="root"&gt;&lt;/div&gt; &lt;!-- Mount point for the React App --&gt;
+    
+        &lt;script type="text/babel"&gt;
+            
+            // --- 1. Utility Function ---
+            const getInitialTasks = () => {
+                const storedTasks = localStorage.getItem('react-todo-list');
+                if (storedTasks) {
+                    return JSON.parse(storedTasks);
+                }
+                return [];
+            };
+    
+            // --- 2. TodoItem Component ---
+            const TodoItem = ({ task, toggleComplete, deleteTask }) => (
+                &lt;li className={`todo-item ${task.isCompleted ? 'completed' : ''}`}&gt;
+                    &lt;span className="todo-text"&gt;{task.text}&lt;/span&gt;
+                    &lt;div&gt;
+                        &lt;button 
+                            className="toggle-btn" 
+                            onClick={() => toggleComplete(task.id)}
+                            title={task.isCompleted ? "Mark as Incomplete" : "Mark as Complete"}
+                        &gt;
+                            {task.isCompleted ? '🔄' : '✅'}
+                        &lt;/button&gt;
+                        &lt;button 
+                            className="delete-btn" 
+                            onClick={() => deleteTask(task.id)}
+                            title="Delete Task"
+                        &gt;
+                            🗑️
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            );
+    
+            // --- 3. TodoApp Component (Main Logic) ---
+            const TodoApp = () => {
+                const [tasks, setTasks] = React.useState(getInitialTasks);
+                const [taskInput, setTaskInput] = React.useState('');
+    
+                // EFFECT: Save tasks to Local Storage whenever the 'tasks' state changes
+                React.useEffect(() => {
+                    localStorage.setItem('react-todo-list', JSON.stringify(tasks));
+                }, [tasks]);
+    
+                // Handler to add a new task (CREATE)
+                const addTask = (e) => {
+                    e.preventDefault();
+                    const trimmedInput = taskInput.trim();
+    
+                    if (trimmedInput) {
+                        const newTodo = {
+                            id: Date.now(),
+                            text: trimmedInput,
+                            isCompleted: false,
+                        };
+                        setTasks([...tasks, newTodo]);
+                        setTaskInput('');
+                    }
+                };
+    
+                // Handler to toggle a task's completion status (UPDATE)
+                const toggleComplete = (id) => {
+                    setTasks(
+                        tasks.map(task => 
+                            task.id === id ? { ...task, isCompleted: !task.isCompleted } : task
+                        )
+                    );
+                };
+    
+                // Handler to delete a task (DELETE)
+                const deleteTask = (id) => {
+                    setTasks(tasks.filter(task => task.id !== id));
+                };
+    
+                return (
+                    &lt;div className="todo-container"&gt;
+                        &lt;h1&gt;Interactive To-Do List&lt;/h1&gt;
+                        
+                        {/* Input Form */}
+                        &lt;form className="todo-form" onSubmit={addTask}&gt;
+                            &lt;input
+                                type="text"
+                                placeholder="Add a new task..."
+                                value={taskInput}
+                                onChange={(e) => setTaskInput(e.target.value)}
+                            /&gt;
+                            &lt;button type="submit"&gt;Add&lt;/button&gt;
+                        &lt;/form&gt;
+                        
+                        {/* Task List */}
+                        {tasks.length === 0 ? (
+                            &lt;p&gt;No tasks yet! Add one above.&lt;/p&gt;
+                        ) : (
+                            &lt;ul className="todo-list"&gt;
+                                {tasks.map(task => (
+                                    &lt;TodoItem
+                                        key={task.id}
+                                        task={task}
+                                        toggleComplete={toggleComplete}
+                                        deleteTask={deleteTask}
+                                    /&gt;
+                                ))}
+                            &lt;/ul&gt;
+                        )}
+                    &lt;/div&gt;
+                );
+            };
+    
+            // --- 4. Render the App ---
+            const container = document.getElementById('root');
+            const root = ReactDOM.createRoot(container);
+            root.render(&lt;TodoApp /&gt;);
+            
+        &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+</div>
     </div>
     <div id="saturday-content-week6" class="day-content day-section">
         <h2>Brain Cache</h2>
