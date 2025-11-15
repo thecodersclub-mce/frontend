@@ -531,75 +531,53 @@ pre code {
             </div>
             <h3>Quiz Questions</h3>
             <div class="form-group no-select">
-                <p><strong>1. Which of the following is the key feature that the text explicitly mentions React uses to
-                        improve application performance?</strong></p>
-                <div class="radio-group">
-                    <label><input type="radio" id="q1_a" name="Question1" value="A" required>A. Component-based
-                        architecture</label>
-                    <label><input type="radio" id="q1_b" name="Question1" value="B">B. Virtual DOM</label>
-                    <label><input type="radio" id="q1_c" name="Question1" value="C">C. JSX (JavaScript + HTML
-                        syntax)</label>
-                    <label><input type="radio" id="q1_d" name="Question1" value="D">D. Unidirectional data flow</label>
-                </div>
-            </div>
-            <div class="form-group no-select">
-                <p><strong>2. According to the section on 'State Management,' what is its primary function in a
-                        JavaScript application?</strong>
-                </p>
-                <div class="radio-group">
-                    <label><input type="radio" id="q2_a" name="Question2" value="A" required>A. To allow teams to work
-                        on different parts of the application independently, leading to Faster Development.</label>
-                    <label><input type="radio" id="q2_b" name="Question2" value="B">B. To improve code reusability by
-                        writing logic once and using it anywhere.</label>
-                    <label><input type="radio" id="q2_c" name="Question2" value="C">C. To manage how data flows between
-                        components and ensure the UI updates automatically when data changes.</label>
-                    <label><input type="radio" id="q2_d" name="Question2" value="D">D. To fix or update a part of the
-                        application without breaking others.</label>
-                </div>
-            </div>
-            <div class="form-group no-select">
-                <p><strong>3. What is the primary reason the 'Key Rule' emphasizes including a unique key prop when
-                        rendering a list of elements using the map() method in React?</strong></p>
-                <div class="radio-group">
-                    <label><input type="radio" id="q3_a" name="Question3" value="A" required>A. To allow the JavaScript
-                        map() method to compile correctly.</label>
-                    <label><input type="radio" id="q3_b" name="Question3" value="B">B. To help React efficiently
-                        identify each element and prevent bugs when the list changes.</label>
-                    <label><input type="radio" id="q3_c" name="Question3" value="C">C. To make sure the function passed
-                        to the event handler is not a string.</label>
-                    <label><input type="radio" id="q3_d" name="Question3" value="D">D. To ensure that event handlers
-                        like onClick are written in camelCase.</label>
-                </div>
-            </div>
-            <div class="form-group no-select">
-                <p><strong>4. The text states that the useEffect hook is impressive because it replaces what three
-                        specific class-based lifecycle methods, offering a declarative and tidy approach to side
-                        effects?</strong></p>
-                <div class="radio-group">
-                    <label><input type="radio" id="q4_a" name="Question4" value="A" required>A. constructor,
-                        shouldComponentUpdate, and render</label>
-                    <label><input type="radio" id="q4_b" name="Question4" value="B">B. componentDidMount,
-                        componentDidUpdate, and componentWillUnmount</label>
-                    <label><input type="radio" id="q4_c" name="Question4" value="C">C. componentWillMount,
-                        componentWillReceiveProps, and componentWillUpdate</label>
-                    <label><input type="radio" id="q4_d" name="Question4" value="D">D. useState, useCallback, and
-                        useContext</label>
-                </div>
-            </div>
-            <div class="form-group no-select">
-                <p><strong>5. Task: Write the specific JavaScript code that needs to be added to script.js to enable the
-                        'Enter' key functionality.</strong></p>
-                <p>This code should:</p>
-                <ol>
-                    <li>Listen for the keydown event on the input element (`movieInput`).</li>
-                    <li>Check if the key pressed is the Enter key (`key === 'Enter'`).</li>
-                    <li>If it is, prevent the default action and then call the search function using the current input
-                        value.</li>
-                </ol>
-                <p>Write only the event listener code block.</p>
-                <textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your JavaScript code here..."
-                    required></textarea>
-            </div>
+    <p><strong>1. What is the role of the Reducer?</strong></p>
+    <div class="radio-group">
+        <label><input type="radio" id="q1_a" name="Question1" value="A" required>A. It is a function that sends an action to the Store to initiate a state change.</label>
+        <label><input type="radio" id="q1_b" name="Question1" value="B">B. It is a component pattern used to reuse logic across different parts of the application.</label>
+        <label><input type="radio" id="q1_c" name="Question1" value="C">C. It is a pure function that takes the current state and an action, and returns a new state.</label>
+        <label><input type="radio" id="q1_d" name="Question1" value="D">D. It is the single global object that holds the entire application state.</label>
+    </div>
+</div>
+<div class="form-group no-select">
+    <p><strong>2. What is the primary function of Routing when building a Single Page Application (SPA) with React Router?</strong></p>
+    <div class="radio-group">
+        <label><input type="radio" id="q2_a" name="Question2" value="A" required>A. To manage global state using a central Redux store.</label>
+        <label><input type="radio" id="q2_b" name="Question2" value="B">B. To optimize component rendering performance through memoization and code splitting.</label>
+        <label><input type="radio" id="q2_c" name="Question2" value="C">C. To handle asynchronous data fetching and side effects within functional components.</label>
+        <label><input type="radio" id="q2_d" name="Question2" value="D">D. To enable navigation between different views or components without triggering a full page reload.</label>
+    </div>
+</div>
+<div class="form-group no-select">
+    <p><strong>3. What is the primary benefit of using CSS Modules in a React application?</strong></p>
+    <div class="radio-group">
+        <label><input type="radio" id="q3_a" name="Question3" value="A" required>A. It enables writing actual CSS directly within the JavaScript file (CSS-in-JS).</label>
+        <label><input type="radio" id="q3_b" name="Question3" value="B">B. It automatically scopes the styles locally to the component, preventing global naming conflicts.</label>
+        <label><input type="radio" id="q3_c" name="Question3" value="C">C. It replaces the need for the className prop entirely by automatically applying styles.</label>
+        <label><input type="radio" id="q3_d" name="Question3" value="D">D. It provides built-in support for Redux-based global theme management.</label>
+    </div>
+</div>
+<div class="form-group no-select">
+    <p><strong>4. In Git, what is the primary purpose of a Commit?</strong></p>
+    <div class="radio-group">
+        <label><input type="radio" id="q4_a" name="Question4" value="A" required>A. To download the entire repository from a remote server to the local machine.</label>
+        <label><input type="radio" id="q4_b" name="Question4" value="B">B. To create a permanent, descriptive snapshot of changes at a specific point in the project's history.</label>
+        <label><input type="radio" id="q4_c" name="Question4" value="C">C. To create a parallel line of development for safe experimentation.</label>
+        <label><input type="radio" id="q4_d" name="Question4" value="D">D. To propose changes and request review before integrating them into the main codebase.</label>
+    </div>
+</div>
+<div class="form-group no-select">
+    <p><strong>5. Task: Interactive CSS Toggling (Intermediate DOM)</strong></p>
+    <p>Goal: Use a single button click to toggle a CSS class on the &lt;body&gt; element, switching the page between two distinct themes (simulating a dark/light mode switch).</p>
+    <p>Requirements:</p>
+    <ol>
+        <li>HTML: Create a complete HTML document structure. Inside the &lt;body&gt;, add a &lt;button&gt; with the ID <strong>theme-toggle</strong> and the text "Toggle Theme".</li><br><br>
+        <li>CSS: (Imagine this is in a separate &lt;style&gt; block or file) Define the default light theme on the <strong>body</strong> selector: Set <strong>background-color: #ffffff;</strong> and <strong>text color: #000000;</strong>. Define a class selector named <strong>.dark-mode</strong>. Set its styles to the dark theme: <strong>background-color: #333333;</strong> and <strong>text color: #f0f0f0;</strong>.</li><br><br>
+        <li>JavaScript: (Imagine this is in a separate &lt;script&gt; block or file) Select the button (<strong>theme-toggle</strong>) and the &lt;body&gt; element. Add an event listener to the button that responds to a click. The function should use the JavaScript <strong>classList.toggle()</strong> method on the &lt;body&gt; element to dynamically add or remove the <strong>.dark-mode</strong> class.</li>
+    </ol>
+    <textarea id="q5_text" name="Question5" rows="8" placeholder="Enter your code here..."
+        required></textarea>
+</div>
         </div>
 
         <p><strong>After submission wait until submit button turns green</strong></p>
@@ -630,4 +608,3 @@ pre code {
 </body>
 
 </html>
-
