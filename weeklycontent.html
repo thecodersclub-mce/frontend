@@ -3791,9 +3791,92 @@ result = np.square(np.array(large_list))  # Often 10x faster!</code></pre>
     </div>
     <div id="saturday-content-week6" class="day-content day-section">
         <h2>Brain Cache</h2>
-        <div class="content-block">
-            <p>Week 6 Quiz goes LIVE on 15/11/2025.</p>
-        </div>
+<div class="content-block">
+    <h3>1. What is the role of the Reducer?</h3>
+    <ol>
+        <li>A. It is a function that sends an action to the Store to initiate a state change.</li>
+        <li>B. It is a component pattern used to reuse logic across different parts of the application.</li>
+        <li><strong>C. It is a pure function that takes the current state and an action, and returns a new state.</strong></li>
+        <li>D. It is the single global object that holds the entire application state.</li>
+    </ol>
+    <h3>2. What is the primary function of Routing when building a Single Page Application (SPA) with React Router?</h3>
+    <ol>
+        <li>A. To manage global state using a central Redux store.</li>
+        <li>B. To optimize component rendering performance through memoization and code splitting.</li>
+        <li>C. To handle asynchronous data fetching and side effects within functional components.</li>
+        <li><strong>D. To enable navigation between different views or components without triggering a full page reload.</strong></li>
+    </ol>
+    <h3>3. What is the primary benefit of using CSS Modules in a React application?</h3>
+    <ol>
+        <li>A. It enables writing actual CSS directly within the JavaScript file (CSS-in-JS).</li>
+        <li><strong>B. It automatically scopes the styles locally to the component, preventing global naming conflicts.</strong></li>
+        <li>C. It replaces the need for the className prop entirely by automatically applying styles.</li>
+        <li>D. It provides built-in support for Redux-based global theme management.</li>
+    </ol>
+    <h3>4. In Git, what is the primary purpose of a Commit?</h3>
+    <ol>
+        <li>A. To download the entire repository from a remote server to the local machine.</li>
+        <li><strong>B. To create a permanent, descriptive snapshot of changes at a specific point in the project's history.</strong></li>
+        <li>C. To create a parallel line of development for safe experimentation.</li>
+        <li>D. To propose changes and request review before integrating them into the main codebase.</li>
+    </ol>
+    <h3>5. Task: Interactive CSS Toggling (Intermediate DOM)</h3>
+    <strong>Goal:</strong> Use a single button click to toggle a CSS class on the &lt;body&gt; element, switching the page between two distinct themes (simulating a dark/light mode switch).
+    <ol>
+        <li>HTML: Create a complete HTML document structure. Inside the &lt;body&gt;, add a &lt;button&gt; with the ID theme-toggle and the text "Toggle Theme".</li>
+        <li>CSS: Define the default light theme on the body selector: Set background-color: #ffffff; and text color: #000000;. Define a class selector named .dark-mode. Set its styles to the dark theme: background-color: #333333; and text color: #f0f0f0;.</li>
+        <li>JavaScript: Select the button (theme-toggle) and the &lt;body&gt; element. Add an event listener to the button that responds to a click. The function should use the JavaScript classList.toggle() method on the &lt;body&gt; element to dynamically add or remove the .dark-mode class.</li>
+    </ol>
+    <h4>Expected Answer: </h4>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Theme Toggler&lt;/title&gt;
+    &lt;style&gt;
+        /* Default (Light) Theme */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+        /* Dark Theme Class */
+        .dark-mode {
+            background-color: #333333;
+            color: #f0f0f0;
+        }
+
+        #theme-toggle {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id="theme-toggle"&gt;Toggle Theme&lt;/button&gt;
+
+    &lt;script&gt;
+        // Select button and body
+        const themeButton = document.getElementById('theme-toggle');
+        const bodyElement = document.body;
+
+        // Add event listener and use classList.toggle()
+        themeButton.addEventListener('click', function() {
+            bodyElement.classList.toggle('dark-mode');
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
     </div>
 </div>  <!-- add week6 content before these -->  
 <div id="week10" class="week-content">
@@ -4168,7 +4251,304 @@ result = np.square(np.array(large_list))  # Often 10x faster!</code></pre>
 
     </div>
     <div id="tuesday-content-week10" class="day-content day-section">
-        <h2>Mindmash - Quiz 2 goes LIVE on 16/11/2025</h2>
+        <h2>Mindmash - Quiz 2</h2>
+<div class="content-block">
+    <h3>1. What is the primary function of the Web Server in the client-server interaction?</h3>
+    <ol>
+        <li>To send the initial HTTP Request to load the page to the Web Browser.</li>
+        <li>To determine the user's location and connection speed for optimization.</li>
+        <li><strong>To store the website's resources and send the requested files back to the browser in an HTTP Response.</strong></li>
+        <li>To render the received content (HTML, CSS, JavaScript) into a visual web page.</li>
+    </ol>
+    <h3>2. Which essential CSS property and value must be applied to the parent element to successfully transform it into a Flexbox container and enable the Flexbox layout model?</h3>
+    <ol>
+        <li>position: relative;</li>
+        <li>float: left;</li>
+        <li><strong>display: flex;</strong></li>
+        <li>display: grid;</li>
+    </ol>
+    <h3>3. What is the primary difference in layout structure that CSS Grid is specifically designed to manage compared to Flexbox?</h3>
+    <ol>
+        <li>One-dimensional layouts, focusing on arranging items either in a single row OR a single column.</li>
+        <li>The layering of elements along the Z-axis using the z-index property.</li>
+        <li>Automatic creation of media queries for mobile-first responsiveness.</li>
+        <li><strong>Complex, two-dimensional layouts, controlling the position and size of items in both rows AND columns simultaneously.</strong></li>
+    </ol>
+    <h3>4. What is the primary benefit of organizing code into Functions in JavaScript?</h3>
+    <ol>
+        <li>They are the only way to declare block-scoped variables using the let and const keywords.</li>
+        <li>They ensure all variables declared inside are automatically available in the global scope.</li>
+        <li><strong>They create reusable blocks of code that perform a specific task, promoting modularity, organization, and improved readability.</strong></li>
+        <li>They automatically resolve all asynchronous operations and simplify API calls.</li>
+    </ol>
+    <h3>5. Which statement best describes the fundamental difference in how data is stored and accessed in a JavaScript Array versus an Object?</h3>
+    <ol>
+        <li>Arrays store data as key-value pairs accessed by string keys, while Objects store data as an ordered collection accessed by numeric indices.</li>
+        <li><strong>Arrays store an ordered collection accessed by a numeric index starting from 0, while Objects store unordered data as key-value pairs accessed by a string key.</strong></li>
+        <li>Arrays can only store primitive data types (like numbers and strings), but Objects can store any type of data.</li>
+        <li>Arrays are non-primitive data types, but Objects are primitive data types.</li>
+    </ol>
+    <h3>6. What is the primary function of the DOM (Document Object Model) in a web browser?</h3>
+    <ol>
+        <li>To compile and transpile modern JavaScript (like ES6) into older, browser-compatible versions.</li>
+        <li>To determine the visual styling (colors, fonts, layout) of the HTML elements.</li>
+        <li><strong>To represent the HTML structure as a tree-like object structure, allowing JavaScript to dynamically access, modify, or create page elements.</strong></li>
+        <li>To execute asynchronous JavaScript code efficiently in the background.</li>
+    </ol>
+    <h3>7. Which rule applies to a variable declared with let that prohibits a specific action within the same scope?</h3>
+    <ol>
+        <li>Its content cannot be modified if it is an object or array.</li>
+        <li>Its value cannot be reassigned after initialization.</li>
+        <li>It is only accessible within the global scope.</li>
+        <li><strong>It cannot be redeclared using let again in the same scope.</strong></li>
+    </ol>
+    <h3>8. What is the correct syntax for creating a string using a Template Literal that embeds the calculation a * b, given const a = 4; and const b = 5;?</h3>
+    <ol>
+        <li>The product is {a * b}</li>
+        <li>The product is ${a * b}</li>
+        <li><strong>The product is `${a * b}`</strong></li>
+        <li>The product is (a * b)</li>
+    </ol>
+    <h3>9. What are the three possible states that a Promise can be in at any given time?</h3>
+    <ol>
+        <li>Waiting, Success, and Failure</li>
+        <li>Starting, Running, and Stopping</li>
+        <li>Resolved, Unresolved, and Pending</li>
+        <li><strong>Pending, Fulfilled, and Rejected</strong></li>
+    </ol>
+    <h3>10. What is the primary source of the current and forecasted weather conditions displayed by the Weather App?</h3>
+    <ol>
+        <li><strong>Data fetched directly from a weather API.</strong></li>
+        <li>Hardcoded data stored in JavaScript variables.</li>
+        <li>The app's style.css file.</li>
+        <li>The user's computer files.</li>
+    </ol>
+    <h3>11. Which core mechanism does React use to efficiently update and render the user interface when the application's data changes?</h3>
+    <ol>
+        <li>Immediate DOM Manipulation</li>
+        <li>Server-Side Rendering (SSR)</li>
+        <li><strong>The Virtual DOM (Document Object Model)</strong></li>
+        <li>The Shadow DOM</li>
+    </ol>
+    <h3>12. Which of the following is the best description of a Component in modern web application development?</h3>
+    <ol>
+        <li>The single, central file that manages the entire application's data flow.</li>
+        <li>A command-line tool used to initialize a new project folder.</li>
+        <li>A complex piece of code that must be rewritten for every page it appears on.</li>
+        <li><strong>A reusable, self-contained building block that handles its own logic, design, and data, used to break down complex UIs.</strong></li>
+    </ol>
+    <h3>13. When handling an event in React (e.g., a button click), how is the event handler typically passed to the element?</h3>
+    <ol>
+        <li>By using the addEventListener method in the component's useEffect hook.</li>
+        <li>Using a dash-case attribute name (e.g., on-click={handleClick}).</li>
+        <li>As a string that references the function's name (e.g., onClick="myFunction()").</li>
+        <li><strong>As a JavaScript function reference written inside curly braces (e.g., onClick={handleClick}).</strong></li>
+    </ol>
+    <h3>14. What is the primary purpose of the useState Hook in a functional React component?</h3>
+    <ol>
+        <li>To define a reusable piece of logic that can be shared across multiple components.</li>
+        <li><strong>To declare a local state variable that, when updated by its setter function, triggers a re-render of the component.</strong></li>
+        <li>To optimize the performance of components by memoizing expensive calculation results.</li>
+        <li>To perform side effects like data fetching or subscribing to external services.</li>
+    </ol>
+    <h3>15. The gist of the Movie Search App project is to build a simple web application focused on which core technical process?</h3>
+    <ol>
+        <li><strong>Learning to fetch external data from an API (using JavaScript's Fetch API) and dynamically render the parsed JSON movie details onto the UI.</strong></li>
+        <li>Managing complex application state using the Redux library and component props.</li>
+        <li>Creating static HTML pages that require a full page reload for every different movie detail viewed.</li>
+        <li>Implementing a system for user authentication and managing secure local database transactions.</li>
+    </ol>
+    <h3>16. What is the primary purpose of running the npm run build command before deploying a production-ready React application?</h3>
+    <ol>
+        <li>To upload the application's source code to a hosting service</li>
+        <li><strong>To create the build folder containing optimized, minimized, and production-ready assets (like JavaScript and CSS)</strong></li>
+        <li>To set up the routing configuration for the Single Page Application (SPA)</li>
+        <li>To install all necessary dependencies for production</li>
+    </ol>
+    <h3>17. Which specific component or hook in React Router is used to define the relationship between a URL path and the component that should be rendered at that path?</h3>
+    <ol>
+        <li>The &lt;Routes&gt; container</li>
+        <li><strong>The &lt;Route&gt; component</strong></li>
+        <li>The &lt;Link&gt; component</li>
+        <li>The useNavigate() hook</li>
+    </ol>
+    <h3>18. Which key feature is uniquely enabled by Styled-Components (a CSS-in-JS solution) that is more difficult to achieve with standard CSS or CSS Modules?</h3>
+    <ol>
+        <li>The creation of a single global style store for the entire application.</li>
+        <li>The use of the import and export statements to manage component files.</li>
+        <li>The ability to define styles in a separate .css file for better separation of concerns.</li>
+        <li><strong>The ability to apply dynamic styles by referencing component props directly within the CSS definition.</strong></li>
+    </ol>
+    <h3>19. What is the key GitHub collaboration feature used by a developer to formally propose changes and ask for feedback before those changes are integrated (merged) into the main repository?</h3>
+    <ol>
+        <li>An Issue</li>
+        <li><strong>A Pull Request (PR)</strong></li>
+        <li>A Fork</li>
+        <li>A Git Push</li>
+    </ol>
+    <h3>20. In the TodoApp component, the following useEffect hook is responsible for ensuring the task list persists across browser sessions:</h3>
+    <pre><code>React.useEffect(() => {
+    localStorage.setItem('react-todo-list', JSON.stringify(tasks));
+}, [tasks]);</code></pre>
+    <p>What is the purpose of including **[tasks]** as the dependency array in this specific hook?</p>
+    <ol>
+        <li>It forces the application to load the tasks from Local Storage before any components are rendered.</li>
+        <li>It prevents the effect from running, as saving should only happen manually through an explicit button click.</li>
+        <li><strong>It tells React to re-run the effect (save the data) every time the tasks array state changes (e.g., after adding, deleting, or toggling a task).</strong></li>
+        <li>It ensures the effect runs only once after the initial render to load tasks from Local Storage.</li>
+    </ol>
+    
+    <h3>21. Task 1: CSS Selectors and Basic Styling (Targeting Content)</h3>
+    <h4>Goal: Apply specific styles to elements using different CSS selector types to demonstrate targeting accuracy.</h4>
+    <strong>Requirements:</strong>
+    <ol>
+        <li>HTML: Create an &lt;h1&gt; element with the ID <strong>main-title</strong> and content "CSS Selectors Practice". Create a &lt;p&gt; element with the class <strong>info-text</strong> and content "Apply different styles here.". Create an unordered list &lt;ul&gt; with three &lt;li&gt; items.</li>
+        <li>CSS: Use an ID Selector to set the <strong>main-title</strong> text color to <strong>#0069d9</strong>. Use a Class Selector (<strong>.info-text</strong>) to set the font size to <strong>18px</strong>. Use a Type Selector (<strong>li</strong>) to add a <strong>list-style-type: square;</strong> to all list items.</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre>
+&lt;!-- HTML --&gt;
+&lt;h1 id="main-title"&gt;CSS Selectors Practice&lt;/h1&gt;
+&lt;p class="info-text"&gt;Apply different styles here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- CSS --&gt;
+#main-title {
+    color: #0069d9;
+}
+
+.info-text {
+    font-size: 18px;
+}
+
+li {
+    list-style-type: square;
+}
+</pre>
+    
+    <h3>22. Task 2: Responsive Layout with Flexbox (One-Dimensional Design)</h3>
+    <h4>Goal: Use Flexbox to create a simple, horizontally centered and responsive navigation bar.</h4>
+    <strong>Requirements:</strong>
+    <ol>
+        <li>HTML: Create a &lt;div&gt; container with the class <strong>nav-container</strong>. Inside the container, add three anchor links (&lt;a&gt;) with the classes <strong>nav-item</strong> and simple text (e.g., "Home", "About", "Contact").</li>
+        <li>CSS: Set <strong>display: flex;</strong> on the <strong>.nav-container</strong>. Use the appropriate property to **center** all <strong>nav-item</strong> links horizontally within the container. Use the appropriate property to add **equal space between** the links (**space-around**). Style the links (e.g., remove the underline and add some padding).</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre>
+&lt;!-- HTML --&gt;
+&lt;div class="nav-container"&gt;
+    &lt;a class="nav-item" href="#"&gt;Home&lt;/a&gt;
+    &lt;a class="nav-item" href="#"&gt;About&lt;/a&gt;
+    &lt;a class="nav-item" href="#"&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.nav-container {
+    display: flex;
+    justify-content: space-around; /* for equal space between */
+    /* To center horizontally if needed, you could use margin: 0 auto; if a width is set, 
+       but space-around handles the distribution. */
+}
+
+.nav-item {
+    text-decoration: none;
+    padding: 10px;
+    /* other styling for links */
+}
+</pre>
+    
+    <h3>23. Task 3: Asynchronous JavaScript (Data Fetching)</h3>
+    <h4>Goal: Fetch data from an external API using <strong>async/await</strong> and display the result on the page.</h4>
+    <strong>Requirements:</strong>
+    <ol>
+        <li>HTML: Add a paragraph &lt;p&gt; with the ID <strong>quote-output</strong> and initial text "Loading quote...".</li>
+        <li>JavaScript: Define an <strong>async function</strong> named <strong>fetchQuote</strong>. Inside <strong>fetchQuote</strong>, use **await** with the **fetch()** API to call this endpoint: `https://api.kanye.rest/`. **await** the response and parse it to JSON. Select the **quote-output** paragraph and set its **textContent** to the received **quote** property (e.g., `data.quote`). Call `fetchQuote()` when the page loads.</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre>
+&lt;!-- HTML for placement in body --&gt;
+&lt;p id="quote-output"&gt;Loading quote...&lt;/p&gt;
+
+&lt;!-- JavaScript --&gt;
+async function fetchQuote() {
+    try {
+        const response = await fetch("https://api.kanye.rest/");
+        const data = await response.json();
+        document.getElementById("quote-output").textContent = data.quote;
+    } catch (error) {
+        document.getElementById("quote-output").textContent = "Failed to load quote.";
+        console.error('Error fetching quote:', error);
+    }
+}
+fetchQuote(); // Call the function when the script executes (page loads)
+</pre>
+    
+    <h3>24. Task 4: Functional React Component (Conditional Rendering)</h3>
+    <h4>Goal: Write a functional React component that uses a prop to conditionally render different content or styles.</h4>
+    <strong>Requirements:</strong>
+    <ol>
+        <li>Define a functional component named StockStatus that takes a boolean prop named inStock.</li>
+        <li>The component must return JSX that uses a ternary operator (or if/else logic within the function) to determine the output.</li>
+        <li>If inStock is true, display an &lt;h3&gt; saying: "Available Now!".</li>
+        <li>If inStock is false, display an &lt;h3&gt; saying: "Out of Stock - Check Back Later".</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre>
+const StockStatus = ({ inStock }) => {
+    return (
+        &lt;div&gt;
+            {inStock ? (
+                &lt;h3&gt;Available Now!&lt;/h3&gt;
+            ) : (
+                &lt;h3&gt;Out of Stock - Check Back Later&lt;/h3&gt;
+            )}
+        &lt;/div&gt;
+    );
+};
+
+// Example usage:
+// &lt;StockStatus inStock={true} /&gt;
+// &lt;StockStatus inStock={false} /&gt;
+</pre>
+    
+    <h3>25. Task 5: React Component with useEffect (Side Effects and Data)</h3>
+    <h4>Goal: Use the <strong>useEffect</strong> hook to fetch and update component data only when the component mounts.</h4>
+    <strong>Requirements:</strong>
+    <ol>
+        <li>Define a functional component named PostFetcher.</li>
+        <li>Use useState to manage a state variable named postTitle, initialized to "Placeholder Title".</li>
+        <li>Use the useEffect hook with an empty dependency array ([]) to ensure the side effect runs only once when the component mounts.</li>
+        <li>Inside useEffect, perform a fetch call to an API (`https://jsonplaceholder.typicode.com/posts/1`) and update the postTitle state with the title property from the fetched data.</li>
+        <li>The component must display the postTitle inside an &lt;h2&gt; element.</li>
+    </ol>
+    <h4>Expected Answer:</h4>
+    <pre>
+import React, { useState, useEffect } from 'react';
+
+const PostFetcher = () => {
+    const [postTitle, setPostTitle] = useState("Placeholder Title");
+
+    useEffect(() => {
+        // Fetch runs only once because of the empty dependency array: []
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(res => res.json())
+            .then(data => {
+                setPostTitle(data.title);
+            })
+            .catch(error => {
+                console.error("Error fetching post:", error);
+                setPostTitle("Error loading post.");
+            });
+    }, []); 
+
+    return &lt;h2&gt;{postTitle}&lt;/h2&gt;;
+};
+</pre>
+</div>
     </div>
 </div><!-- Mindmash content before this-->
 
@@ -4199,13 +4579,13 @@ let disabledWeekId = null; // Changed from 'null' to null to ensure no week is d
 // Define an array of disabled days for a given week (e.g., ['tuesday', 'thursday'] for week1)
 const disabledDays = {
     // Uncomment these lines and specify days if you want to disable specific days within weeks
-    'week1': ['monday','tuesday','wednesday','thursday','friday','saturday'], // Example: No disabled days for Week 1
-    'week2': ['monday','tuesday','wednesday','thursday','friday','saturday'],
-    'week3': ['monday','tuesday','wednesday','thursday','friday','saturday'],
-    'week4': ['monday','tuesday','wednesday','thursday','friday','saturday'],
-    'week5': ['monday','tuesday','wednesday','thursday','friday','saturday'],
-    'week6': ['monday','tuesday','wednesday','thursday','friday'],
-    'week10': ['monday'], // Mindmash - no disabled days here for now
+    //'week1': ['monday','tuesday','wednesday','thursday','friday','saturday'], // Example: No disabled days for Week 1
+    //'week2': ['monday','tuesday','wednesday','thursday','friday','saturday'],
+    //'week3': ['monday','tuesday','wednesday','thursday','friday','saturday'],
+    //'week4': ['monday','tuesday','wednesday','thursday','friday','saturday'],
+    //'week5': ['monday','tuesday','wednesday','thursday','friday','saturday'],
+    //'week6': ['monday','tuesday','wednesday','thursday','friday'],
+    //'week10': ['monday'], // Mindmash - no disabled days here for now
 };
 // --- END CONTROL KEYWORD ---
 
