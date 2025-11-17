@@ -7,8 +7,8 @@
     <link rel="icon" href="TCC.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        
         /* Mini Window Styling (for leaderboard page) */
+        
         .mini-window {
             width: 90%;
             max-width: 600px;
@@ -22,16 +22,16 @@
             padding: 15px;
             text-align: center;
         }
-
         /* Wrapper for Table Tabs */
         /* This wrapper might not be strictly needed for two separate sections but good for consistency */
+        
         .table-tabs-wrapper {
             width: 100%;
             text-align: center;
             padding: 10px;
         }
-
         /* Tab Navigation */
+        
         .tab-nav {
             display: flex;
             justify-content: center;
@@ -40,9 +40,10 @@
             overflow: hidden;
             padding: 5px;
             box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 10px; /* Space between main tabs and content/department tabs */
+            margin-bottom: 10px;
+            /* Space between main tabs and content/department tabs */
         }
-
+        
         .tab-button {
             flex: 1;
             padding: 8px 12px;
@@ -54,35 +55,38 @@
             border-radius: 6px 6px 0 0;
             transition: 0.3s;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 0 2px; /* Small gap between buttons */
+            margin: 0 2px;
+            /* Small gap between buttons */
         }
-
+        
         .tab-button:first-child {
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
         }
-
+        
         .tab-button:last-child {
             border-top-right-radius: 6px;
             border-bottom-right-radius: 6px;
         }
-
+        
         .tab-button:hover {
             background: #1E88E5;
             color: white;
         }
-
+        
         .tab-button.active {
             background: #00408f;
             color: white;
             font-weight: bold;
             box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
-            border-radius: 6px; /* Active button looks like a solid block */
+            border-radius: 6px;
+            /* Active button looks like a solid block */
         }
-
         /* Table Wrapper */
+        
         .table-wrapper {
-            overflow-x: auto; /* Enables horizontal scrolling on smaller screens if content overflows */
+            overflow-x: auto;
+            /* Enables horizontal scrolling on smaller screens if content overflows */
             margin: 10px auto 30px auto;
             max-height: 350px;
             background: linear-gradient(to bottom, #e3f2fd, #ffffff);
@@ -92,8 +96,8 @@
             border: 2px solid #007BFF;
             margin-top: -1px;
         }
-
         /* Table Styling */
+        
         table {
             width: 100%;
             border-collapse: collapse;
@@ -102,13 +106,14 @@
             border-radius: 8px;
             overflow: hidden;
         }
-
-        th, td {
+        
+        th,
+        td {
             padding: 12px 15px;
             border: 1px solid #cceeff;
             text-align: center;
         }
-
+        
         th {
             background: #00408f;
             color: white;
@@ -116,56 +121,64 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         /* Striped rows for better readability */
+        
         tbody tr:nth-child(even) {
             background-color: #f0f8ff;
         }
-
         /* Hover effect on table rows */
+        
         tbody tr:hover {
             background-color: #e0f2f7;
             cursor: pointer;
         }
-
         /* Style for disqualified rows */
+        
         .disqualified-row {
-            background-color: #ffe6e6 !important; /* Light red background */
-            color: #a00; /* Darker red text */
-            text-decoration: line-through; /* Strikethrough text */
-            opacity: 0.7; /* Slightly faded */
+            background-color: #ffe6e6 !important;
+            /* Light red background */
+            color: #a00;
+            /* Darker red text */
+            text-decoration: line-through;
+            /* Strikethrough text */
+            opacity: 0.7;
+            /* Slightly faded */
             font-style: italic;
         }
-
+        
         .disqualified-row td {
             /* Ensure border and padding are consistent */
             border: 1px solid #ffcccc;
         }
-
+        
         .tab-content {
             display: none;
         }
-
+        
         .active-content {
             display: block;
         }
-
         /* Heading for department tables */
+        
         .tab-content h3 {
             color: #00408f;
             margin-top: 15px;
             margin-bottom: 10px;
             font-size: 1.2em;
         }
-        
         /* New styling for leaderboard sections */
+        
         .leaderboard-section {
-            margin-bottom: 40px; /* Space between Brain Cache and Mindmash sections */
-            border: 2px solid #007BFF; /* Consistent border */
+            margin-bottom: 40px;
+            /* Space between Brain Cache and Mindmash sections */
+            border: 2px solid #007BFF;
+            /* Consistent border */
             border-radius: 12px;
             padding: 15px;
-            background-color: #e6f7ff; /* Light background for the whole section */
+            background-color: #e6f7ff;
+            /* Light background for the whole section */
         }
+        
         .leaderboard-section h2 {
             color: #00408f;
             font-size: 1.8em;
@@ -173,69 +186,86 @@
             border-bottom: 2px solid #00408f;
             padding-bottom: 10px;
         }
+        
         @media only screen and (max-width: 600px) {
-    .button-container {
-        padding: 10px; /* Adjust padding for the button container */
-        text-align: center; /* Center buttons if they wrap (though nav buttons should fit) */
-    }
-
-    /* --- Critical changes for the Week/Quiz tab buttons (Brain Cache & Mindmash) --- */
+            .button-container {
+                padding: 10px;
+                /* Adjust padding for the button container */
+                text-align: center;
+                /* Center buttons if they wrap (though nav buttons should fit) */
+            }
+            /* --- Critical changes for the Week/Quiz tab buttons (Brain Cache & Mindmash) --- */
             .tab-nav {
-        font-size: 0.95em;
-    display: flex;
-    flex-wrap: nowrap; /* CRITICAL: This forces all buttons onto a single line */
-    justify-content: space-around;
-    overflow: hidden; 
-    padding: 5px 0;
-    width: 100%;
-    box-sizing: border-box;
-    }
-
-    .tab-button {
-    flex: 1; 
-    min-width: 0;
-    padding: 8px 4px;
-    margin: 0 2px;
-    font-size: 0.75em;
-    
-    /* --- CRITICAL CHANGES BELOW --- */
-    white-space: normal; /* This allows text to wrap */
-    overflow: visible;   /* This allows all text to be shown */
-    text-overflow: clip; /* This prevents the ellipsis from showing */
-    word-break: break-word; /* This ensures a single long word will break */
-    /* --- CRITICAL CHANGES ABOVE --- */
-    
-    box-sizing: border-box; 
-  }
-    }
-
-    /* Ensure active button styling doesn't break layout */
-    .tab-button.active {
-        border-radius: 6px; /* Consistent border radius */
-    }
-
-
+                font-size: 0.95em;
+                display: flex;
+                flex-wrap: nowrap;
+                /* CRITICAL: This forces all buttons onto a single line */
+                justify-content: space-around;
+                overflow: hidden;
+                padding: 5px 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .tab-button {
+                flex: 1;
+                min-width: 0;
+                padding: 8px 4px;
+                margin: 0 2px;
+                font-size: 0.75em;
+                /* --- CRITICAL CHANGES BELOW --- */
+                white-space: normal;
+                /* This allows text to wrap */
+                overflow: visible;
+                /* This allows all text to be shown */
+                text-overflow: clip;
+                /* This prevents the ellipsis from showing */
+                word-break: break-word;
+                /* This ensures a single long word will break */
+                /* --- CRITICAL CHANGES ABOVE --- */
+                box-sizing: border-box;
+            }
+        }
+        /* Ensure active button styling doesn't break layout */
+        
+        .tab-button.active {
+            border-radius: 6px;
+            /* Consistent border radius */
+        }
         /* Media Queries for Leaderboard specific elements */
+        
         @media (max-width: 768px) {
             /* General mini-window adjustments for small screens */
-    .mini-window {
-        width: 94%; /* Even wider to maximize button space */
-        margin: 10px auto 30px auto; /* Adjust vertical margins */
-        padding: 8px; /* Reduce overall padding */
-    }
+            .mini-window {
+                width: 94%;
+                /* Even wider to maximize button space */
+                margin: 10px auto 30px auto;
+                /* Adjust vertical margins */
+                padding: 8px;
+                /* Reduce overall padding */
+            }
         }
-
+        
         @media (min-width: 769px) {
             .mini-window {
                 max-width: 900px;
                 padding: 20px;
-                margin-bottom: 70px; /* Adjust spacing for larger screens */
+                margin-bottom: 70px;
+                /* Adjust spacing for larger screens */
             }
-            table th:nth-child(1), table td:nth-child(1) { width: 10%; }
-            table th:nth-child(2), table td:nth-child(2) { width: 70%; }
-            table th:nth-child(3), table td:nth-child(3) { width: 20%; }
+            table th:nth-child(1),
+            table td:nth-child(1) {
+                width: 10%;
+            }
+            table th:nth-child(2),
+            table td:nth-child(2) {
+                width: 70%;
+            }
+            table th:nth-child(3),
+            table td:nth-child(3) {
+                width: 20%;
+            }
         }
-
+        
         @media (min-width: 1024px) {
             .mini-window {
                 max-width: 1000px;
@@ -243,6 +273,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="blue-container">
@@ -257,6 +288,7 @@
         </div>
     </div>
 
+
     <div class="button-container">
         <button class="b-nav-button" onclick="window.location.href='index.html';">Home</button>
         <button class="b-nav-button" onclick="window.location.href='weeklycontent.html';">Weekly Content</button>
@@ -265,8 +297,118 @@
         <button class="b-nav-button active-nav-button" onclick="window.location.href='leaderboard.html';">Leaderboard</button>
         <button class="b-nav-button" onclick="window.location.href='feedback.html';">Feedback</button>
     </div>
-
-       <div class="mini-window">
+<div class="mini-window">
+        <!-- New Overall Performer Table Section -->
+        <div id="overall-performer-section" class="leaderboard-section">
+            <h2>Overall Performers (Brain Cache + Mindmash)</h2>
+            <div class="table-wrapper" style="max-height: none; max-width: 1200px;">
+                <table>
+    <thead>
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Dept/Year</th>
+        <th>W1</th>
+        <th>W2</th>
+        <th>W3</th>
+        <th>W4</th>
+        <th>W5</th>
+        <th>W6</th>
+        <th>M-Q1 (25)</th>
+        <th>M-Q2 (25)</th>
+        <th>Total Score (50)</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>1</td>
+        <td>Gladiyas Asin D</td>
+        <td>CSE (AI&ML), 3rd</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+        <td>25</td>
+        <td>-</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>M. Asmath Fouziya</td>
+        <td>CSE, 3rd</td>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>4</td>
+        <td>0</td>
+        <td>25</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Shivadharshini B</td>
+        <td>CSE (AI&ML), 2nd</td>
+        <td>5</td>
+        <td>4</td>
+        <td>3</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>G. Shakthipriya</td>
+        <td>CSE (AI&ML), 2nd</td>
+        <td>5</td>
+        <td>4</td>
+        <td>5</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>R. Amirtha Varshni</td>
+        <td>CSE, 4th</td>
+        <td>3</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>J. Mariapushpam</td>
+        <td>CSE (AI&ML), 2nd</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+        <td>5</td>
+    </tr>
+</tbody>
+</table>
+            </div>
+        </div>
+    <div class="mini-window">
         <div id="brain-cache-section" class="leaderboard-section">
             <h2>Brain Cache (5 Questions Quiz) Leaderboard</h2>
             <div class="tab-nav">
@@ -287,56 +429,84 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week1')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week1')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week1')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week1')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week1')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>2ND YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Shakthipriya G</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Shivadharshini B</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="cse3_week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Asmath Fouziya M</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="aiml3_week1" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="cse4_week1" class="tab-content">
+                        <h3>4TH YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Amirtha Varshni R</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+                <!--week1-->
 
                 <div id="week2" class="tab-content">
                     <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
@@ -346,57 +516,84 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week2')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week2')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week2')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week2')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week2')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>2ND YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sivadharshini B</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Shakthipriya G</td>
+                                <td>4</td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="cse3_week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Azmath Fouziya M</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
 
+                    <div id="aiml3_week2" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="cse4_week2" class="tab-content">
+                        <h3>4TH YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Amirtha Varshni R</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
                 <div id="week3" class="tab-content">
                     <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
                         Results for Week 3 Quiz
@@ -405,54 +602,57 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week3')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week3')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week3')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week3')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week3')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week3" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week3" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>2ND YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Shakthipriya G</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Shivadharshini B</td>
+                                <td>3</td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="cse3_week3" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Azmath Fouziya M</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="aiml3_week3" class="tab-content">
+                        <h3>NO DATA ⚠️</h3>
+                    </div>
+
+                    <div id="cse4_week3" class="tab-content">
+                        <h3>NO DATA ⚠️</h3>
                     </div>
                 </div>
 
@@ -464,54 +664,69 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week4')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week4')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week4')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week4')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week4')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week4" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week4" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>2ND YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Shivafharshini B</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Shakthipriya G</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="cse3_week4" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Asmath Fouziya M</td>
+                                <td>3</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="aiml3_week4" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="cse4_week4" class="tab-content">
+                        <h3>NO DATA ⚠️</h3>
                     </div>
                 </div>
 
@@ -523,54 +738,64 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week5')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week5')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week5')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week5')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week5')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week5" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week5" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>2ND YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Mariapushpam J</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
                     </div>
 
                     <div id="cse3_week5" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Asmath Fouziya M</td>
+                                <td>3</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="aiml3_week5" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="cse4_week5" class="tab-content">
+                        <h3>NO DATA ⚠️</h3>
                     </div>
                 </div>
 
@@ -582,190 +807,130 @@
                         <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'week6')">CSE 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'week6')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'week6')">CSE 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'week6')">CSE (AI/ML) 3rd Year</button>
+                        <button class="tab-button" onclick="switchDepartmentTab('cse4', event, 'week6')">CSE 4th Year</button>
                     </div>
 
                     <div id="cse2_week6" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="aiml2_week6" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>NO DATA ⚠️</h3>
                     </div>
 
                     <div id="cse3_week6" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Asmath Fouziya M</td>
+                                <td>4</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="aiml3_week6" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="cse4_week6" class="tab-content">
+                        <h3>NO DATA ⚠️</h3>
                     </div>
                 </div>
-                
-               
-                </div>
-
-                
+                <!--w6-->
+            </div>
         </div>
+        <!--brain cache section-->
 
         <div id="mindmash-section" class="leaderboard-section">
-            <h2>Mindmash (25 Questions Quiz) Leaderboard</h2>
+            <h2>Mindmash (30 Questions Quiz) Leaderboard</h2>
             <div class="tab-nav">
                 <button class="tab-button" onclick="switchWeekTab('mindmash-week1', event, 'mindmash')">Quiz 1</button>
-                <!-- <button class="tab-button" onclick="switchWeekTab('mindmash-quiz2', event, 'mindmash')">Quiz 2</button> -->
-                </div>
+                <button class="tab-button" onclick="switchWeekTab('mindmash-week2', event, 'mindmash')">Quiz 2</button>
+            </div>
 
             <div class="table-wrapper">
-                <div id="mindmash-week1" class="tab-content">
+                <div id="mindmash-week1" class="tab-content active-content">
                     <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
                         Results for Mindmash 1 Quiz
                     </p>
                     <div class="tab-nav">
-                        <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'mindmash-week1')">CSE 2nd Year</button>
-                        <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'mindmash-week1')">CSE (AI/ML) 2nd Year</button>
-                        <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'mindmash-week1')">CSE 3rd Year</button>
-                    </div>
-                    
-                    <div id="cse2_mindmash-week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> --> 
+                        <button class="tab-button" onclick="switchDepartmentTab('aiml3', event, 'mindmash-week1')">CSE (AI/ML) 3rd Year</button>
                     </div>
 
-                    <div id="aiml2_mindmash-week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                    <div id="aiml3_mindmash-week1" class="tab-content">
+                        <h3>3RD YEAR CSE (AI/ML) DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiyas Asin D</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <div id="cse3_mindmash-week1" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
-                    </div>
                 </div>
 
-                <!-- <div id="mindmash-week2" class="tab-content">
+                <div id="mindmash-week2" class="tab-content active-content">
                     <p style="text-align: left; font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #00408f;">
-                        Results for Mindmash Week 2 Quiz
+                        Results for Mindmash 2 Quiz
                     </p>
                     <div class="tab-nav">
-                        <button class="tab-button" onclick="switchDepartmentTab('cse2', event, 'mindmash-week2')">CSE 2nd Year</button>
-                        <button class="tab-button" onclick="switchDepartmentTab('aiml2', event, 'mindmash-week2')">CSE (AI/ML) 2nd Year</button>
                         <button class="tab-button" onclick="switchDepartmentTab('cse3', event, 'mindmash-week2')">CSE 3rd Year</button>
                     </div>
-                    
-                    <div id="cse2_mindmash-week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
-                    </div>
-
-                    <div id="aiml2_mindmash-week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
-                    </div>
-
+                
                     <div id="cse3_mindmash-week2" class="tab-content">
-                        <h3>COMING SOON!</h3>
-                        <!-- <table>
-                            <tr><th>S.No.</th><th>Name</th><th>Score</th></tr>
-                            <tr><td>1</td><td>Karthikeyan B S</td><td>5</td></tr>
-                            <tr><td>2</td><td>Sathyaraj K</td><td>5</td></tr>
-                            <tr><td>3</td><td>Nagajothi M</td><td>5</td></tr>
-                            <tr><td>4</td><td>Azmath Fouziya M</td><td>5</td></tr>
-                            <tr><td>5</td><td>Jerusha Grace J T</td><td>4</td></tr>
-                            <tr><td>6</td><td>Anitha M</td><td>4</td></tr>
-                            <tr><td>7</td><td>Prithika J</td><td>4</td></tr>
-                            <tr><td>8</td><td>Uma Ghayathri I</td><td>3</td></tr>
-                            <tr><td>9</td><td>Madhumitha P R</td><td>1</td></tr>
-                        </table> -->
+                        <h3>3RD YEAR CSE DEPARTMENT</h3>
+                        <table>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Asmath Fouziya M</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-                </div> 
+                
+                                    </div>
+
+
+
+
+
+
+
+            </div><!-- MINDMASH TABLE WRAPPER -->
+
+            
         </div>
+    </div>
+    </div>
     </div>
 
     <footer>
@@ -783,7 +948,7 @@
             <img src="WP.svg" alt="WhatsApp" class="social-logo">
         </a>
     </footer>
-    
+
     <script>
         // --- Core Functions for Tab Switching ---
 
@@ -798,13 +963,22 @@
             const sectionContainerId = sectionIdPrefix + '-section';
             const sectionContainer = document.getElementById(sectionContainerId);
 
+            // Guard clause: if the container doesn't exist, exit the function.
+            if (!sectionContainer) {
+                console.error(`Section container with ID '${sectionContainerId}' not found.`);
+                return;
+            }
+
             // Deactivate all week content tabs within this specific section
             sectionContainer.querySelectorAll('.table-wrapper > .tab-content').forEach(tab => {
                 tab.classList.remove('active-content');
             });
 
             // Activate the selected week content tab
-            document.getElementById(weekId).classList.add('active-content');
+            const activeWeekContent = document.getElementById(weekId);
+            if (activeWeekContent) {
+                activeWeekContent.classList.add('active-content');
+            }
 
             // Deactivate all week tab buttons within this specific section's tab navigation
             sectionContainer.querySelectorAll('.tab-nav > .tab-button').forEach(button => {
@@ -816,24 +990,36 @@
                 event.target.classList.add('active');
             } else {
                 // If called programmatically (e.g., on initial load), find the correct button and activate it
-                sectionContainer.querySelector(`.tab-nav > .tab-button[onclick*="${weekId}"]`).classList.add('active');
+                const firstButton = sectionContainer.querySelector(`.tab-nav > .tab-button[onclick*="${weekId}"]`);
+                if (firstButton) {
+                    firstButton.classList.add('active');
+                }
             }
 
             // Reset and activate the first department tab for the newly active week
-            const activeWeekContent = document.getElementById(weekId);
-            const departmentTabNav = activeWeekContent.querySelector('.tab-nav');
-            const departmentTabButtons = departmentTabNav.querySelectorAll('.tab-button');
-            const departmentTabContents = activeWeekContent.querySelectorAll('.tab-content');
+            if (activeWeekContent) {
+                const departmentTabNav = activeWeekContent.querySelector('.tab-nav');
+                if (departmentTabNav) {
+                    const departmentTabButtons = departmentTabNav.querySelectorAll('.tab-button');
+                    const departmentTabContents = activeWeekContent.querySelectorAll('.tab-content');
 
-            // Deactivate all department buttons and content within this week
-            departmentTabButtons.forEach(button => button.classList.remove('active'));
-            departmentTabContents.forEach(content => content.classList.remove('active-content'));
+                    // Deactivate all department buttons and content within this week
+                    departmentTabButtons.forEach(button => button.classList.remove('active'));
+                    departmentTabContents.forEach(content => content.classList.remove('active-content'));
 
-            // Activate the first department tab for the new week (e.g., CSE 2nd Year)
-            if (departmentTabButtons.length > 0) {
-                departmentTabButtons[0].classList.add('active');
-                const firstDepartmentId = departmentTabButtons[0].getAttribute('onclick').match(/'(.*?)'/)[1];
-                document.getElementById(firstDepartmentId + '_' + weekId).classList.add('active-content');
+                    // Activate the first department tab for the new week (e.g., CSE 2nd Year)
+                    if (departmentTabButtons.length > 0) {
+                        departmentTabButtons[0].classList.add('active');
+                        const firstDepartmentIdMatch = departmentTabButtons[0].getAttribute('onclick').match(/'(.*?)'/);
+                        if (firstDepartmentIdMatch && firstDepartmentIdMatch.length > 1) {
+                            const firstDepartmentId = firstDepartmentIdMatch[1];
+                            const departmentContentElement = document.getElementById(firstDepartmentId + '_' + weekId);
+                            if (departmentContentElement) {
+                                departmentContentElement.classList.add('active-content');
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -846,14 +1032,23 @@
         function switchDepartmentTab(departmentId, event, weekId) {
             // Select the correct week content (e.g., #week1 or #mindmash-week1)
             const activeWeekContent = document.getElementById(weekId);
-            
+
+            // Guard clause: if the content doesn't exist, exit the function.
+            if (!activeWeekContent) {
+                console.error(`Active week content with ID '${weekId}' not found.`);
+                return;
+            }
+
             // Deactivate all department content within this week
             activeWeekContent.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active-content');
             });
 
             // Activate the selected department content
-            document.getElementById(departmentId + '_' + weekId).classList.add('active-content');
+            const departmentContentElement = document.getElementById(departmentId + '_' + weekId);
+            if (departmentContentElement) {
+                departmentContentElement.classList.add('active-content');
+            }
 
             // Deactivate all department buttons within the current week's tab navigation
             const departmentButtons = activeWeekContent.querySelectorAll('.tab-nav > .tab-button');
@@ -867,17 +1062,18 @@
 
         // Initialize both leaderboard sections on page load
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Brain Cache section:
-            // Ensure #brain-cache-section is initially visible if hidden by other CSS
-            document.getElementById('brain-cache-section').style.display = 'block'; 
-            switchWeekTab('week1', null, 'brain-cache'); // Activate Week 1 for Brain Cache
+            // Check if the brain cache section exists before trying to initialize it
+            if (document.getElementById('brain-cache-section')) {
+                switchWeekTab('week1', null, 'brain-cache'); // Activate Week 1 for Brain Cache
+            }
 
-            // Initialize Mindmash section:
-            // Ensure #mindmash-section is initially visible
-            document.getElementById('mindmash-section').style.display = 'block'; 
-            switchWeekTab('mindmash-week1', null, 'mindmash'); // Activate Week 1 for Mindmash
+            // Check if the mindmash section exists before trying to initialize it
+            if (document.getElementById('mindmash-section')) {
+                switchWeekTab('mindmash-week1', null, 'mindmash'); // Activate Quiz 1 for Mindmash
+            }
         });
     </script>
 
 </body>
+
 </html>
